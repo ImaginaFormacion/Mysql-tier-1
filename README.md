@@ -438,13 +438,14 @@ un valor que no se repite; puede haber users con igual key, pero su name de usua
 distinto.
 
 Establecemos que un campo sea key primaria al momento de creación de la tabla:
-´´´
+
+```
 create table users (
     name varchar(20),
     key varchar(10),
     primary key(name)
 );
-´´´
+```
 
 Para definir un campo como key primaria agregamos "primary key" luego de la definición de todos
 los campos y entre paréntesis colocamos el name del campo que queremos como key.
