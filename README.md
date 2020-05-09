@@ -4,92 +4,92 @@
 ## Índice
 
 
-- 1 - Introducción..........................................................................................................................................
-- 2 - show databases......................................................................................................................................
+- 1 - Introducción........................
+- 2 - show databases....................
 - 3 - Creación de una tabla y mostrar sus campos (create table - show tables - describe - drop table)........
-- 4 - Carga de registros a una tabla y su recuperación (insert into - select)..................................................
-- 5 - Típos de datos básicos de un campo de una tabla.................................................................................
-- 6 - Recuperación de algunos campos (select)..........................................................................................
-- 7 - Recuperación de registros específicos (select - where)......................................................................
-- 8 - Operadores Relacionales = <> < <= > >=..........................................................................................
-- 9 - Borrado de registros de una tabla (delete)..........................................................................................
-- 10 - Modificación de registros de una tabla (update)...............................................................................
-- 10 - Modificación de registros de una tabla (update)...............................................................................
-- 11 - Clave primaria...................................................................................................................................
-- 12 - Campo entero con autoincremento...................................................................................................
-- 13 - Comando truncate table....................................................................................................................
-- 14 - Valores null.......................................................................................................................................
-- 15 - Valores numéricos sin signo (unsigned)...........................................................................................
-- 15 - Valores numéricos sin signo (unsigned)...........................................................................................
-- 16 - Tipos de datos...................................................................................................................................
-- 17 - Tipos de datos (texto)........................................................................................................................
-- 18 - Tipos de datos (numéricos)...............................................................................................................
-- 20 - Valores por defecto...........................................................................................................................
-- 21 - Valores inválidos...............................................................................................................................
-- 22 - Atributo default en una columna de una tabla..................................................................................
-- 23 - Atributo zerofill en una columna de una tabla..................................................................................
-- 24 - Columnas calculadas.........................................................................................................................
-- 25 - Funciones para el manejo de cadenas...............................................................................................
-- 26 - Funciones matemáticas.....................................................................................................................
-- 27 - Funciones para el uso de fecha y hora..............................................................................................
-- 28 - Cláusula order by del select..............................................................................................................
-- 29 - Operadores Lógicos (and - or - not).................................................................................................
-- 30 - Otros operadores relacionales (between - in)...................................................................................
-- 31 - Búsqueda de patrones (like y not like)..............................................................................................
-- 32 - Búsqueda de patrones (regexp).........................................................................................................
-- 33 - Contar registros (count)....................................................................................................................
-- 34 - Funciones de agrupamiento (count - max - min - sum - avg)...........................................................
-- 36 - Selección de un grupo de registros (having).....................................................................................
-- 37 - Registros duplicados (distinct).........................................................................................................
-- 38 - Alias..................................................................................................................................................
-- 39 - Clave primaria compuesta................................................................................................................
-- 40 - Indice de una tabla............................................................................................................................
-- 41 - Indice de tipo primary.......................................................................................................................
-- 42 - Indice común (index)........................................................................................................................
-- 43 - Indice único (unique)........................................................................................................................
-- 44 - Borrar indice (drop index)................................................................................................................
-- 45 - Creación de índices a tablas existentes (create index)......................................................................
-- 46 - Cláusula limit del comando select....................................................................................................
-- 47 - Recuperación de registros en forma aleatoria(rand).........................................................................
-- 48 - Remplazar registros (replace)...........................................................................................................
-- 49 - Agregar campos a una tabla (alter table - add).................................................................................
-- 50 - Eliminar campos de una tabla (alter table - drop).............................................................................
-- 51 - Modificar campos de una tabla (alter table - modify)......................................................................
-- 52 - Cambiar el nombre de un campo de una tabla (alter table - change)................................................
-- 53 - Agregar y eliminar la clave primaria (alter table).............................................................................
-- 54 - Agregar índices(alter table - add index)............................................................................................
-- 55 - Borrado de índices (alter table - drop index)....................................................................................
-- 56 - renombrar tablas (alter table - rename - rename table).....................................................................
-- 57 - Tipo de dato enum............................................................................................................................
-- 58 - Tipo de dato set.................................................................................................................................
-- 60 - Funciones de control de flujo (if).....................................................................................................
-- 61 - Funciones de control de flujo (case).................................................................................................
-- 62 - Varias tablas (join)............................................................................................................................
-- 63 - Clave foránea..................................................................................................................................
-- 64 - Varias tablas (left join)....................................................................................................................
-- 65 - Varias tablas (right join)..................................................................................................................
-- 66 - Varias tablas (cross join).................................................................................................................
-- 67 - Varias tablas (natural join)..............................................................................................................
-- 68 - Varias tablas (inner join - straight join)..........................................................................................
-- 69 - join, group by y funciones de agrupamiento...................................................................................
-- 70 - join con más de dos tablas..............................................................................................................
-- 71 - Función de control if con varias tablas...........................................................................................
-- 72 - Variables de usuario........................................................................................................................
-- 73 - Crear tabla a partir de otra (create - insert).....................................................................................
-- 74 - Crear tabla a partir de otras (create - insert - join)..........................................................................
-- 75 - Insertar datos en una tabla buscando un valor en otra (insert - select)...........................................
-- 76 - Insertar registros con valores de otra tabla (insert - select)............................................................
-- 77 - Insertar registros con valores de otra tabla (insert - select - join)...................................................
-- 78 - Actualizar datos con valores de otra tabla (update)........................................................................
-- 79 - Actualización en cascada (update - join)........................................................................................
-- 80 - Borrar registros consultando otras tablas (delete - join).................................................................
-- 81 - Borrar registros buscando coincidencias en otras tablas (delete - join)..........................................
-- 82 - Borrar registros en cascada (delete - join)......................................................................................
-- 83 - Chequear y reparar tablas (check - repair)......................................................................................
-- 84 - Encriptación de datos (encode - decode)........................................................................................
+- 4 - Carga de registros a una tabla y su recuperación (insert into - select)......................
+- 5 - Típos de datos básicos de un campo de una tabla.........................
+- 6 - Recuperación de algunos campos (select)....
+- 7 - Recuperación de registros específicos (select - where)..............
+- 8 - Operadores Relacionales = <> < <= > >=....
+- 9 - Borrado de registros de una tabla (delete)....
+- 10 - Modificación de registros de una tabla (update).......................
+- 10 - Modificación de registros de una tabla (update).......................
+- 11 - key primaria.................
+- 12 - Campo entero con autoincremento.............
+- 13 - Comando truncate table..
+- 14 - Valores null.....................
+- 15 - Valores numéricos sin signo (unsigned).....
+- 15 - Valores numéricos sin signo (unsigned).....
+- 16 - Tipos de datos.................
+- 17 - Tipos de datos (texto)......
+- 18 - Tipos de datos (numéricos).........................
+- 20 - Valores por defecto.........
+- 21 - Valores inválidos.............
+- 22 - Atributo default en una columna de una tabla..........................
+- 23 - Atributo zerofill en una columna de una tabla..........................
+- 24 - Columnas calculadas.......
+- 25 - Funciones para el manejo de cadenas.........
+- 26 - Funciones matemáticas...
+- 27 - Funciones para el uso de fecha y hora........
+- 28 - Cláusula order by del select........................
+- 29 - Operadores Lógicos (and - or - not)...........
+- 30 - Otros operadores relacionales (between - in)...........................
+- 31 - Búsqueda de patrones (like y not like)........
+- 32 - Búsqueda de patrones (regexp)...................
+- 33 - Contar registros (count)..
+- 34 - Funciones de agrupamiento (count - max - min - sum - avg)...
+- 36 - Selección de un grupo de registros (having).
+- 37 - Registros duplicados (distinct)...................
+- 38 - Alias....
+- 39 - key primaria compuesta..........................
+- 40 - Indice de una tabla..........
+- 41 - Indice de tipo primary.....
+- 42 - Indice común (index)......
+- 43 - Indice único (unique)......
+- 44 - Borrar indice (drop index)..........................
+- 45 - Creación de índices a tablas existentes (create index)..............
+- 46 - Cláusula limit del comando select..............
+- 47 - Recuperación de registros en forma aleatoria(rand).................
+- 48 - Remplazar registros (replace).....................
+- 49 - Agregar campos a una tabla (alter table - add).........................
+- 50 - Eliminar campos de una tabla (alter table - drop).....................
+- 51 - Modificar campos de una tabla (alter table - modify)..............
+- 52 - Cambiar el name de un campo de una tabla (alter table - change)....................
+- 53 - Agregar y eliminar la key primaria (alter table).....................
+- 54 - Agregar índices(alter table - add index)......
+- 55 - Borrado de índices (alter table - drop index)
+- 56 - renombrar tablas (alter table - rename - rename table).............
+- 57 - Tipo de dato enum..........
+- 58 - Tipo de dato set...............
+- 60 - Funciones de control de flujo (if)...............
+- 61 - Funciones de control de flujo (case)...........
+- 62 - Varias tablas (join)..........
+- 63 - key foránea................
+- 64 - Varias tablas (left join)..
+- 65 - Varias tablas (right join)
+- 66 - Varias tablas (cross join)...........................
+- 67 - Varias tablas (natural join)........................
+- 68 - Varias tablas (inner join - straight join)....
+- 69 - join, group by y funciones de agrupamiento...........................
+- 70 - join con más de dos tablas........................
+- 71 - Función de control if con varias tablas.....
+- 72 - Variables de usuario......
+- 73 - Crear tabla a partir de otra (create - insert).
+- 74 - Crear tabla a partir de otras (create - insert - join)..................
+- 75 - Insertar datos en una tabla buscando un valor en otra (insert - select)...............
+- 76 - Insertar registros con valores de otra tabla (insert - select)....
+- 77 - Insertar registros con valores de otra tabla (insert - select - join).......................
+- 78 - Actualizar datos con valores de otra tabla (update)................
+- 79 - Actualización en cascada (update - join)..
+- 80 - Borrar registros consultando otras tablas (delete - join).........
+- 81 - Borrar registros buscando coincidencias en otras tablas (delete - join)..............
+- 82 - Borrar registros en cascada (delete - join)
+- 83 - Chequear y reparar tablas (check - repair)
+- 84 - Encriptación de datos (encode - decode)..
 
 
-## 1 - Introducción..........................................................................................................................................
+## 1 - Introducción y entorno........................
 
 SQL, Structure Query Language (Lenguaje de Consulta Estructurado) es un lenguaje de programacion
 para trabajar con base de datos relacionales como MySQL, Oracle, etc.
@@ -110,23 +110,34 @@ create database administracion;
 Create DataBase administracion;
 Pero Linux interpretará como un error la segunda.
 
-Se recomienda usar siempre minúsculas. Es más el sitio mysqlya.com.ar está instalado sobre un
-servidor Linux por lo que todos los ejercicios deberán respetarse mayúsculas y minúsculas.
+Se recomienda usar siempre minúsculas. Es más las practicas se realizaran sobre un contenedor con un servidor Linux por lo que todos los ejercicios deberán respetarse mayúsculas y minúsculas.
+
+Vamos a trabajar en una base de datos ya creada en este mismo repositorio, y que podemos instanciar lanzando la configuracion de docker-compose.yaml
+
+> docker-compose up -d
+
+una vez lanzado comprobaremos que se han desplegado algunos contenedores.
+
+Accediendo al contenedor mysql por shell tendremos un cliente de consola de mysql disponible con el que poder realizar las prácticas.
 
 
-## 2 - show databases......................................................................................................................................
+> docker exec -it mysql /bin/bash
+
+Nos conectaremos al cliente de mysql 
+
+> mysql -u root -ppassword
+
+## 2 - show databases....................
 
 Una base de datos es un conjunto de tablas.
 
-Una base de datos tiene un nombre con el cual accederemos a ella.
+Una base de datos tiene un name con el cual accederemos a ella.
 
-Vamos a trabajar en una base de datos ya creada en el sitio mysqlya.com.ar, llamada "administracion".
+Para que el servidor nos muestre las bases de datos existentes, se lo solicitamos enviando la instrucción:
 
-Para que el servidor nos muestre las bases de datos existentes, se lo solicitamos enviando la
-instrucción:
+> show databases;
 
-show databases;
-Nos mostrará los nombres de las bases de datos, debe aparecer en este sitio "administracion".
+Nos mostrará los names de las bases de datos, debe aparecer en este sitio "administracion".
 
 
 ## 3 - Creación de una tabla y mostrar sus campos (create table - show tables - describe - drop table)........
@@ -139,107 +150,103 @@ dato específico, un solo valor.
 
 Cada registro contiene un dato por cada columna de la tabla.
 
-Cada campo (columna) debe tener un nombre. El nombre del campo hace referencia a la información
+Cada campo (columna) debe tener un name. El name del campo hace referencia a la información
 que almacenará.
 
 Cada campo (columna) también debe definir el tipo de dato que almacenará.
 
-**nombre clave**
-MarioPerez Marito
-MariaGarcia Mary
-DiegoRodriguez z
-Gráficamente acá tenemos la tabla usuarios, que contiene dos campos llamados:nombre y clave. Luego
-tenemos tres registros almacenados en esta tabla, el primero almacena en el campo nombre el valor
-"MarioPerez" y en el campo clave "Marito", y así sucesivamente con los otros dos registros.
 
 Las tablas forman parte de una base de datos.
 
-Nosotros trabajaremos con la base de datos llamada "administracion", que ya hemos creado en el
-servidor mysqlya.com.ar.
+podemos crear una base de datos, y acceder a una base datos existente.
 
-Para ver las tablas existentes en una base de datos tipeamos:
+> create database [name];
 
-show tables;
-Deben aparecer todas las tablas que han creado los visitantes al sitio mysqlya.com.ar
+> use [name];
 
-Al crear una tabla debemos resolver qué campos (columnas) tendrá y que tipo de datos almacenarán
-cada uno de ellos, es decir, su estructura.
+Para ver las tablas existentes en una base de datos:
 
-La tabla debe ser definida con un nombre que la identifique y con el cual accederemos a ella.
+> show tables;
 
-Creamos una tabla llamada "usuarios", tipeamos:
+Deben aparecer todas las tablas.
+
+Al crear una tabla debemos resolver qué campos (columnas) tendrá y que tipo de datos almacenarán cada uno de ellos, es decir, su estructura.
+
+La tabla debe ser definida con un name que la identifique y con el cual accederemos a ella.
+
+Creamos una tabla llamada "users", tipeamos:
 
 
-create table usuarios (
-nombre varchar(30),
-clave varchar(10)
-);
-Si intentamos crear una tabla con un nombre ya existente (existe otra tabla con ese nombre), mostrará
+> create table users ( name varchar(30), key varchar(10) );
+
+Si intentamos crear una tabla con un name ya existente (existe otra tabla con ese name), mostrará
 un mensaje de error indicando que la acción no se realizó porque ya existe una tabla con el mismo
-nombre.
+name.
 
 Para ver las tablas existentes en una base de datos tipeamos nuevamente:
 
-show tables;
-Ahora aparece "usuarios" entre otras que ya pueden estar creadas.
+> show tables;
 
-Cuando se crea una tabla debemos indicar su nombre y definir sus campos con su tipo de dato. En esta
-tabla "usuarios" definimos 2 campos:
+Ahora aparece "users" entre otras que ya pueden estar creadas.
 
-- nombre: que contendrá una cadena de hasta 30 caracteres de longitud,
-que almacenará el nombre de usuario y
-- clave: otra cadena de caracteres de 10 de longitud, que guardará la clave de
+Cuando se crea una tabla debemos indicar su name y definir sus campos con su tipo de dato. En esta
+tabla "users" definimos 2 campos:
+
+- name: que contendrá una cadena de hasta 30 caracteres de longitud,
+que almacenará el name de usuario y
+- key: otra cadena de caracteres de 10 de longitud, que guardará la key de
 cada usuario.
-Cada usuario ocupará un registro de esta tabla, con su respectivo nombre y clave.
+Cada usuario ocupará un registro de esta tabla, con su respectivo name y key.
 
-Para ver la estructura de una tabla usamos el comando "describe" junto al nombre de la tabla:
+Para ver la estructura de una tabla usamos el comando "describe" junto al name de la tabla:
 
-describe usuarios;
+> describe users;
+
 Aparece lo siguiente:
 
 Field Type Null
 _________________________
-nombre varchar(30) YES
-clave varchar(10) YES
-Esta es la estructura de la tabla "usuarios"; nos muestra cada campo, su tipo, lo que ocupa en bytes y
-otros datos como la aceptación de valores nulos etc, que veremos más adelante en detalle.
+name varchar(30) YES
+key varchar(10) YES
+Esta es la estructura de la tabla "users"; nos muestra cada campo, su tipo, lo que ocupa en bytes y otros datos como la aceptación de valores nulos etc, que veremos más adelante en detalle.
 
 Para eliminar una tabla usamos "drop table". Tipeamos:
 
-drop table usuarios;
+> drop table users;
+
 Si tipeamos nuevamente:
 
-drop table usuarios;
+> drop table users;
+
 Aparece un mensaje de error, indicando que no existe, ya que intentamos borrar una tabla inexistente.
 
 Para evitar este mensaje podemos tipear:
 
-drop table if exists usuarios;
-En la sentencia precedente especificamos que elimine la tabla "usuarios" si existe.
+> drop table if exists users;
+
+En la sentencia precedente especificamos que elimine la tabla "users" si existe.
 
 
-## 4 - Carga de registros a una tabla y su recuperación (insert into - select)..................................................
+## 4 - Carga de registros a una tabla y su recuperación (insert into - select)......................
 
 Un registro es una fila de la tabla que contiene los datos propiamente dichos. Cada registro tiene un
 dato por cada columna.
 
-Recordemos como crear la tabla "usuarios":
+Recordemos como crear la tabla "users":
 
-create table usuarios (
-nombre varchar(30),
-clave varchar(10)
-);
+>create table users ( name varchar(30), key varchar(10));
+
 Al ingresar los datos de cada registro debe tenerse en cuenta la cantidad y el orden de los campos.
 
 Ahora vamos a agregar un registro a la tabla:
 
-insert into usuarios (nombre, clave) values ('MarioPerez','Marito');
-Usamos "insert into". Especificamos los nombres de los campos entre paréntesis y separados por comas
+> insert into users (name, key) values ('MarioPerez','Marito');
+Usamos "insert into". Especificamos los names de los campos entre paréntesis y separados por comas
 y luego los valores para cada campo, también entre paréntesis y separados por comas.
 
-La tabla usuarios ahora la podemos graficar de la siguiente forma:
+La tabla users ahora la podemos graficar de la siguiente forma:
 
-**nombre clave**
+**name key**
 MarioPerez Marito
 Es importante ingresar los valores en el mismo orden en que se nombran los campos, si ingresamos los
 datos en otro orden, no aparece un mensaje de error y los datos se guardan de modo incorrecto.
@@ -249,25 +256,24 @@ comillas simples. Las comillas simples son OBLIGATORIAS.
 
 Para ver los registros de una tabla usamos "select":
 
-select nombre,clave from usuarios;
+> select name,key from users;
+
 Aparece un registro.
 
 El comando "select" recupera los registros de una tabla. Luego del comando select indicamos los
-nombres de los campos a rescatar.
+names de los campos a rescatar.
 
 
-## 5 - Típos de datos básicos de un campo de una tabla.................................................................................
+## 5 - Típos de datos básicos de un campo de una tabla.........................
 
 Ya explicamos que al crear una tabla debemos resolver qué campos (columnas) tendrá y que tipo de
 datos almacenará cada uno de ellos, es decir, su estructura. Estos son algunos tipos de datos básicos:
 
-- varchar: se usa para almacenar cadenas de caracteres. Una cadena es una secuencia de caracteres. Se
-coloca entre comillas (simples): 'Hola'. El tipo "varchar" define una cadena de longitud variable en la
-cual determinamos el máximo de caracteres. Puede guardar hasta 255 caracteres. Para almacenar
-cadenas de hasta 30 caracteres, definimos un campo de tipo varchar(30). Si asignamos una cadena de
-caracteres de mayor longitud que la definida, la cadena se corta. Por ejemplo, si definimos un campo de
-tipo varchar(10) y le asignamos la cadena 'Buenas tardes', se almacenará 'Buenas tar' ajustándose a la
-longitud de 10 caracteres.
+- varchar: se usa para almacenar cadenas de caracteres. Una cadena es una secuencia de caracteres. Se coloca entre comillas (simples): 'Hola'. El tipo "varchar" define una cadena de longitud variable en la
+cual determinamos el máximo de caracteres. Puede guardar hasta 255 caracteres. 
+
+Para almacenar cadenas de hasta 30 caracteres, definimos un campo de tipo varchar(30). Si asignamos una cadena de caracteres de mayor longitud que la definida, la cadena se corta. Por ejemplo, si definimos un campo de
+tipo varchar(10) y le asignamos la cadena 'Buenas tardes', se almacenará 'Buenas tar' ajustándose a la longitud de 10 caracteres.
 - integer: se usa para guardar valores numéricos enteros, de -2000000000 a 2000000000 aprox.
 Definimos campos de este tipo cuando queremos representar, por ejemplo, cantidades.
 - float: se usa para almacenar valores numéricos decimales. Se utiliza como separador el punto (.).
@@ -279,52 +285,55 @@ mala elección; si vamos a guardar precios, el tipo "float" es correcto, no así
 decimales.
 
 
-## 6 - Recuperación de algunos campos (select)..........................................................................................
+## 6 - Recuperación de algunos campos (select)....
 
 Hemos aprendido cómo ver todos los registros de una tabla:
 
-select * from libros;
+> select * from libros;
+
 El comando "select" recupera los registros de una tabla. Con el asterisco (*) indicamos que seleccione
 todos los campos de la tabla que nombramos.
 
-Podemos especificar el nombre de los campos que queremos ver separándolos por comas:
+Podemos especificar el name de los campos que queremos ver separándolos por comas:
 
-select titulo,autor,editorial from libros;
+> select titulo,autor,editorial from libros;
+
 En la sentencia anterior la consulta mostrará sólo los campos "titulo", "autor" y "editorial". En la
 siguiente sentencia, veremos los campos correspondientes al título y precio de todos los libros:
 
-select titulo,precio from libros;
+> select titulo,precio from libros;
 Para ver solamente la editorial y la cantidad de libros tipeamos:
 
-select editorial,cantidad from libros;
+> select editorial,cantidad from libros;
 
 
-## 7 - Recuperación de registros específicos (select - where)......................................................................
+## 7 - Recuperación de registros específicos (select - where)..............
 
 Hemos aprendido cómo ver todos los registros de una tabla:
 
-select nombre, clave from usuarios;
-El comando "select" recupera los registros de una tabla. Detallando los nombres de los campos
+> select name, key from users;
+El comando "select" recupera los registros de una tabla. Detallando los names de los campos
 separados por comas, indicamos que seleccione todos los campos de la tabla que nombramos.
 
 Existe una cláusula, "where" que es opcional, con ella podemos especificar condiciones para la
 consulta "select". Es decir, podemos recuperar algunos registros, sólo los que cumplan con ciertas
-condiciones indicadas con la cláusula "where". Por ejemplo, queremos ver el usuario cuyo nombre es
+condiciones indicadas con la cláusula "where". Por ejemplo, queremos ver el usuario cuyo name es
 "MarioPerez", para ello utilizamos "where" y luego de ella, la condición:
 
-select nombre, clave from usuarios where nombre='MarioPerez';
+> select name, key from users where name='MarioPerez';
 Para las condiciones se utilizan operadores relacionales (tema que trataremos más adelante en detalle).
 El signo igual(=) es un operador relacional. Para la siguiente selección de registros especificamos una
-condición que solicita los usuarios cuya clave es igual a 'bocajunior':
+condición que solicita los users cuya key es igual a 'atocha':
 
-select nombre, clave from usuarios where clave='bocajunior';
+> select name, key from users where key='atocha';
+
 Si ningún registro cumple la condición establecida con el "where", no aparecerá ningún registro.
 
 
-## 8 - Operadores Relacionales = <> < <= > >=..........................................................................................
+## 8 - Operadores Relacionales = <> < <= > >=....
 
-Hemos aprendido a especificar condiciones de igualdad para seleccionar registros de una tabla; por
-ejemplo:
+Hemos aprendido a especificar condiciones de igualdad para seleccionar registros de una tabla; 
+por ejemplo:
 
 select titulo,autor,editorial from libros where autor='Borges';
 Utilizamos el operador relacional de igualdad.
@@ -352,32 +361,32 @@ También, los libros cuyo precio sea menor o igual a 30:
 select titulo,autor,editorial,precio from libros where precio<=30;
 
 
-## 9 - Borrado de registros de una tabla (delete)..........................................................................................
+## 9 - Borrado de registros de una tabla (delete)....
 
 Para eliminar los registros de una tabla usamos el comando "delete":
 
-delete from usuarios;
+delete from users;
 La ejecución del comando indicado en la línea anterior borra TODOS los registros de la tabla.
 
 Si queremos eliminar uno o varios registros debemos indicar cuál o cuáles, para ello utilizamos el
 comando "delete" junto con la clausula "where" con la cual establecemos la condición que deben
-cumplir los registros a borrar. Por ejemplo, queremos eliminar aquel registro cuyo nombre de usuario
+cumplir los registros a borrar. Por ejemplo, queremos eliminar aquel registro cuyo name de usuario
 es 'Leonardo':
 
-delete from usuarios where nombre='Leonardo';
+delete from users where name='Leonardo';
 Si solicitamos el borrado de un registro que no existe, es decir, ningún registro cumple con la condición
 especificada, no se borrarán registros, pues no encontró registros con ese dato.
 
 
-## 10 - Modificación de registros de una tabla (update)...............................................................................
+## 10 - Modificación de registros de una tabla (update).......................
 
 Para modificar uno o varios datos de uno o varios registros utilizamos "update" (actualizar).
 
-Por ejemplo, en nuestra tabla "usuarios", queremos cambiar los valores de todas las claves, por
+Por ejemplo, en nuestra tabla "users", queremos cambiar los valores de todas las keys, por
 "RealMadrid":
 
-update usuarios set clave='RealMadrid';
-Utilizamos "update" junto al nombre de la tabla y "set" junto con el campo a modificar y su nuevo
+update users set key='RealMadrid';
+Utilizamos "update" junto al name de la tabla y "set" junto con el campo a modificar y su nuevo
 valor.
 
 El cambio afectará a todos los registros.
@@ -385,12 +394,12 @@ El cambio afectará a todos los registros.
 Podemos modificar algunos registros, para ello debemos establecer condiciones de selección con
 "where".
 
-Por ejemplo, queremos cambiar el valor correspondiente a la clave de nuestro usuario llamado
-'MarioPerez', queremos como nueva clave 'Boca', necesitamos una condición "where" que afecte
+Por ejemplo, queremos cambiar el valor correspondiente a la key de nuestro usuario llamado
+'MarioPerez', queremos como nueva key 'Boca', necesitamos una condición "where" que afecte
 solamente a este registro:
 
-update usuarios set clave='Boca'
-where nombre='MarioPerez';
+update users set key='Boca'
+where name='MarioPerez';
 Si no encuentra registros que cumplan con la condición del "where", ningún registro es afectado.
 
 Las condiciones no son obligatorias, pero si omitimos la cláusula "where", la actualización afectará a
@@ -398,21 +407,21 @@ todos los registros.
 
 También se puede actualizar varios campos en una sola instrucción:
 
-update usuarios set nombre='MarceloDuarte', clave='Marce'
-where nombre='Marcelo';
-Para ello colocamos "update", el nombre de la tabla, "set" junto al nombre del campo y el nuevo valor y
-separado por coma, el otro nombre del campo con su nuevo valor.
+update users set name='MarceloDuarte', key='Marce'
+where name='Marcelo';
+Para ello colocamos "update", el name de la tabla, "set" junto al name del campo y el nuevo valor y
+separado por coma, el otro name del campo con su nuevo valor.
 
 
-## 10 - Modificación de registros de una tabla (update)...............................................................................
+## 10 - Modificación de registros de una tabla (update).......................
 
 Para modificar uno o varios datos de uno o varios registros utilizamos "update" (actualizar).
 
-Por ejemplo, en nuestra tabla "usuarios", queremos cambiar los valores de todas las claves, por
+Por ejemplo, en nuestra tabla "users", queremos cambiar los valores de todas las keys, por
 "RealMadrid":
 
-update usuarios set clave='RealMadrid';
-Utilizamos "update" junto al nombre de la tabla y "set" junto con el campo a modificar y su nuevo
+update users set key='RealMadrid';
+Utilizamos "update" junto al name de la tabla y "set" junto con el campo a modificar y su nuevo
 valor.
 
 El cambio afectará a todos los registros.
@@ -420,12 +429,12 @@ El cambio afectará a todos los registros.
 Podemos modificar algunos registros, para ello debemos establecer condiciones de selección con
 "where".
 
-Por ejemplo, queremos cambiar el valor correspondiente a la clave de nuestro usuario llamado
-'MarioPerez', queremos como nueva clave 'Boca', necesitamos una condición "where" que afecte
+Por ejemplo, queremos cambiar el valor correspondiente a la key de nuestro usuario llamado
+'MarioPerez', queremos como nueva key 'Boca', necesitamos una condición "where" que afecte
 solamente a este registro:
 
-update usuarios set clave='Boca'
-where nombre='MarioPerez';
+update users set key='Boca'
+where name='MarioPerez';
 Si no encuentra registros que cumplan con la condición del "where", ningún registro es afectado.
 
 Las condiciones no son obligatorias, pero si omitimos la cláusula "where", la actualización afectará a
@@ -433,69 +442,69 @@ todos los registros.
 
 También se puede actualizar varios campos en una sola instrucción:
 
-update usuarios set nombre='MarceloDuarte', clave='Marce'
-where nombre='Marcelo';
-Para ello colocamos "update", el nombre de la tabla, "set" junto al nombre del campo y el nuevo valor y
-separado por coma, el otro nombre del campo con su nuevo valor.
+update users set name='MarceloDuarte', key='Marce'
+where name='Marcelo';
+Para ello colocamos "update", el name de la tabla, "set" junto al name del campo y el nuevo valor y
+separado por coma, el otro name del campo con su nuevo valor.
 
 
-## 11 - Clave primaria...................................................................................................................................
+## 11 - key primaria.................
 
-Una clave primaria es un campo (o varios) que identifica 1 solo registro (fila) en una tabla.
+Una key primaria es un campo (o varios) que identifica 1 solo registro (fila) en una tabla.
 
-Para un valor del campo clave existe solamente 1 registro. Los valores no se repiten ni pueden ser
+Para un valor del campo key existe solamente 1 registro. Los valores no se repiten ni pueden ser
 nulos.
 
 Veamos un ejemplo, si tenemos una tabla con datos de personas, el número de documento puede
-establecerse como clave primaria, es un valor que no se repite; puede haber personas con igual apellido
-y nombre, incluso el mismo domicilio (padre e hijo por ejemplo), pero su documento será siempre
+establecerse como key primaria, es un valor que no se repite; puede haber personas con igual apellido
+y name, incluso el mismo domicilio (padre e hijo por ejemplo), pero su documento será siempre
 distinto.
 
-Si tenemos la tabla "usuarios", el nombre de cada usuario puede establecerse como clave primaria, es
-un valor que no se repite; puede haber usuarios con igual clave, pero su nombre de usuario será siempre
+Si tenemos la tabla "users", el name de cada usuario puede establecerse como key primaria, es
+un valor que no se repite; puede haber users con igual key, pero su name de usuario será siempre
 distinto.
 
-Establecemos que un campo sea clave primaria al momento de creación de la tabla:
+Establecemos que un campo sea key primaria al momento de creación de la tabla:
 
-create table usuarios (
-nombre varchar(20),
-clave varchar(10),
-primary key(nombre)
+create table users (
+name varchar(20),
+key varchar(10),
+primary key(name)
 );
-Para definir un campo como clave primaria agregamos "primary key" luego de la definición de todos
-los campos y entre paréntesis colocamos el nombre del campo que queremos como clave.
+Para definir un campo como key primaria agregamos "primary key" luego de la definición de todos
+los campos y entre paréntesis colocamos el name del campo que queremos como key.
 
-Si visualizamos la estructura de la tabla con "describe" vemos que el campo "nombre" es clave
+Si visualizamos la estructura de la tabla con "describe" vemos que el campo "name" es key
 primaria y no acepta valores nulos(más adelante explicaremos esto detalladamente).
 
 Ingresamos algunos registros:
 
-insert into usuarios (nombre, clave)
+insert into users (name, key)
 values ('Leonardo','payaso');
-insert into usuarios (nombre, clave)
+insert into users (name, key)
 values ('MarioPerez','Marito');
-insert into usuarios (nombre, clave)
+insert into users (name, key)
 values ('Marcelo','River');
-insert into usuarios (nombre, clave)
+insert into users (name, key)
 values ('Gustavo','River');
-Si intentamos ingresar un valor para el campo clave que ya existe, aparece un mensaje de error
-indicando que el registro no se cargó pues el dato clave existe. Esto sucede porque los campos
-definidos como clave primaria no pueden repetirse.
+Si intentamos ingresar un valor para el campo key que ya existe, aparece un mensaje de error
+indicando que el registro no se cargó pues el dato key existe. Esto sucede porque los campos
+definidos como key primaria no pueden repetirse.
 
-Ingresamos un registro con un nombre de usuario repetido, por ejemplo:
+Ingresamos un registro con un name de usuario repetido, por ejemplo:
 
-insert into usuarios (nombre, clave)
+insert into users (name, key)
 
 
 values ('Gustavo','Boca');
-Una tabla sólo puede tener una clave primaria. Cualquier campo (de cualquier tipo) puede ser clave
+Una tabla sólo puede tener una key primaria. Cualquier campo (de cualquier tipo) puede ser key
 primaria, debe cumplir como requisito, que sus valores no se repitan.
 
-Al establecer una clave primaria estamos indexando la tabla, es decir, creando un índice para dicha
+Al establecer una key primaria estamos indexando la tabla, es decir, creando un índice para dicha
 tabla; a este tema lo veremos más adelante.
 
 
-## 12 - Campo entero con autoincremento...................................................................................................
+## 12 - Campo entero con autoincremento.............
 
 Un campo de tipo entero puede tener otro atributo extra 'auto_increment'. Los valores de un campo
 'auto_increment', se inician en 1 y se incrementan en 1 automáticamente.
@@ -503,10 +512,10 @@ Un campo de tipo entero puede tener otro atributo extra 'auto_increment'. Los va
 Se utiliza generalmente en campos correspondientes a códigos de identificación para generar valores
 únicos para cada nuevo registro que se inserta.
 
-Sólo puede haber un campo "auto_increment" y debe ser clave primaria (o estar indexado).
+Sólo puede haber un campo "auto_increment" y debe ser key primaria (o estar indexado).
 
 Para establecer que un campo autoincremente sus valores automáticamente, éste debe ser entero
-(integer) y debe ser clave primaria:
+(integer) y debe ser key primaria:
 
 create table libros(
 codigo int auto_increment,
@@ -518,7 +527,7 @@ primary key (codigo)
 Para definir un campo autoincrementable colocamos "auto_increment" luego de la definición del
 campo al crear la tabla.
 
-Hasta ahora, al ingresar registros, colocamos el nombre de todos los campos antes de los valores; es
+Hasta ahora, al ingresar registros, colocamos el name de todos los campos antes de los valores; es
 posible ingresar valores para algunos de los campos de la tabla, pero recuerde que al ingresar los
 valores debemos tener en cuenta los campos que detallamos y el orden en que lo hacemos.
 
@@ -558,7 +567,7 @@ Para que este atributo funcione correctamente, el campo debe contener solamente 
 más adelante trataremos este tema.
 
 
-## 13 - Comando truncate table....................................................................................................................
+## 13 - Comando truncate table..
 
 Aprendimos que para borrar todos los registro de una tabla se usa "delete" sin condición "where".
 
@@ -586,7 +595,7 @@ registro sin valor de código, se guardará el valor "6"; si en cambio, vaciamos
 table", al ingresar un nuevo registro sin valor para el código, iniciará la secuencia en 1 nuevamente.
 
 
-## 14 - Valores null.......................................................................................................................................
+## 14 - Valores null.....................
 
 Analizaremos la estructura de una tabla que vemos al utilizar el comando "describe". Tomamos como
 ejemplo la tabla "libros":
@@ -602,14 +611,14 @@ La primera columna indica el tipo de dato de cada campo.
 
 La segunda columna "Null" especifica si el campo permite valores nulos; vemos que en el campo
 "codigo", aparece "NO" y en las demás "YES", esto significa que el primer campo no acepta valores
-nulos (porque es clave primaria) y los otros si los permiten.
+nulos (porque es key primaria) y los otros si los permiten.
 
-La tercera columna "Key", muestra los campos que son clave primaria; en el campo "codigo" aparece
-"PRI" (es clave primaria) y los otros están vacíos, porque no son clave primaria.
+La tercera columna "Key", muestra los campos que son key primaria; en el campo "codigo" aparece
+"PRI" (es key primaria) y los otros están vacíos, porque no son key primaria.
 
 La cuarta columna "Default", muestra los valores por defecto, esto es, los valores que MySQL ingresa
 cuando omitimos un dato o colocamos un valor inválido; para todos los campos, excepto para el que es
-clave primaria, el valor por defecto es "null".
+key primaria, el valor por defecto es "null".
 
 La quinta columna "Extra", muestra algunos atributos extra de los campos; el campo "codigo" es
 "auto_increment".
@@ -625,7 +634,7 @@ libros, podemos tener valores nulos en el campo "precio" porque es posible que p
 le hayamos establecido el precio para la venta.
 
 En contraposición, tenemos campos que no pueden estar vacíos jamás, por ejemplo, los campos que
-identifican cada registro, como los códigos de identificación, que son clave primaria.
+identifican cada registro, como los códigos de identificación, que son key primaria.
 
 Por defecto, es decir, si no lo aclaramos en la creación de la tabla, los campos permiten valores nulos.
 
@@ -638,7 +647,7 @@ Note que el valor "null" no es una cadena de caracteres, no se coloca entre comi
 
 Si un campo acepta valores nulos, podemos ingresar "null" cuando no conocemos el valor.
 
-Los campos establecidos como clave primaria no aceptan valores nulos. Nuestro campo clave primaria,
+Los campos establecidos como key primaria no aceptan valores nulos. Nuestro campo key primaria,
 está definido "auto_increment"; si intentamos ingresar el valor "null" para este campo, no lo tomará y
 seguirá la secuencia de incremento.
 
@@ -682,9 +691,9 @@ cuya editorial guarda una cadena vacía.
 
 
 
-## 15 - Valores numéricos sin signo (unsigned)...........................................................................................
+## 15 - Valores numéricos sin signo (unsigned).....
 
-## 15 - Valores numéricos sin signo (unsigned)...........................................................................................
+## 15 - Valores numéricos sin signo (unsigned).....
 
 Hemos visto algunos atributos extra para los campos.
 
@@ -750,7 +759,7 @@ Los tipos de coma flotante (float por ejemplo) también aceptan el atributo "uns
 límite superior del rango se mantiene.
 
 
-## 16 - Tipos de datos...................................................................................................................................
+## 16 - Tipos de datos.................
 
 Ya explicamos que al crear una tabla debemos elegir la estructura adecuada, esto es, definir los campos
 y sus tipos más precisos, según el caso. Por ejemplo, si un campo numérico almacenará solamente
@@ -781,7 +790,7 @@ E) Otro valor que podemos almacenar es el valor "null". El valor 'null' signific
 "dato inexistente", ya lo estudiamos. No es lo mismo que 0 o una cadena vacía.
 
 
-## 17 - Tipos de datos (texto)........................................................................................................................
+## 17 - Tipos de datos (texto)......
 
 Ya explicamos que al crear una tabla debemos elegir la estructura adecuada, esto es, definir los campos
 y sus tipos más precisos, según el caso.
@@ -824,7 +833,7 @@ varchar(x) x+1
 
 
 
-## 18 - Tipos de datos (numéricos)...............................................................................................................
+## 18 - Tipos de datos (numéricos).........................
 
 Hasta ahora hemos visto 2 tipos de datos para almacenar valores numéricos: integer (con y sin signo) y
 float (con y sin signo). Existe variedad de tipos numéricos para representar enteros, negativos,
@@ -877,7 +886,7 @@ decimal(t,d) t+2 si d>0, t+1 si d=0 y d+2 si t<d
 
 
 
-## 20 - Valores por defecto...........................................................................................................................
+## 20 - Valores por defecto.........
 
 Hemos visto los valores por defecto de los distintos tipos de datos. Ahora que conocemos más tipos de
 datos, vamos a ampliar la información referente a ellos y a repasar los conocidos.
@@ -916,7 +925,7 @@ auto_increment siguiente de la sec., empieza en 1 no permite
 carac.,numer.,fecha,hora null null permite
 
 
-## 21 - Valores inválidos...............................................................................................................................
+## 21 - Valores inválidos.............
 
 Hemos visto los valores por defecto de los distintos tipos de datos.
 
@@ -1019,7 +1028,7 @@ fecha y hora not null null
 error
 
 
-## 22 - Atributo default en una columna de una tabla..................................................................................
+## 22 - Atributo default en una columna de una tabla..........................
 
 ## tabla.
 
@@ -1074,7 +1083,7 @@ cantidad int unsigned not null,
 primary key (codigo)
 );
 Si al ingresar un nuevo registro omitimos los valores para el campo "autor" y "precio", MySQL
-insertará los valores por defecto definidos con la palabra clave "default":
+insertará los valores por defecto definidos con la palabra key "default":
 
 insert into libros (titulo,editorial,cantidad)
 values('Java en 10 minutos','Paidos',200);
@@ -1105,7 +1114,7 @@ Ahora al visualizar la estructura de la tabla con "describe" podemos entender un
 informa cada columna:
 
 describe libros;
-"Field" contiene el nombre del campo; "Type", el tipo de dato; "NULL" indica si el campo admite
+"Field" contiene el name del campo; "Type", el tipo de dato; "NULL" indica si el campo admite
 valores nulos; "Key" indica si el campo está indexado (lo veremos más adelante); "Default" muestra el
 valor por defecto del campo y "Extra" muestra información adicional respecto al campo, por ejemplo,
 aquí indica que "codigo" está definido "auto_increment".
@@ -1118,7 +1127,7 @@ values ('El gato con botas',default,default,100);
 
 
 
-## 23 - Atributo zerofill en una columna de una tabla..................................................................................
+## 23 - Atributo zerofill en una columna de una tabla..........................
 
 ## tabla.
 
@@ -1151,7 +1160,7 @@ Si especificamos "zerofill" a un campo numérico, se coloca automáticamente el 
 Cualquier valor negativo ingresado en un campo definido "zerofill" es un valor inválido.
 
 
-## 24 - Columnas calculadas.........................................................................................................................
+## 24 - Columnas calculadas.......
 
 Es posible obtener salidas en las cuales una columna sea el resultado de un cálculo y no un campo de
 una tabla.
@@ -1173,11 +1182,11 @@ select titulo, precio,precio*0.1,precio-(precio*0.1)
 from libros;
 
 
-## 25 - Funciones para el manejo de cadenas...............................................................................................
+## 25 - Funciones para el manejo de cadenas.........
 
-RECUERDE que NO debe haber espacios entre un nombre de función y los paréntesis porque MySQL
+RECUERDE que NO debe haber espacios entre un name de función y los paréntesis porque MySQL
 puede confundir una llamada a una función con una referencia a una tabla o campo que tenga el mismo
-nombre de una función.
+name de una función.
 
 MySQL tiene algunas funciones para trabajar con cadenas de caracteres. Estas son algunas:
 
@@ -1396,7 +1405,7 @@ select strcmp('Hola','Chau');
 retorna 1.
 
 
-## 26 - Funciones matemáticas.....................................................................................................................
+## 26 - Funciones matemáticas...
 
 Los operadores aritméticos son "+","-","*" y "/". Todas las operaciones matemáticas retornan "null" en
 caso de error. Ejemplo:
@@ -1404,9 +1413,9 @@ caso de error. Ejemplo:
 select 5/0;
 MySQL tiene algunas funciones para trabajar con números. Aquí presentamos algunas.
 
-RECUERDE que NO debe haber espacios entre un nombre de función y los paréntesis porque MySQL
+RECUERDE que NO debe haber espacios entre un name de función y los paréntesis porque MySQL
 puede confundir una llamada a una función con una referencia a una tabla o campo que tenga el mismo
-nombre de una función.
+name de una función.
 
 -abs(x): retorna el valor absoluto del argumento "x". Ejemplo:
 
@@ -1473,7 +1482,7 @@ retorna 123.
 Todas retornan null en caso de error.
 
 
-## 27 - Funciones para el uso de fecha y hora..............................................................................................
+## 27 - Funciones para el uso de fecha y hora........
 
 MySQL tiene algunas funciones para trabajar con fechas y horas. Estas son algunas:
 
@@ -1503,7 +1512,7 @@ horas y minutos), day_second(dias a segundos).
 
 -datediff(fecha1,fecha2): retorna la cantidad de días entre fecha1 y fecha2.
 
--dayname(fecha): retorna el nombre del día de la semana de la fecha. Ejemplo: dayname('2006-08-10')
+-dayname(fecha): retorna el name del día de la semana de la fecha. Ejemplo: dayname('2006-08-10')
 retorna "thursday".
 
 -dayofmonth(fecha): retorna el día del mes para la fecha dada, dentro del rango 1 a 31. Ejemplo:
@@ -1534,7 +1543,7 @@ Ejemplo: hour('18:25:09') retorna "18";
 
 -minute(hora): retorna los minutos de la hora dada, en el rango de 0 a 59.
 
--monthname(fecha): retorna el nombre del mes de la fecha dada.
+-monthname(fecha): retorna el name del mes de la fecha dada.
 
 Ejemplo: monthname('2006-08-10') retorna "August".
 
@@ -1570,7 +1579,7 @@ retorna "2006".
 
 
 
-## 28 - Cláusula order by del select..............................................................................................................
+## 28 - Cláusula order by del select........................
 
 Podemos ordenar el resultado de un "select" para que los registros se muestren ordenados por algún
 campo, para ello usamos la cláusula "order by".
@@ -1581,11 +1590,11 @@ select codigo,titulo,autor,editorial,precio from libros order by titulo;
 Aparecen los registros ordenados alfabéticamente por el campo especificado.
 
 También podemos colocar el número de orden del campo por el que queremos que se ordene en lugar
-de su nombre. Por ejemplo, queremos el resultado del "select" ordenado por "precio":
+de su name. Por ejemplo, queremos el resultado del "select" ordenado por "precio":
 
 select codigo,titulo,autor,editorial,precio from libros order by 5;
 Por defecto, si no aclaramos en la sentencia, los ordena de manera ascendente (de menor a mayor).
-Podemos ordenarlos de mayor a menor, para ello agregamos la palabra clave "desc":
+Podemos ordenarlos de mayor a menor, para ello agregamos la palabra key "desc":
 
 select codigo,titulo,autor,editorial,precio from libros order by editorial desc;
 También podemos ordenar por varios campos, por ejemplo, por "titulo" y "editorial":
@@ -1596,11 +1605,11 @@ Incluso, podemos ordenar en distintos sentidos, por ejemplo, por "titulo" en sen
 
 select codigo,titulo,autor,editorial,precio
 from libros order by titulo asc, editorial desc;
-Debe aclararse al lado de cada campo, pues estas palabras claves afectan al campo inmediatamente
+Debe aclararse al lado de cada campo, pues estas palabras keys afectan al campo inmediatamente
 anterior.
 
 
-## 29 - Operadores Lógicos (and - or - not).................................................................................................
+## 29 - Operadores Lógicos (and - or - not)...........
 
 Hasta el momento, hemos aprendido a establer una condición con "where" utilizando operadores
 relacionales. Podemos establecer más de una condición con la cláusula "where", para ello
@@ -1685,7 +1694,7 @@ El orden en el que se evalúan los operadores con igual nivel de precedencia es 
 recomienda usar los paréntesis.
 
 
-## 30 - Otros operadores relacionales (between - in)...................................................................................
+## 30 - Otros operadores relacionales (between - in)...........................
 
 ## in)
 
@@ -1733,7 +1742,7 @@ condición, invertimos el resultado.
 
 
 
-## 31 - Búsqueda de patrones (like y not like)..............................................................................................
+## 31 - Búsqueda de patrones (like y not like)........
 
 Hemos realizado consultas utilizando operadores relacionales para comparar cadenas. Por ejemplo,
 sabemos recuperar los libros cuyo autor sea igual a la cadena "Borges":
@@ -1793,7 +1802,7 @@ barra invertida "\", así lo tomará como caracter de búsqueda literal y no com
 búsqueda. Para buscar el caracter literal "%" se debe colocar "\%".
 
 
-## 32 - Búsqueda de patrones (regexp).........................................................................................................
+## 32 - Búsqueda de patrones (regexp)...................
 
 Los operadores "regexp" y "not regexp" busca patrones de modo similar a "like" y "not like".
 
@@ -1850,7 +1859,7 @@ El asterisco indica que busque el caracter inmediatamente anterior, en este caso
 un punto.
 
 
-## 33 - Contar registros (count)....................................................................................................................
+## 33 - Contar registros (count)..
 
 Existen en MySQL funciones que nos permiten contar registros, calcular sumas, promedios, obtener
 valores máximos y mínimos. Veamos algunas de ellas.
@@ -1871,15 +1880,15 @@ Por ejemplo, solicitamos la cantidad de libros que contienen la cadena "Borges":
 select count(*) from libros
 where autor like '%Borges%';
 Para contar los registros que tienen precio (sin tener en cuenta los que tienen valor nulo), usamos la
-función "count()" y en los paréntesis colocamos el nombre del campo que necesitamos contar:
+función "count()" y en los paréntesis colocamos el name del campo que necesitamos contar:
 
 select count(precio) from libros;
 Note que "count(*)" retorna la cantidad de registros de una tabla (incluyendo los que tienen valor
 "null") mientras que "count(precio)" retorna la cantidad de registros en los cuales el campo "precio" no
 es nulo. No es lo mismo. "count(*)" cuenta registros, si en lugar de un asterisco colocamos como
-argumento el nombre de un campo, se contabilizan los registros cuyo valor en ese campo no es nulo.
+argumento el name de un campo, se contabilizan los registros cuyo valor en ese campo no es nulo.
 
-Tenga en cuenta que no debe haber espacio entre el nombre de la función y el paréntesis, porque puede
+Tenga en cuenta que no debe haber espacio entre el name de la función y el paréntesis, porque puede
 confundirse con una referencia a una tabla o campo. Las siguientes sentencias son distintas:
 
 select count(*) from libros;
@@ -1887,7 +1896,7 @@ select count (*) from libros;
 La primera es correcta, la segunda incorrecta.
 
 
-## 34 - Funciones de agrupamiento (count - max - min - sum - avg)...........................................................
+## 34 - Funciones de agrupamiento (count - max - min - sum - avg)...
 
 ## min - sum - avg)
 
@@ -1919,7 +1928,7 @@ where titulo like '%PHP%';
 Estas funciones se denominan "funciones de agrupamiento" porque operan sobre conjuntos de
 registros, no con datos individuales.
 
-Tenga en cuenta que no debe haber espacio entre el nombre de la función y el paréntesis, porque puede
+Tenga en cuenta que no debe haber espacio entre el name de la función y el paréntesis, porque puede
 confundirse con una referencia a una tabla o campo. Las siguientes sentencias son distintas:
 
 select count(*) from libros;
@@ -1927,7 +1936,7 @@ select count (*) from libros;
 La primera es correcta, la segunda incorrecta.
 
 
-## 36 - Selección de un grupo de registros (having).....................................................................................
+## 36 - Selección de un grupo de registros (having).
 
 ## (having)
 
@@ -2013,7 +2022,7 @@ group by editorial
 having mayor>=30;
 
 
-## 37 - Registros duplicados (distinct).........................................................................................................
+## 37 - Registros duplicados (distinct)...................
 
 Con la cláusula "distinct" se especifica que los registros con ciertos datos duplicados sean obviadas en
 el resultado. Por ejemplo, queremos conocer todos los autores de los cuales tenemos libros, si
@@ -2043,10 +2052,10 @@ select count(autor)
 from libros;
 Esta sentencia cuenta los registros que tienen autor.
 
-Para obtener los nombres de las editoriales usamos:
+Para obtener los names de las editoriales usamos:
 
 select editoriales from libros;
-Para una consulta en la cual los nombres no se repitan tipeamos:
+Para una consulta en la cual los names no se repitan tipeamos:
 
 select distinct editorial from libros;
 Podemos saber la cantidad de editoriales distintas usamos:
@@ -2078,9 +2087,9 @@ Note que los registros no están duplicados, aparecen títulos iguales pero con 
 registro es diferente.
 
 
-## 38 - Alias..................................................................................................................................................
+## 38 - Alias....
 
-Un "alias" se usa como nombre de un campo o de una expresión o para referenciar una tabla cuando se
+Un "alias" se usa como name de un campo o de una expresión o para referenciar una tabla cuando se
 utilizan más de una tabla (tema que veremos más adelante).
 
 Cuando usamos una función de agrupamiento, por ejemplo:
@@ -2097,15 +2106,15 @@ where autor like '%Borges%';
 La columna de la salida ahora tiene como encabezado el alias, lo que hace más comprensible el
 resultado.
 
-Un alias puede tener hasta 255 caracteres, acepta todos los caracteres. La palabra clave "as" es opcional
+Un alias puede tener hasta 255 caracteres, acepta todos los caracteres. La palabra key "as" es opcional
 en algunos casos, pero es conveniente usarla. Si el alias consta de una sola cadena las comillas no son
 necesarias, pero si contiene más de una palabra, es necesario colocarla entre comillas.
 
 Se pueden utilizar alias en las clásulas "group by", "order by", "having". Por ejemplo:
 
-select editorial as 'Nombre de editorial'
+select editorial as 'name de editorial'
 from libros
-group by 'Nombre de editorial';
+group by 'name de editorial';
 select editorial, count(*) as cantidad
 from libros
 group by editorial
@@ -2119,12 +2128,12 @@ No está permitido utilizar alias de campos en las cláusulas "where".
 Los alias serán de suma importancia cuando rescate datos desde el lenguaje PHP
 
 
-## 39 - Clave primaria compuesta................................................................................................................
+## 39 - key primaria compuesta..........................
 
-Las claves primarias pueden ser simples, formadas por un solo campo o compuestas, más de un campo.
+Las keys primarias pueden ser simples, formadas por un solo campo o compuestas, más de un campo.
 
-Recordemos que una clave primaria identifica 1 solo registro en una tabla. Para un valor del campo
-clave existe solamente 1 registro. Los valores no se repiten ni pueden ser nulos.
+Recordemos que una key primaria identifica 1 solo registro en una tabla. Para un valor del campo
+key existe solamente 1 registro. Los valores no se repiten ni pueden ser nulos.
 
 Retomemos el ejemplo de la playa de estacionamiento que almacena cada día los datos de los vehículos
 que ingresan en la tabla llamada "vehiculos" con los siguientes campos:
@@ -2133,24 +2142,24 @@ que ingresan en la tabla llamada "vehiculos" con los siguientes campos:
 - tipo char (4),
 - horallegada time not null,
 - horasalida time,
-Necesitamos definir una clave primaria para una tabla con los datos descriptos arriba. No podemos usar
+Necesitamos definir una key primaria para una tabla con los datos descriptos arriba. No podemos usar
 la patente porque un mismo auto puede ingresar más de una vez en el día a la playa; tampoco podemos
 usar la hora de entrada porque varios autos pueden ingresar a una misma hora. Tampoco sirven los
 otros campos.
 
-Como ningún campo, por si solo cumple con la condición para ser clave, es decir, debe identificar un
+Como ningún campo, por si solo cumple con la condición para ser key, es decir, debe identificar un
 solo registro, el valor no puede repetirse, debemos usar 2 campos.
 
-Definimos una clave compuesta cuando ningún campo por si solo cumple con la condición para ser
-clave.
+Definimos una key compuesta cuando ningún campo por si solo cumple con la condición para ser
+key.
 
 En este ejemplo, un auto puede ingresar varias veces en un día a la playa, pero siempre será a distinta
 hora.
 
-Usamos 2 campos como clave, la patente junto con la hora de llegada, así identificamos unívocamente
+Usamos 2 campos como key, la patente junto con la hora de llegada, así identificamos unívocamente
 cada registro.
 
-Para establecer más de un campo como clave primaria usamos la siguiente sintaxis:
+Para establecer más de un campo como key primaria usamos la siguiente sintaxis:
 
 create table vehiculos(
 patente char(6) not null,
@@ -2159,27 +2168,27 @@ horallegada time not null
 horasalida time,
 primary key(patente,horallegada)
 );
-Nombramos los campos que formarán parte de la clave separados por comas.
+Nombramos los campos que formarán parte de la key separados por comas.
 
 Si vemos la estructura de la tabla con "describe" vemos que en la columna "key", en ambos campos
-aparece "PRI", porque ambos son clave primaria.
+aparece "PRI", porque ambos son key primaria.
 
 
-Un campo que es parte de una clave primaria puede ser autoincrementable sólo si es el primer campo
-que compone la clave, si es secundario no se permite.
+Un campo que es parte de una key primaria puede ser autoincrementable sólo si es el primer campo
+que compone la key, si es secundario no se permite.
 
-Es posible eliminar un campo que es parte de una clave primaria, la clave queda con los campos
-restantes. Esto, siempre que no queden registros con clave repetida. Por ejemplo, podemos eliminar el
+Es posible eliminar un campo que es parte de una key primaria, la key queda con los campos
+restantes. Esto, siempre que no queden registros con key repetida. Por ejemplo, podemos eliminar el
 campo "horallegada":
 
 alter table vehiculos drop horallegada;
 siempre que no haya registros con "patente" duplicada, en ese caso aparece un mensaje de error y la
 eliminación del campo no se realiza.
 
-En caso de ejecutarse la sentencia anterior, la clave queda formada sólo por el campo "patente".
+En caso de ejecutarse la sentencia anterior, la key queda formada sólo por el campo "patente".
 
 
-## 40 - Indice de una tabla............................................................................................................................
+## 40 - Indice de una tabla..........
 
 Para facilitar la obtención de información de una tabla se utilizan índices.
 
@@ -2211,26 +2220,26 @@ cuales se realizan operaciones de búsqueda con frecuencia.
 
 Hay distintos tipos de índices, a saber:
 
-1) "primary key": es el que definimos como clave primaria. Los valores indexados deben ser únicos y
-además no pueden ser nulos. MySQL le da el nombre "PRIMARY". Una tabla solamente puede tener
-una clave primaria.
+1) "primary key": es el que definimos como key primaria. Los valores indexados deben ser únicos y
+además no pueden ser nulos. MySQL le da el name "PRIMARY". Una tabla solamente puede tener
+una key primaria.
 
 2) "index": crea un indice común, los valores no necesariamente son unicos y aceptan valores "null".
-Podemos darle un nombre, si no se lo damos, se coloca uno por defecto. "key" es sinónimo de "index".
+Podemos darle un name, si no se lo damos, se coloca uno por defecto. "key" es sinónimo de "index".
 Puede haber varios por tabla.
 
 3) "unique": crea un indice para los cuales los valores deben ser únicos y diferentes, aparece un
 mensaje de error si intentamos agregar un registro con un valor ya existente. Permite valores nulos y
 
 
-pueden definirse varios por tabla. Podemos darle un nombre, si no se lo damos, se coloca uno por
+pueden definirse varios por tabla. Podemos darle un name, si no se lo damos, se coloca uno por
 defecto.
 
 Todos los índices pueden ser multicolumna, es decir, pueden estar formados por más de 1 campo.
 
 En las siguientes lecciones aprenderemos sobre cada uno de ellos.
 
-Una tabla puede tener hasta 64 índices. Los nombres de índices aceptan todos los caracteres y pueden
+Una tabla puede tener hasta 64 índices. Los names de índices aceptan todos los caracteres y pueden
 tener una longitud máxima de 64 caracteres. Pueden comenzar con un dígito, pero no pueden tener sólo
 dígitos.
 
@@ -2242,18 +2251,18 @@ indexar por un campo que contenga valores NULL, excepto los PRIMARY.
 show index from libros;
 
 
-## 41 - Indice de tipo primary.......................................................................................................................
+## 41 - Indice de tipo primary.....
 
-El índice llamado primary se crea automáticamente cuando establecemos un campo como clave
+El índice llamado primary se crea automáticamente cuando establecemos un campo como key
 primaria, no podemos crearlo directamente. El campo por el cual se indexa puede ser de tipo numérico
 o de tipo caracter.
 
 Los valores indexados deben ser únicos y además no pueden ser nulos. Una tabla solamente puede
-tener una clave primaria por lo tanto, solamente tiene un índice PRIMARY.
+tener una key primaria por lo tanto, solamente tiene un índice PRIMARY.
 
 Puede ser multicolumna, es decir, pueden estar formados por más de 1 campo.
 
-Veamos un ejemplo definiendo la tabla "libros" con una clave primaria:
+Veamos un ejemplo definiendo la tabla "libros" con una key primaria:
 
 create table libros(
 codigo int unsigned auto_increment,
@@ -2265,13 +2274,13 @@ primary key(codigo)
 Podemos ver la estructura de los índices de una tabla con "show index". Por ejemplo:
 
 show index from libros;
-Aparece el índice PRIMARY creado automáticamente al definir el campo "codigo" como clave
+Aparece el índice PRIMARY creado automáticamente al definir el campo "codigo" como key
 primaria.
 
 
-## 42 - Indice común (index)........................................................................................................................
+## 42 - Indice común (index)......
 
-Dijimos que hay 3 tipos de índices. Hasta ahora solamente conocemos la clave primaria que definimos
+Dijimos que hay 3 tipos de índices. Hasta ahora solamente conocemos la key primaria que definimos
 al momento de crear una tabla.
 
 Vamos a ver el otro tipo de índice, común. Un índice común se crea con "index", los valores no
@@ -2292,13 +2301,13 @@ editorial varchar(15),
 primary key(codigo),
 index i_editorial (editorial)
 );
-Luego de la definición de los campos colocamos "index" seguido del nombre que le damos y entre
+Luego de la definición de los campos colocamos "index" seguido del name que le damos y entre
 paréntesis el o los campos por los cuales se indexará dicho índice.
 
 "show index" muestra la estructura de los índices:
 
 show index from libros;
-Si no le asignamos un nombre a un índice, por defecto tomará el nombre del primer campo que forma
+Si no le asignamos un name a un índice, por defecto tomará el name del primer campo que forma
 parte del índice, con un sufijo opcional (_2,_3,...) para que sea único.
 
 Ciertas tablas (MyISAM, InnoDB y BDB) soportan índices en campos que permiten valores nulos,
@@ -2320,11 +2329,11 @@ comas. Los valores de los índices se crean concatenando los valores de los camp
 Recuerde que "index" es sinónimo de "key".
 
 
-## 43 - Indice único (unique)........................................................................................................................
+## 43 - Indice único (unique)......
 
 Veamos el otro tipo de índice, único. Un índice único se crea con "unique", los valores deben ser únicos
 y diferentes, aparece un mensaje de error si intentamos agregar un registro con un valor ya existente.
-Permite valores nulos y pueden definirse varios por tabla. Podemos darle un nombre, si no se lo damos,
+Permite valores nulos y pueden definirse varios por tabla. Podemos darle un name, si no se lo damos,
 se coloca uno por defecto.
 
 Vamos a trabajar con nuestra tabla "libros".
@@ -2339,7 +2348,7 @@ editorial varchar(15),
 unique i_codigo(codigo),
 unique i_tituloeditorial (titulo,editorial)
 );
-Luego de la definición de los campos colocamos "unique" seguido del nombre que le damos y entre
+Luego de la definición de los campos colocamos "unique" seguido del name que le damos y entre
 paréntesis el o los campos por los cuales se indexará dicho índice.
 
 "show index" muestra la estructura de los índices:
@@ -2347,11 +2356,11 @@ paréntesis el o los campos por los cuales se indexará dicho índice.
 show index from libros;
 RESUMEN: Hay 3 tipos de índices con las siguientes características:
 
-Tipo Nombre Palabra clave Valores únicos Acepta null
+Tipo name Palabra key Valores únicos Acepta null
 Cantidad por tabla
 ___________________________________________________________________________________
 ________________________
-clave primaria PRIMARY no Si No
+key primaria PRIMARY no Si No
 1
 común darlo o por defecto "index" o "key" No Si
 varios
@@ -2359,21 +2368,21 @@ varios
 varios
 
 
-## 44 - Borrar indice (drop index)................................................................................................................
+## 44 - Borrar indice (drop index)..........................
 
 Para eliminar un índice usamos "drop index". Ejemplo:
 
 drop index i_editorial on libros;
 drop index i_tituloeditorial on libros;
-Se elimina el índice con "drop index" seguido de su nombre y "on" seguido del nombre de la tabla a la
+Se elimina el índice con "drop index" seguido de su name y "on" seguido del name de la tabla a la
 cual pertenece.
 
 Podemos eliminar los índices creados con "index" y con "unique" pero no el que se crea al definir una
-clave primaria. Un índice PRIMARY se elimina automáticamente al eliminar la clave primaria (tema
+key primaria. Un índice PRIMARY se elimina automáticamente al eliminar la key primaria (tema
 que veremos más adelante).
 
 
-## 45 - Creación de índices a tablas existentes (create index)......................................................................
+## 45 - Creación de índices a tablas existentes (create index)..............
 
 ## (create index)
 
@@ -2383,18 +2392,18 @@ Para agregar un índice común a la tabla "libros" tipeamos:
 
 create index i_editorial on libros (editorial);
 Entonces, para agregar un índice común a una tabla existente usamos "create index", indicamos el
-nombre, sobre qué tabla y el o los campos por los cuales se indexará, entre paréntesis.
+name, sobre qué tabla y el o los campos por los cuales se indexará, entre paréntesis.
 
 Para agregar un índice único a la tabla "libros" tipeamos:
 
 create unique index i_tituloeditorial on libros (titulo,editorial);
-Para agregar un índice único a una tabla existente usamos "create unique index", indicamos el nombre,
+Para agregar un índice único a una tabla existente usamos "create unique index", indicamos el name,
 sobre qué tabla y entre paréntesis, el o los campos por los cuales se indexará.
 
-Un índice PRIMARY no puede agregarse, se crea automáticamente al definir una clave primaria.
+Un índice PRIMARY no puede agregarse, se crea automáticamente al definir una key primaria.
 
 
-## 46 - Cláusula limit del comando select....................................................................................................
+## 46 - Cláusula limit del comando select..............
 
 La cláusula "limit" se usa para restringir los registros que se retornan en una consulta "select".
 
@@ -2470,7 +2479,7 @@ editorial='Planeta';
 Sólo queda 1.
 
 
-## 47 - Recuperación de registros en forma aleatoria(rand).........................................................................
+## 47 - Recuperación de registros en forma aleatoria(rand).................
 
 ## aleatoria(rand)
 
@@ -2489,18 +2498,18 @@ Podemos ejecutar la sentencia anterior varias veces seguidas y veremos que los r
 son diferentes en cada ocasión.
 
 
-## 48 - Remplazar registros (replace)...........................................................................................................
+## 48 - Remplazar registros (replace).....................
 
 "replace" reemplaza un registro por otro.
 
-Cuando intentamos ingresar con "insert" un registro que repite el valor de un campo clave o indexado
+Cuando intentamos ingresar con "insert" un registro que repite el valor de un campo key o indexado
 con índice único, aparece un mensaje de error indicando que el valor está duplicado. Si empleamos
 "replace" en lugar de "insert", el registro existente se borra y se ingresa el nuevo, de esta manera no se
 duplica el valor único.
 
-Si tenemos la tabla "libros" con el campo "codigo" establecido como clave primaria e intentamos
+Si tenemos la tabla "libros" con el campo "codigo" establecido como key primaria e intentamos
 ingresar ("insert") un valor de código existente, aparece un mensaje de error porque no está permitido
-repetir los valores del campo clave. Si empleamos "replace" en lugar de "insert", la sentencia se ejecuta
+repetir los valores del campo key. Si empleamos "replace" en lugar de "insert", la sentencia se ejecuta
 reemplazando el registro con el valor de código existente por el nuevo registro.
 
 Veamos un ejemplo. Tenemos los siguientes registros almacenados en "libros":
@@ -2510,7 +2519,7 @@ _______________________________________________________________
 10 Alicia en .. Lewis Carroll Emece 15.4
 15 Aprenda PHP Mario Molina Planeta 45.8
 23 El aleph Borges Planeta 23.0
-Intentamos insertar un registro con valor de clave repetida (código 23):
+Intentamos insertar un registro con valor de key repetida (código 23):
 
 insert into libros values(23,'Java en 10 minutos','Mario Molina','Emece',25.5);
 Aparece un mensaje de error indicando que hay registros duplicados.
@@ -2536,7 +2545,7 @@ aparece un mensaje indicando que se afectó solo una fila, no hubo reemplazo por
 existía antes de la nueva inserción.
 
 
-- si la tabla no tiene indexación. Si la tabla "libros" no tuviera establecida ninguna clave primaria (ni
+- si la tabla no tiene indexación. Si la tabla "libros" no tuviera establecida ninguna key primaria (ni
 índice único), podríamos ingresar varios registros con igual código:
 
 replace into libros values(1,'Harry Potter ya la piedra
@@ -2545,7 +2554,7 @@ aparecería un mensaje indicando que se afectó 1 registro (el ingresado), no se
 ahora habría 2 libros con código 1.
 
 
-## 49 - Agregar campos a una tabla (alter table - add).................................................................................
+## 49 - Agregar campos a una tabla (alter table - add).........................
 
 ## add)
 
@@ -2557,8 +2566,8 @@ Para modificar la estructura de una tabla existente, usamos "alter table".
 - eliminar campos existentes,
 - modificar el tipo de dato de un campo,
 - agregar o quitar modificadores como "null", "unsigned", "auto_increment",
-- cambiar el nombre de un campo,
-- agregar o eliminar la clave primaria,
+- cambiar el name de un campo,
+- agregar o eliminar la key primaria,
 - agregar y eliminar índices,
 - renombrar una tabla.
 
@@ -2569,7 +2578,7 @@ Aprenderemos a agregar campos a una tabla.
 
 Para ello utilizamos nuestra tabla "libros", definida con la siguiente estructura:
 
-- código, int unsigned auto_increment, clave primaria,
+- código, int unsigned auto_increment, key primaria,
 - titulo, varchar(40) not null,
 - autor, varchar(30),
 - editorial, varchar (20),
@@ -2578,7 +2587,7 @@ Necesitamos agregar el campo "cantidad", de tipo smallint unsigned not null, tip
 
 alter table libros
 add cantidad smallint unsigned not null;
-Usamos "alter table" seguido del nombre de la tabla y "add" seguido del nombre del nuevo campo con
+Usamos "alter table" seguido del name de la tabla y "add" seguido del name del nuevo campo con
 su tipo y los modificadores.
 
 Agreguemos otro campo a la tabla:
@@ -2587,7 +2596,7 @@ alter table libros
 add edicion date;
 
 
-Si intentamos agregar un campo con un nombre existente, aparece un mensaje de error indicando que el
+Si intentamos agregar un campo con un name existente, aparece un mensaje de error indicando que el
 campo ya existe y la sentencia no se ejecuta.
 
 Cuando se agrega un campo, si no especificamos, lo coloca al final, después de todos los campos
@@ -2597,7 +2606,7 @@ alter table libros
 add cantidad tinyint unsigned after autor;
 
 
-## 50 - Eliminar campos de una tabla (alter table - drop).............................................................................
+## 50 - Eliminar campos de una tabla (alter table - drop).....................
 
 ## - drop)
 
@@ -2609,7 +2618,7 @@ Para eliminar el campo "edicion" tipeamos:
 
 alter table libros
 drop edicion;
-Entonces, para borrar un campo de una tabla usamos "alter table" junto con "drop" y el nombre del
+Entonces, para borrar un campo de una tabla usamos "alter table" junto con "drop" y el name del
 campo a eliminar.
 
 Si intentamos borrar un campo inexistente aparece un mensaje de error y la acción no se realiza.
@@ -2622,15 +2631,15 @@ Si se borra un campo de una tabla que es parte de un índice, también se borra 
 
 Si una tabla tiene sólo un campo, éste no puede ser borrado.
 
-Hay que tener cuidado al eliminar un campo, éste puede ser clave primaria. Es posible eliminar un
-campo que es clave primaria, no aparece ningún mensaje:
+Hay que tener cuidado al eliminar un campo, éste puede ser key primaria. Es posible eliminar un
+campo que es key primaria, no aparece ningún mensaje:
 
 alter table libros
 drop codigo;
-Si eliminamos un campo clave, la clave también se elimina.
+Si eliminamos un campo key, la key también se elimina.
 
 
-## 51 - Modificar campos de una tabla (alter table - modify)......................................................................
+## 51 - Modificar campos de una tabla (alter table - modify)..............
 
 ## table - modify)
 
@@ -2649,7 +2658,7 @@ Queremos modificar el tipo del campo "cantidad", como guardaremos valores que no
 
 alter table libros
 modify cantidad smallint unsigned;
-Usamos "alter table" seguido del nombre de la tabla y "modify" seguido del nombre del nuevo campo
+Usamos "alter table" seguido del name de la tabla y "modify" seguido del name del nuevo campo
 con su tipo y los modificadores.
 
 Queremos modificar el tipo del campo "titulo" para poder almacenar una longitud de 40 caracteres y
@@ -2670,8 +2679,8 @@ Si definimos un campo de tipo decimal(5,2) y tenemos un registro con el valor "9
 modificamos el campo a "decimal(4,2)", el valor "900.00" se convierte en un valor inválido para el
 tipo, entonces guarda en su lugar, el valor límite más cercano, "99.99".
 
-Si intentamos definir "auto_increment" un campo que no es clave primaria, aparece un mensaje de
-error indicando que el campo debe ser clave primaria. Por ejemplo:
+Si intentamos definir "auto_increment" un campo que no es key primaria, aparece un mensaje de
+error indicando que el campo debe ser key primaria. Por ejemplo:
 
 alter table libros
 modify codigo int unsigned auto_increment;
@@ -2690,43 +2699,43 @@ alter table libros
 alter autor drop default;
 
 
-## 52 - Cambiar el nombre de un campo de una tabla (alter table - change)................................................
+## 52 - Cambiar el name de un campo de una tabla (alter table - change)....................
 
 ## tabla (alter table - change)
 
-Con "alter table" podemos cambiar el nombre de los campos de una tabla.
+Con "alter table" podemos cambiar el name de los campos de una tabla.
 
 Continuamos con nuestra tabla "libros", definida con la siguiente estructura:
 
 - código, int unsigned auto_increment,
-- nombre, varchar(40),
+- name, varchar(40),
 - autor, varchar(30),
 - editorial, varchar (20),
 - costo, decimal(5,2) unsigned,
 - cantidad int unsigned,
-- clave primaria: código.
+- key primaria: código.
 
-Queremos cambiar el nombre del campo "costo" por "precio", tipeamos:
+Queremos cambiar el name del campo "costo" por "precio", tipeamos:
 
 alter table libros
 change costo precio decimal (5,2);
-Usamos "alter table" seguido del nombre de la tabla y "change" seguido del nombre actual y el nombre
+Usamos "alter table" seguido del name de la tabla y "change" seguido del name actual y el name
 nuevo con su tipo y los modificadores.
 
-Con "change" cambiamos el nombre de un campo y también podemos cambiar el tipo y sus
-modificadores. Por ejemplo, queremos cambiar el nombre del campo "nombre" por "titulo" y
+Con "change" cambiamos el name de un campo y también podemos cambiar el tipo y sus
+modificadores. Por ejemplo, queremos cambiar el name del campo "name" por "titulo" y
 redefinirlo como "not null", tipeamos:
 
 alter table libros
-change nombre titulo varchar(40) not null;
+change name titulo varchar(40) not null;
 
 
-## 53 - Agregar y eliminar la clave primaria (alter table).............................................................................
+## 53 - Agregar y eliminar la key primaria (alter table).....................
 
 ## (alter table)
 
-Hasta ahora hemos aprendido a definir una clave primaria al momento de crear una tabla. Con "alter
-table" podemos agregar una clave primaria a una tabla existente.
+Hasta ahora hemos aprendido a definir una key primaria al momento de crear una tabla. Con "alter
+table" podemos agregar una key primaria a una tabla existente.
 
 Continuamos con nuestra tabla "libros", definida con la siguiente estructura:
 
@@ -2736,41 +2745,41 @@ Continuamos con nuestra tabla "libros", definida con la siguiente estructura:
 - editorial, varchar (20),
 - precio, decimal(5,2) unsigned,
 - cantidad smallint unsigned.
-Para agregar una clave primaria a una tabla existente usamos:
+Para agregar una key primaria a una tabla existente usamos:
 
 alter table libros
 add primary key (codigo);
-Usamos "alter table" con "add primary key" y entre paréntesis el nombre del campo que será clave.
+Usamos "alter table" con "add primary key" y entre paréntesis el name del campo que será key.
 
-Si intentamos agregar otra clave primaria, aparecerá un mensaje de error porque (recuerde) una tabla
-solamente puede tener una clave primaria.
+Si intentamos agregar otra key primaria, aparecerá un mensaje de error porque (recuerde) una tabla
+solamente puede tener una key primaria.
 
-Para que un campo agregado como clave primaria sea autoincrementable, es necesario agregarlo como
-clave y luego redefinirlo con "modify" como "auto_increment". No se puede agregar una clave y al
+Para que un campo agregado como key primaria sea autoincrementable, es necesario agregarlo como
+key y luego redefinirlo con "modify" como "auto_increment". No se puede agregar una key y al
 mismo tiempo definir el campo autoincrementable. Tampoco es posible definir un campo como
-autoincrementable y luego agregarlo como clave porque para definir un campo "auto_increment" éste
-debe ser clave primaria.
+autoincrementable y luego agregarlo como key porque para definir un campo "auto_increment" éste
+debe ser key primaria.
 
-También usamos "alter table" para eliminar una clave primaria.
+También usamos "alter table" para eliminar una key primaria.
 
-Para eliminar una clave primaria usamos:
+Para eliminar una key primaria usamos:
 
 alter table libros
 drop primary key;
-Con "alter table" y "drop primary key" eliminamos una clave primaria definida al crear la tabla o
+Con "alter table" y "drop primary key" eliminamos una key primaria definida al crear la tabla o
 agregada luego.
 
-Si queremos eliminar la clave primaria establecida en un campo "auto_increment" aparece un mensaje
-de error y la sentencia no se ejecuta porque si existe un campo con este atributo DEBE ser clave
+Si queremos eliminar la key primaria establecida en un campo "auto_increment" aparece un mensaje
+de error y la sentencia no se ejecuta porque si existe un campo con este atributo DEBE ser key
 primaria. Primero se debe modificar el campo quitándole el atributo "auto_increment" y luego se podrá
-eliminar la clave.
+eliminar la key.
 
 
-Si intentamos establecer como clave primaria un campo que tiene valores repetidos, aparece un
+Si intentamos establecer como key primaria un campo que tiene valores repetidos, aparece un
 mensaje de error y la operación no se realiza.
 
 
-## 54 - Agregar índices(alter table - add index)............................................................................................
+## 54 - Agregar índices(alter table - add index)......
 
 Aprendimos a crear índices al momento de crear una tabla. También a crearlos luego de haber creado la
 tabla, con "create index". También podemos agregarlos a una tabla usando "alter table".
@@ -2789,22 +2798,22 @@ Para agregar un índice común por el campo "editorial" usamos la siguiente sent
 
 alter table libros
 add index i_editorial (editorial);
-Usamos "alter table" junto con "add index" seguido del nombre que le daremos al índice y entre
-paréntesis el nombre de el o los campos por los cuales se indexará.
+Usamos "alter table" junto con "add index" seguido del name que le daremos al índice y entre
+paréntesis el name de el o los campos por los cuales se indexará.
 
 Para agregar un índice único multicampo, por los campos "titulo" y "editorial", usamos la siguiente
 sentencia:
 
 alter table libros
 add unique index i_tituloeditorial (titulo,editorial);
-Usamos "alter table" junto con "add unique index" seguido del nombre que le daremos al índice y entre
-paréntesis el nombre de el o los campos por los cuales se indexará.
+Usamos "alter table" junto con "add unique index" seguido del name que le daremos al índice y entre
+paréntesis el name de el o los campos por los cuales se indexará.
 
-En ambos casos, para índices comunes o únicos, si no colocamos nombre de índice, se coloca uno por
+En ambos casos, para índices comunes o únicos, si no colocamos name de índice, se coloca uno por
 defecto, como cuando los creamos junto con la tabla.
 
 
-## 55 - Borrado de índices (alter table - drop index)....................................................................................
+## 55 - Borrado de índices (alter table - drop index)
 
 ## index)
 
@@ -2825,7 +2834,7 @@ Para eliminar un índice usamos la siguiente sintaxis:
 
 alter table libros
 drop index i_editorial;
-Usamos "alter table" y "drop index" seguido del nombre del índice a borrar.
+Usamos "alter table" y "drop index" seguido del name del índice a borrar.
 
 Para eliminar un índice único usamos la misma sintaxis:
 
@@ -2833,21 +2842,21 @@ alter table libros
 drop index i_tituloeditorial;
 
 
-## 56 - renombrar tablas (alter table - rename - rename table).....................................................................
+## 56 - renombrar tablas (alter table - rename - rename table).............
 
 ## rename table)
 
-Podemos cambiar el nombre de una tabla con "alter table".
+Podemos cambiar el name de una tabla con "alter table".
 
-Para cambiar el nombre de una tabla llamada "amigos" por "contactos" usamos esta sintaxis:
+Para cambiar el name de una tabla llamada "amigos" por "contactos" usamos esta sintaxis:
 
 alter table amigos rename contactos;
-Entonces usamos "alter table" seguido del nombre actual, "rename" y el nuevo nombre.
+Entonces usamos "alter table" seguido del name actual, "rename" y el nuevo name.
 
-También podemos cambiar el nombre a una tabla usando la siguiente sintaxis:
+También podemos cambiar el name a una tabla usando la siguiente sintaxis:
 
 rename table amigos to contactos;
-La renombración se hace de izquierda a derecha, con lo cual, si queremos intercambiar los nombres de
+La renombración se hace de izquierda a derecha, con lo cual, si queremos intercambiar los names de
 dos tablas, debemos tipear lo siguiente:
 
 rename table amigos to auxiliar,
@@ -2855,7 +2864,7 @@ contactos to amigos,
 auxiliar to contactos;
 
 
-## 57 - Tipo de dato enum............................................................................................................................
+## 57 - Tipo de dato enum..........
 
 Además de los tipos de datos ya conocidos, existen otros que analizaremos ahora, los tipos "enum" y
 "set".
@@ -2877,7 +2886,7 @@ Para definir un campo de tipo "enum" usamos la siguiente sintaxis al crear la ta
 create table postulantes(
 numero int unsigned auto_increment,
 documento char(8),
-nombre varchar(30),
+name varchar(30),
 estudios enum('ninguno','primario','secundario', 'terciario','universitario'),
 primary key(numero)
 );
@@ -2889,18 +2898,18 @@ por defecto es el primer valor de la lista de permitidos.
 Si se ingresa un valor numérico, lo interpreta como índice de la enumeración y almacena el valor de la
 lista con dicho número de índice. Por ejemplo:
 
-insert into postulantes (documento,nombre,estudios)
+insert into postulantes (documento,name,estudios)
 values('22255265','Juana Pereyra',5);
 En el campo "estudios" almacenará "universitario" que es valor de índice 5.
 
 Si se ingresa un valor inválido, puede ser un valor no presente en la lista o un valor de índice fuera de
 rango, coloca una cadena vacía. Por ejemplo:
 
-insert into postulantes (documento,nombre,estudios)
+insert into postulantes (documento,name,estudios)
 values('22255265','Juana Pereyra',0);
-insert into postulantes (documento,nombre,estudios)
+insert into postulantes (documento,name,estudios)
 values('22255265','Juana Pereyra',6);
-insert into postulantes (documento,nombre,estudios)
+insert into postulantes (documento,name,estudios)
 
 
 values('22255265','Juana Pereyra','PostGrado');
@@ -2928,7 +2937,7 @@ error y la sentencia no se ejecuta.
 Los bytes de almacenamiento del tipo "enum" depende del número de valores enumerados.
 
 
-## 58 - Tipo de dato set.................................................................................................................................
+## 58 - Tipo de dato set...............
 
 El tipo de dato "set" representa un conjunto de cadenas.
 
@@ -2949,30 +2958,30 @@ Para definir un campo de tipo "set" usamos la siguiente sintaxis:
 create table postulantes(
 numero int unsigned auto_increment,
 documento char(8),
-nombre varchar(30),
+name varchar(30),
 idioma set('ingles','italiano','portuges'),
 primary key(numero)
 );
 Ingresamos un registro:
 
-insert into postulantes (documento,nombre,idioma)
+insert into postulantes (documento,name,idioma)
 values('22555444','Ana Acosta','ingles');
 Para ingresar un valor que contenga más de un elemento del conjunto, se separan por comas, por
 ejemplo:
 
-insert into postulantes (documento,nombre,idioma)
+insert into postulantes (documento,name,idioma)
 values('23555444','Juana Pereyra','ingles,italiano');
 No importa el orden en el que se inserten, se almacenan en el orden que han sido definidos, por
 ejemplo, si ingresamos:
 
-insert into postulantes (documento,nombre,idioma)
+insert into postulantes (documento,name,idioma)
 values('23555444','Juana Pereyra','italiano,ingles');
 en el campo "idioma" guardará 'ingles,italiano'.
 
 Tampoco importa si se repite algún valor, cada elemento repetido, se ignora y se guarda una vez y en el
 orden que ha sido definido, por ejemplo, si ingresamos:
 
-insert into postulantes (documento,nombre,idioma)
+insert into postulantes (documento,name,idioma)
 values('23555444','Juana Pereyra','italiano,ingles,italiano');
 
 
@@ -2980,16 +2989,16 @@ en el campo "idioma" guardará 'ingles,italiano'.
 Si ingresamos un valor que no está en la lista "set", se ignora y se almacena una cadena vacía, por
 ejemplo:
 
-insert into postulantes (documento,nombre,idioma)
+insert into postulantes (documento,name,idioma)
 values('22255265','Juana Pereyra','frances');
 Si un "set" permite valores nulos, el valor por defecto es "null"; si no permite valores nulos, el valor por
 defecto es una cadena vacía.
 
 Si se ingresa un valor de índice fuera de rango, coloca una cadena vacía. Por ejemplo:
 
-insert into postulantes (documento,nombre,idioma)
+insert into postulantes (documento,name,idioma)
 values('22255265','Juana Pereyra',0);
-insert into postulantes (documento,nombre,idioma)
+insert into postulantes (documento,name,idioma)
 values('22255265','Juana Pereyra',8);
 Si se ingresa un valor numérico, lo interpreta como índice de la enumeración y almacena el valor de la
 lista con dicho número de índice. Los valores de índice se definen en el siguiente orden, en este
@@ -3004,9 +3013,9 @@ ejemplo:
 7='ingles,italiano,portugues'.
 Ingresamos algunos registros con valores de índice:
 
-insert into postulantes (documento,nombre,idioma)
+insert into postulantes (documento,name,idioma)
 values('22255265','Juana Pereyra',2);
-insert into postulantes (documento,nombre,idioma)
+insert into postulantes (documento,name,idioma)
 values('22555888','Juana Pereyra',3);
 En el campo "idioma", con la primera inserción se almacenará "italiano" que es valor de índice 2 y con
 la segunda inserción, "ingles,italiano" que es el valor con índice 3.
@@ -3062,7 +3071,7 @@ Los bytes de almacenamiento del tipo "set" depende del número de miembros, se c
 de miembros+7)/8 bytes; entonces puede ser 1,2,3,4 u 8 bytes.
 
 
-## 60 - Funciones de control de flujo (if).....................................................................................................
+## 60 - Funciones de control de flujo (if)...............
 
 Trabajamos con las tablas "libros" de una librería.
 
@@ -3093,9 +3102,9 @@ Si el precio del libro es mayor a 50 (primer argumento del "if"), coloca "caro" 
 
 Veamos otros ejemplos.
 
-Queremos mostrar los nombres de los autores y la cantidad de libros de cada uno de ellos; para ello
-especificamos el nombre del campo a mostrar ("autor"), contamos los libros con "autor" conocido con
-la función "count()" y agrupamos por nombre de autor:
+Queremos mostrar los names de los autores y la cantidad de libros de cada uno de ellos; para ello
+especificamos el name del campo a mostrar ("autor"), contamos los libros con "autor" conocido con
+la función "count()" y agrupamos por name de autor:
 
 select autor, count(*)
 from libros
@@ -3131,7 +3140,7 @@ Si la cantidad de libros de cada editorial es mayor a 4 (primer argumento del "i
 (segundo argumento del "if"), en caso contrario coloca "menos de 5" (tercer argumento del "if").
 
 
-## 61 - Funciones de control de flujo (case).................................................................................................
+## 61 - Funciones de control de flujo (case)...........
 
 La función "case" es similar a la función "if", sólo que se pueden establecer varias condiciones a
 cumplir.
@@ -3144,7 +3153,7 @@ select editorial,
 if (count(*)>1,'Mas de 2','1') as 'cantidad'
 from libros
 group by editorial;
-vemos los nombres de las editoriales y una columna "cantidad" que especifica si hay más o menos de
+vemos los names de las editoriales y una columna "cantidad" que especifica si hay más o menos de
 uno. Podemos obtener la misma salida usando un "case":
 
 select editorial,
@@ -3224,7 +3233,7 @@ from libros
 group by editorial;
 
 
-## 62 - Varias tablas (join)............................................................................................................................
+## 62 - Varias tablas (join)..........
 
 Hasta ahora hemos trabajado con una sola tabla, pero en general, se trabaja con varias tablas.
 
@@ -3247,18 +3256,18 @@ primary key (codigo)
 
 create table editoriales(
 codigo tinyint unsigned auto_increment,
-nombre varchar(20) not null,
+name varchar(20) not null,
 primary key(codigo)
 );
-De este modo, evitamos almacenar tantas veces los nombres de las editoriales en la tabla "libros" y
-guardamos el nombre en la tabla "editoriales"; para indicar la editorial de cada libro agregamos un
+De este modo, evitamos almacenar tantas veces los names de las editoriales en la tabla "libros" y
+guardamos el name en la tabla "editoriales"; para indicar la editorial de cada libro agregamos un
 campo referente al código de la editorial en la tabla "libros" y en "editoriales".
 
 Al recuperar los datos de los libros:
 
 select * from libros;
-vemos que en el campo "editorial" aparece el código, pero no sabemos el nombre de la editorial. Para
-obtener los datos de cada libro, incluyendo el nombre de la editorial, necesitamos consultar ambas
+vemos que en el campo "editorial" aparece el código, pero no sabemos el name de la editorial. Para
+obtener los datos de cada libro, incluyendo el name de la editorial, necesitamos consultar ambas
 tablas, traer información de las dos.
 
 Cuando obtenemos información de más de una tabla decimos que hacemos un "join" (unión). Veamos
@@ -3270,7 +3279,7 @@ on libros.codigoeditorial=editoriales.codigo;
 Analicemos la consulta anterior.
 
 
-Indicamos el nombre de la tabla luego del "from" ("libros"), unimos esa tabla con "join" y el nombre de
+Indicamos el name de la tabla luego del "from" ("libros"), unimos esa tabla con "join" y el name de
 la otra tabla ("editoriales"), luego especificamos la condición para enlazarlas con "on", es decir, el
 campo por el cual se combinarán. "on" hace coincidir registros de las dos tablas basándose en el valor
 de algún campo, en este ejemplo, los códigos de las editoriales de ambas tablas, el campo
@@ -3292,12 +3301,12 @@ Note que en la consulta
 select * from libros
 join editoriales
 on libros.codigoeditorial=editoriales.codigo;
-al nombrar el campo usamos el nombre de la tabla también. Cuando las tablas referenciadas tienen
-campos con igual nombre, esto es necesario para evitar confusiones y ambiguedades al momento de
+al nombrar el campo usamos el name de la tabla también. Cuando las tablas referenciadas tienen
+campos con igual name, esto es necesario para evitar confusiones y ambiguedades al momento de
 referenciar un campo. En este ejemplo, si no especificamos "editoriales.codigo" y solamente tipeamos
 "codigo", MySQL no sabrá si nos referimos al campo "codigo" de "libros" o de "editoriales".
 
-Si omitimos la referencia a las tablas al nombrar el campo "codigo" (nombre de campo que contienen
+Si omitimos la referencia a las tablas al nombrar el campo "codigo" (name de campo que contienen
 ambas tablas):
 
 select * from libros
@@ -3305,11 +3314,11 @@ join editoriales
 on codigoeditorial=codigo;
 aparece un mensaje de error indicando que "codigo" es ambiguo.
 
-Entonces, si en las tablas, los campos tienen el mismo nombre, debemos especificar a cuál tabla
-pertenece el campo al hacer referencia a él, para ello se antepone el nombre de la tabla al nombre del
+Entonces, si en las tablas, los campos tienen el mismo name, debemos especificar a cuál tabla
+pertenece el campo al hacer referencia a él, para ello se antepone el name de la tabla al name del
 campo, separado por un punto (.).
 
-Entonces, se nombra la primer tabla, se coloca "join" junto al nombre de la segunda tabla de la cual
+Entonces, se nombra la primer tabla, se coloca "join" junto al name de la segunda tabla de la cual
 obtendremos información y se asocian los registros de ambas tablas usando un "on" que haga coincidir
 los valores de un campo en común en ambas tablas, que será el enlace.
 
@@ -3326,41 +3335,41 @@ el uso de alias es para fines de simplificación, pero en algunas consultas es a
 En la consulta anterior vemos que el código de la editorial aparece 2 veces, desde la tabla "libros" y
 "editoriales". Podemos solicitar que nos muestre algunos campos:
 
-select titulo,autor,nombre from libros as l
+select titulo,autor,name from libros as l
 join editoriales as e
 on l.codigoeditorial=e.codigo;
 Al presentar los campos, en este caso, no es necesario aclarar a qué tabla pertenecen porque los campos
 solicitados no se repiten en ambas tablas, pero si solicitáramos el código del libro, debemos especificar
 de qué tabla porque el campo "codigo" se repite en ambas tablas ("libros" y "editoriales"):
 
-select l.codigo,titulo,autor,nombre from libros as l
+select l.codigo,titulo,autor,name from libros as l
 join editoriales as e
 on l.codigoeditorial=e.codigo;
 Si obviamos la referencia a la tabla, la sentencia no se ejecuta y aparece un mensaje indicando que el
 campo "codigo" es ambiguo.
 
 
-## 63 - Clave foránea..................................................................................................................................
+## 63 - key foránea................
 
-Un campo que se usa para establecer un "join" (unión) con otra tabla en la cual es clave primaria, se
-denomina "clave ajena o foránea".
+Un campo que se usa para establecer un "join" (unión) con otra tabla en la cual es key primaria, se
+denomina "key ajena o foránea".
 
 En el ejemplo de la librería en que utilizamos las tablas "libros" y "editoriales" con los campos:
 
-libros: codigo (clave primaria), titulo, autor, codigoeditorial, precio, cantidad
+libros: codigo (key primaria), titulo, autor, codigoeditorial, precio, cantidad
 y
-editoriales: codigo (clave primaria), nombre.
-el campo "codigoeditorial" de "libros" es una clave foránea, se emplea para enlazar la tabla "libros" con
-"editoriales" y es clave primaria en "editoriales" con el nombre "codigo".
+editoriales: codigo (key primaria), name.
+el campo "codigoeditorial" de "libros" es una key foránea, se emplea para enlazar la tabla "libros" con
+"editoriales" y es key primaria en "editoriales" con el name "codigo".
 
-Cuando alteramos una tabla, debemos tener cuidado con las claves foráneas. Si modificamos el tipo,
-longitud o atributos de una clave foránea, ésta puede quedar inhabilitada para hacer los enlaces.
+Cuando alteramos una tabla, debemos tener cuidado con las keys foráneas. Si modificamos el tipo,
+longitud o atributos de una key foránea, ésta puede quedar inhabilitada para hacer los enlaces.
 
-Las claves foráneas y las claves primarias deben ser del mismo tipo para poder enlazarse. Si
+Las keys foráneas y las keys primarias deben ser del mismo tipo para poder enlazarse. Si
 modificamos una, debemos modificar la otra para que los valores se correspondan.
 
 
-## 64 - Varias tablas (left join)....................................................................................................................
+## 64 - Varias tablas (left join)..
 
 Hemos visto cómo usar registros de una tabla para encontrar registros de otra tabla, uniendo ambas
 tablas con "join" y enlazándolas con una condición "on" en la cual colocamos el campo en común. O
@@ -3369,9 +3378,9 @@ valores del campo que tienen en comun ambas tablas.
 
 Trabajamos con las tablas de una librería:
 
--libros: codigo (clave primaria), titulo, autor, codigoeditorial, precio, cantidad
+-libros: codigo (key primaria), titulo, autor, codigoeditorial, precio, cantidad
 y
--editoriales: codigo (clave primaria), nombre.
+-editoriales: codigo (key primaria), name.
 Queremos saber de qué editoriales no tenemos libros.
 
 Para averiguar qué registros de una tabla no se encuentran en otra tabla necesitamos usar un "join"
@@ -3419,7 +3428,7 @@ Luego del "on" se especifican los campos que se asociarán; no se deben colocar 
 Un "left join" puede tener clausula "where" que restringa el resultado de la consulta considerando
 solamente los registros que encuentran coincidencia en la tabla de la derecha:
 
-select e.nombre,l.titulo
+select e.name,l.titulo
 from editoriales as e
 left join libros as l
 on e.codigo=l.codigoeditorial
@@ -3429,7 +3438,7 @@ derecha ("libros").
 
 También podemos mostrar las editoriales que no están presentes en "libros":
 
-select e.nombre,l.titulo from editoriales as e
+select e.name,l.titulo from editoriales as e
 left join libros as l
 on e.codigo=l.codigoeditorial
 where l.codigoeditorial is null;
@@ -3437,7 +3446,7 @@ El anterior "left join" muestra los valores de la tabla "editoriales" que no enc
 en la tabla de la derecha, "libros".
 
 
-## 65 - Varias tablas (right join)..................................................................................................................
+## 65 - Varias tablas (right join)
 
 "right join" opera del mismo modo que "left join" sólo que la búsqueda de coincidencias la realiza de
 modo inverso, es decir, los roles de las tablas se invierten, busca coincidencia de valores desde la tabla
@@ -3447,17 +3456,17 @@ todos los campos seteados a "null".
 
 Trabajamos con las tablas de una librería:
 
--libros: codigo (clave primaria), titulo, autor, codigoeditorial, precio, cantidad
+-libros: codigo (key primaria), titulo, autor, codigoeditorial, precio, cantidad
 y
--editoriales: codigo (clave primaria), nombre.
+-editoriales: codigo (key primaria), name.
 Estas sentencias devuelven el mismo resultado:
 
-select nombre,titulo
+select name,titulo
 from editoriales as e
 left join libros as l
 on e.codigo=l.codigoeditorial;
 
-select nombre,titulo
+select name,titulo
 from libros as l
 right join editoriales as e
 on e.codigo=l.codigoeditorial;
@@ -3466,12 +3475,12 @@ los valores de "codigoeditorial" de la tabla "libros" (tabla de la derecha). La 
 la tabla de la derecha coincidentes con los valores de la tabla de la izquierda.
 
 
-## 66 - Varias tablas (cross join).................................................................................................................
+## 66 - Varias tablas (cross join)...........................
 
 "cross join" retorna todos los registros de todas las tablas implicadas en la unión, devuelve el producto
 cartesiano. No es muy utilizado.
 
-Un pequeño restaurante tiene almacenados los nombres y precios de sus comidas en una tabla llamada
+Un pequeño restaurante tiene almacenados los names y precios de sus comidas en una tabla llamada
 "comidas" y en una tabla denominada "postres" los mismos datos de sus postres.
 
 El restaurante quiere combinar los registros de ambas tablas para mostrar los distintos menúes que
@@ -3485,10 +3494,10 @@ es igual a un simple "join" sin parte "on":
 select c.*,p.*
 from comidas as c
 join postres as p;
-Podemos organizar la salida del "cross join" para obtener el nombre del plato principal, del postre y el
+Podemos organizar la salida del "cross join" para obtener el name del plato principal, del postre y el
 precio total de cada combinación (menú):
 
-select c.nombre,p.nombre,
+select c.name,p.name,
 c.precio+p.precio as total
 from comidas as c
 cross join postres as p;
@@ -3500,7 +3509,7 @@ estructura:
 
 create table comidas(
 codigo tinyint unsigned auto_increment,
-nombre varchar(30),
+name varchar(30),
 rubro varchar(20),/*plato principal y postre*/
 precio decimal (5,2) unsigned,
 primary key(codigo)
@@ -3508,7 +3517,7 @@ primary key(codigo)
 Podemos obtener la combinación de platos principales con postres empleando un "cross join" con una
 sola tabla:
 
-select c1.nombre,c1.precio,c2.nombre,c2.precio
+select c1.name,c1.precio,c2.name,c2.precio
 from comidas as c1
 cross join comidas as c2
 where c1.rubro='plato principal' and
@@ -3519,7 +3528,7 @@ Se empleó un "where" para combinar "plato principal" con "postre".
 
 Si queremos el monto total de cada combinación:
 
-select c1.nombre,c2.nombre,
+select c1.name,c2.name,
 c1.precio+c2.precio as total
 from comidas as c1
 cross join comidas as c2
@@ -3527,59 +3536,59 @@ where c1.rubro='plato principal' and
 c2.rubro='postre';
 
 
-## 67 - Varias tablas (natural join)..............................................................................................................
+## 67 - Varias tablas (natural join)........................
 
-"natural join" se usa cuando los campos por los cuales se enlazan las tablas tienen el mismo nombre.
+"natural join" se usa cuando los campos por los cuales se enlazan las tablas tienen el mismo name.
 
 Tenemos las tablas "libros" y "editoriales" de una librería.
 
 Las tablas tienen las siguientes estructuras:
 
-- libros: codigo (clave primaria), titulo, autor, codigoeditorial, precio.
-- editoriales: codigoeditorial(clave primaria), nombre.
+- libros: codigo (key primaria), titulo, autor, codigoeditorial, precio.
+- editoriales: codigoeditorial(key primaria), name.
 Como en ambas tablas, el código de la editorial se denomina "codigoeditorial", podemos omitir la parte
-"on" que indica los nombres de los campos por el cual se enlazan las tablas, empleando "natural join",
+"on" que indica los names de los campos por el cual se enlazan las tablas, empleando "natural join",
 se unirán por el campo que tienen en común:
 
-select titulo,nombre
+select titulo,name
 from libros as l
 natural join editoriales as e;
 La siguiente sentencia tiene la misma salida anterior:
 
-select titulo,nombre
+select titulo,name
 from libros as l
 join editoriales as e
 on l.codigoeditorial=e.codigoeditorial;
 También se puede usar "natural" con "left join" y "right join":
 
-select nombre,titulo
+select name,titulo
 from editoriales as e
 natural left join libros as l;
 que tiene la misma salida que:
 
-select nombre,titulo
+select name,titulo
 from editoriales as e
 left join libros as l
 on e.codigoeditorial=l.codigoeditorial;
 Es decir, con "natural join" no se coloca la parte "on" que especifica los campos por los cuales se
-enlazan las tablas, porque MySQL busca los campos con igual nombre y enlaza las tablas por ese
+enlazan las tablas, porque MySQL busca los campos con igual name y enlaza las tablas por ese
 campo.
 
 Hay que tener cuidado con este tipo de "join" porque si ambas tablas tiene más de un campo con igual
-nombre, MySQL no sabrá por cual debe realizar la unión. Por ejemplo, si el campo "titulo" de la tabla
-"libros" se llamara "nombre", las tablas tendrían 2 campos con igual nombre ("codigoeditorial" y
-"nombre").
+name, MySQL no sabrá por cual debe realizar la unión. Por ejemplo, si el campo "titulo" de la tabla
+"libros" se llamara "name", las tablas tendrían 2 campos con igual name ("codigoeditorial" y
+"name").
 
 Otro problema que puede surgir es el siguiente. Tenemos la tabla "libros" con los siguientes campos:
 codigo (del libro), titulo, autor y codigoeditorial, y la tabla "editoriales" con estos campos: codigo (de
-la editorial) y nombre. Si usamos "natural join", unirá las tablas por el campo "codigo", que es el
+la editorial) y name. Si usamos "natural join", unirá las tablas por el campo "codigo", que es el
 
 
-campo que tienen igual nombre, pero el campo "codigo" de "libros" no hace referencia al código de la
+campo que tienen igual name, pero el campo "codigo" de "libros" no hace referencia al código de la
 editorial sino al del libro, así que la salida será errónea.
 
 
-## 68 - Varias tablas (inner join - straight join)..........................................................................................
+## 68 - Varias tablas (inner join - straight join)....
 
 Existen otros tipos de "join" además del simple "join", "left join", "right join", "cross join" y "natural
 join". Veámoslos.
@@ -3587,13 +3596,13 @@ join". Veámoslos.
 "inner join" es igual que "join". Con "inner join", todos los registros no coincidentes son descartados,
 sólo los coincidentes se muestran en el resultado:
 
-select nombre,titulo
+select name,titulo
 from editoriales as e
 inner join libros as l
 on e.codigo=l.codigoeditorial;
 Tiene la misma salida que un simple "join":
 
-select nombre,titulo
+select name,titulo
 from editoriales as e
 join libros as l
 on e.codigo=l.codigoeditorial;
@@ -3601,55 +3610,55 @@ on e.codigo=l.codigoeditorial;
 derecha.
 
 
-## 69 - join, group by y funciones de agrupamiento...................................................................................
+## 69 - join, group by y funciones de agrupamiento...........................
 
 ## agrupamiento.
 
 Podemos usar "group by" y las funciones de agrupamiento con "join".
 
-Para ver todas las editoriales, agrupadas por nombre, con una columna llamada "Cantidad de libros" en
+Para ver todas las editoriales, agrupadas por name, con una columna llamada "Cantidad de libros" en
 la que aparece la cantidad calculada con "count()" de todos los libros de cada editorial tipeamos:
 
-select e.nombre,count(l.codigoeditorial) as 'Cantidad de libros'
+select e.name,count(l.codigoeditorial) as 'Cantidad de libros'
 from editoriales as e
 left join libros as l
 on l.codigoeditorial=e.codigo
-group by e.nombre;
+group by e.name;
 Si usamos "left join" la consulta mostrará todas las editoriales, y para cualquier editorial que no
 encontrara coincidencia en la tabla "libros" colocará "0" en "Cantidad de libros". Si usamos "join" en
 lugar de "left join":
 
-select e.nombre,count(l.codigoeditorial) as 'Cantidad de libros'
+select e.name,count(l.codigoeditorial) as 'Cantidad de libros'
 from editoriales as e
 join libros as l
 on l.codigoeditorial=e.codigo
-group by e.nombre;
+group by e.name;
 solamente mostrará las editoriales para las cuales encuentra valores coincidentes para el código de la
 editorial en la tabla "libros".
 
 Para conocer el mayor precio de los libros de cada editorial usamos la función "max()", hacemos una
-unión y agrupamos por nombre de la editorial:
+unión y agrupamos por name de la editorial:
 
-select e.nombre,
+select e.name,
 max(l.precio) as 'Mayor precio'
 from editoriales as e
 left join libros as l
 on l.codigoeditorial=e.codigo
-group by e.nombre;
+group by e.name;
 En la sentencia anterior, mostrará, para la editorial de la cual no haya libros, el valor "null" en la
 columna calculada; si realizamos un simple "join":
 
-select e.nombre,
+select e.name,
 max(l.precio) as 'Mayor precio'
 from editoriales as e
 join libros as l
 on l.codigoeditorial=e.codigo
-group by e.nombre;
+group by e.name;
 sólo mostrará las editoriales para las cuales encuentra correspondencia en la tabla de la derecha.
 
 
 
-## 70 - join con más de dos tablas..............................................................................................................
+## 70 - join con más de dos tablas........................
 
 Podemos hacer un "join" con más de dos tablas.
 
@@ -3668,7 +3677,7 @@ primary key (codigo)
 
 create socios(
 documento char(8) not null,
-nombre varchar(30),
+name varchar(30),
 domicilio varchar(30),
 primary key (numero)
 );
@@ -3683,19 +3692,19 @@ primary key (codigolibro,fechaprestamo)
 Al recuperar los datos de los prestamos:
 
 select * from prestamos;
-aparece el código del libro pero no sabemos el nombre y tampoco el nombre del socio sino su
+aparece el código del libro pero no sabemos el name y tampoco el name del socio sino su
 documento. Para obtener los datos completos de cada préstamo, incluyendo esos datos, necesitamos
 consultar las tres tablas.
 
 Hacemos un "join" (unión):
 
-select nombre,titulo,fechaprestamo
+select name,titulo,fechaprestamo
 from prestamos as p
 join socios as s
 on s.documento=p.documento
 join libros as l
 on codigolibro=codigo;
-Analicemos la consulta anterior. Indicamos el nombre de la tabla luego del "from" ("prestamos"),
+Analicemos la consulta anterior. Indicamos el name de la tabla luego del "from" ("prestamos"),
 unimos esa tabla con la tabla "socios" especificando con "on" el campo por el cual se combinarán: el
 
 
@@ -3703,14 +3712,14 @@ campo "documento" de ambas tablas; luego debemos hacer coincidir los valores par
 tabla "libros" enlazándolas por los campos "codigolibro" y "codigo" de "libros". Utilizamos alias para
 una sentencia más sencilla y comprensible.
 
-Note que especificamos a qué tabla pertenece el campos "documento" porque a ese nombre de campo
+Note que especificamos a qué tabla pertenece el campos "documento" porque a ese name de campo
 lo tienen las tablas "prestamos" y "socios", esto es necesario para evitar confusiones y ambiguedades al
 momento de referenciar un campo. En este ejemplo, si omitimos la referencia a las tablas al nombrar el
 campo "documento" aparece un mensaje de error indicando que "documento" es ambiguo.
 
 Para ver todos los prestamos, incluso los que no encuentran coincidencia en las otras tablas, usamos:
 
-select nombre,titulo,fechaprestamo
+select name,titulo,fechaprestamo
 from prestamos as p
 left join socios as s
 on p.documento=s.documento
@@ -3719,7 +3728,7 @@ on l.codigo=p.codigolibro;
 Podemos ver aquellos prestamos con valor coincidente para "libros" pero para "socio" con y sin
 coincidencia:
 
-select nombre,titulo,fechaprestamo
+select name,titulo,fechaprestamo
 from prestamos as p
 left join socios as s
 on p.documento=s.documento
@@ -3727,32 +3736,32 @@ join libros as l
 on p.codigolibro=l.codigo;
 
 
-## 71 - Función de control if con varias tablas...........................................................................................
+## 71 - Función de control if con varias tablas.....
 
 Podemos emplear "if" y "case" en la misma sentencia que usamos un "join".
 
 Por ejemplo, tenemos las tablas "libros" y "editoriales" y queremos saber si hay libros de cada una de
 las editoriales:
 
-select e.nombre,
+select e.name,
 if (count(l.codigoeditorial)>0,'Si','No') as hay
 from editoriales as e
 left join libros as l
 on e.codigo=l.codigoeditorial
-group by e.nombre;
+group by e.name;
 Podemos obtener una salida similar usando "case" en lugar de "if":
 
-select e.nombre,
+select e.name,
 case count(l.codigoeditorial)
 when 0 then 'No'
 else 'Si' end as 'Hay'
 from editoriales as e
 left join libros as l
 on e.codigo=l.codigoeditorial
-group by e.nombre;
+group by e.name;
 
 
-## 72 - Variables de usuario........................................................................................................................
+## 72 - Variables de usuario......
 
 Cuando buscamos un valor con las funciones de agrupamiento, por ejemplo "max()", la consulta nos
 devuelve el máximo valor de un campo de una tabla, pero no nos muestra los valores de otros campos
@@ -3777,16 +3786,16 @@ Las variables de usuario son específicas de cada conexión, es decir, una varia
 no puede ser vista ni usada por otros clientes y son liberadas automáticamente al abandonar la
 conexión.
 
-Las variables de usuario comienzan con "@" (arroba) seguido del nombre (sin espacios), dicho nombre
+Las variables de usuario comienzan con "@" (arroba) seguido del name (sin espacios), dicho name
 puede contener cualquier caracter.
 
 Para almacenar un valor en una variable se coloca ":=" (operador de asignación) entre la variable y el
 valor a asignar.
 
 En el ejemplo, mostramos todos los datos del libro com precio más alto, pero, si además, necesitamos
-el nombre de la editorial podemos emplear un "join":
+el name de la editorial podemos emplear un "join":
 
-select l.titulo,l.autor,e.nombre
+select l.titulo,l.autor,e.name
 from libros as l
 join editoriales as e
 on l.codigoeditorial=e.codigo
@@ -3794,7 +3803,7 @@ where l.precio = @mayorprecio;
 La utilidad de las variables consiste en que almacenan valores para utilizarlos en otras consultas.
 
 Por ejemplo, queremos ver todos los libros de la editorial que tenga el libro más caro. Debemos buscar
-el precio más alto y almacenarlo en una variable, luego buscar el nombre de la editorial del libro con el
+el precio más alto y almacenarlo en una variable, luego buscar el name de la editorial del libro con el
 
 
 precio igual al valor de la variable y guardarlo en otra variable, finalmente buscar todos los libros de
@@ -3802,25 +3811,25 @@ esa editorial:
 
 select @mayorprecio:=max(precio) from libros;
 
-select @editorial:=e.nombre
+select @editorial:=e.name
 from libros as l
 join editoriales as e
 on l.codigoeditorial=e.codigo
 where precio=@mayorprecio;
 
-select l.titulo,l.autor,e.nombre
+select l.titulo,l.autor,e.name
 from libros as l
 join editoriales as e
 on l.codigoeditorial=e.codigo
-where e.nombre=@editorial;
+where e.name=@editorial;
 
 
-## 73 - Crear tabla a partir de otra (create - insert).....................................................................................
+## 73 - Crear tabla a partir de otra (create - insert).
 
 ## insert)
 
 Tenemos la tabla "libros" de una librería y queremos crear una tabla llamada "editoriales" que contenga
-los nombres de las editoriales.
+los names de las editoriales.
 
 La tabla "libros" tiene esta estructura:
 
@@ -3829,22 +3838,22 @@ La tabla "libros" tiene esta estructura:
 -autor: varchar(30),
 -editorial: varchar(20) not null,
 -precio: decimal(5,2) unsigned,
--clave primaria: codigo.
+-key primaria: codigo.
 La tabla "editoriales", que no existe, debe tener la siguiente estructura:
 
--nombre: nombre de la editorial.
+-name: name de la editorial.
 La tabla libros contiene varios registros.
 
-Para guardar en "editoriales" los nombres de las editoriales, podemos hacerlo en 3 pasos:
+Para guardar en "editoriales" los names de las editoriales, podemos hacerlo en 3 pasos:
 
 1º paso: crear la tabla "editoriales":
 
 create table editoriales(
-nombre varchar(20)
+name varchar(20)
 );
-2º paso: realizar la consulta en la tabla "libros" para obtener los nombres de las distintas editoriales:
+2º paso: realizar la consulta en la tabla "libros" para obtener los names de las distintas editoriales:
 
-select distinct editorial as nombre
+select distinct editorial as name
 from libros;
 obteniendo una salida como la siguiente:
 
@@ -3855,18 +3864,18 @@ Paidos
 Planeta
 3º paso: insertar los registros necesarios en la tabla "editoriales":
 
-insert into editoriales (nombre) values('Emece');
-insert into editoriales (nombre) values('Paidos');
-insert into editoriales (nombre) values('Planeta');
+insert into editoriales (name) values('Emece');
+insert into editoriales (name) values('Paidos');
+insert into editoriales (name) values('Planeta');
 Pero existe otra manera simplificando los pasos. Podemos crear la tabla "editoriales" con los campos
 necesarios consultando la tabla "libros" y en el mismo momento insertar la información:
 
 create table editoriales
-select distinct editorial as nombre
+select distinct editorial as name
 from libros;
 
 
-La tabla "editoriales" se ha creado con el campo llamado "nombre" seleccionado del campo "editorial"
+La tabla "editoriales" se ha creado con el campo llamado "name" seleccionado del campo "editorial"
 de "libros".
 
 Entonces, se realiza una consulta de la tabla "libros" y anteponiendo "create table ..." se ingresa el
@@ -3874,12 +3883,12 @@ resultado de dicha consulta en la tabla "editoriales" al momento de crearla.
 
 Si seleccionamos todos los registros de la tabla "editoriales" aparece lo siguiente:
 
-nombre
+name
 ______
 Emece
 Paidos
 Planeta
-Si visualizamos la estructura de "editoriales" con "describe editoriales" vemos que el campo "nombre"
+Si visualizamos la estructura de "editoriales" con "describe editoriales" vemos que el campo "name"
 se creó con el mismo tipo y longitud del campo "editorial" de "libros".
 
 También podemos crear una tabla a partir de una consulta cargando los campos con los valores de otra
@@ -3890,14 +3899,14 @@ la cantidad de libros de cada editorial.
 
 La tabla "cantidadporeditorial", que no está creada, debe tener la siguiente estructura:
 
--nombre: nombre de la editorial,
+-name: name de la editorial,
 -cantidad: cantidad de libros.
 Podemos lograrlo en 3 pasos:
 
 1º paso: crear la tabla "cantidadporeditorial":
 
 create table editoriales(
-nombre varchar(20),
+name varchar(20),
 cantidad smallint
 );
 2º paso: realizar la consulta en la tabla "libros" para obtener la cantidad de libros de cada editorial
@@ -3908,7 +3917,7 @@ from libros
 group by editorial;
 obteniendo una salida como la siguiente:
 
-nombre cantidad
+name cantidad
 ________________
 Emece 3
 Paidos 4
@@ -3924,10 +3933,10 @@ Pero existe otra manera simplificando los pasos. Podemos crear la tabla "cantida
 campos necesarios consultando la tabla "libros" y en el mismo momento insertar la información:
 
 create table cantidadporeditorial
-select editorial as nombre,count(*) as cantidad
+select editorial as name,count(*) as cantidad
 from libros
 group by editorial;
-La tabla "cantidadporeditorial" se ha creado con el campo llamado "nombre" seleccionado del campo
+La tabla "cantidadporeditorial" se ha creado con el campo llamado "name" seleccionado del campo
 "editorial" de "libros" y con el campo "cantidad" con el valor calculado con count() de la tabla "libros".
 
 Entonces, se realiza una consulta de la tabla "libros" y anteponiendo "create table ..." se ingresa el
@@ -3935,17 +3944,17 @@ resultado de dicha consulta en la tabla "cantidadporeditorial" al momento de cre
 
 Si seleccionamos todos los registros de la tabla "cantidadporeditorial" aparece lo siguiente:
 
-nombre cantidad
+name cantidad
 _______________________
 Emece 3
 Paidos 4
 Planeta 2
 Si visualizamos la estructura de "cantidadporeditorial" con "describe cantidadporeditorial", vemos que
-el campo "nombre" se creó con el mismo tipo y longitud del campo "editorial" de "libros" y el campo
+el campo "name" se creó con el mismo tipo y longitud del campo "editorial" de "libros" y el campo
 "cantidad" se creó como "bigint".
 
 
-## 74 - Crear tabla a partir de otras (create - insert - join)..........................................................................
+## 74 - Crear tabla a partir de otras (create - insert - join)..................
 
 ## insert - join)
 
@@ -3959,37 +3968,37 @@ La tabla "libros" tiene la siguiente estructura:
 -autor: varchar(30),
 -codigoeditorial: tinyint unsigned,
 -precio: decimal(5,2) unsigned,
--clave primaria: codigo.
+-key primaria: codigo.
 La tabla "editoriales" tiene esta estructura:
 
 -codigo: tinyint unsigned auto_increment,
--nombre: varchar(20),
-clave primaria: codigo.
+-name: varchar(20),
+key primaria: codigo.
 Las tablas "libros" y "editoriales" contienen varios registros.
 
 La tabla "cantidadporeditorial", que no existe, debe tener la siguiente estructura:
 
--nombre: nombre de la editorial,
+-name: name de la editorial,
 -cantidad: cantidad de libros.
 Podemos guardar en la tabla "cantidadporeditorial" la cantidad de libros de cada editorial en 3 pasos:
 
 1º paso: crear la tabla "cantidadporeditorial":
 
 create table cantidadporeditorial(
-nombre varchar(20),
+name varchar(20),
 cantidad smallint
 );
 2º paso: realizar la consulta en la tabla "libros" y "editoriales", con un "join" para obtener la cantidad de
-libros de cada editorial agrupando por el nombre de la editorial y calculando la cantidad con "count()":
+libros de cada editorial agrupando por el name de la editorial y calculando la cantidad con "count()":
 
-select e.nombre,count(*)
+select e.name,count(*)
 from libros as l
 join editoriales as e
 on l.codigoeditorial=e.codigo
-group by e.nombre;
+group by e.name;
 obteniendo una salida como la siguiente:
 
-nombre cantidad
+name cantidad
 ________________
 Emece 3
 Paidos 4
@@ -4006,13 +4015,13 @@ campos necesarios consultando la tabla "libros" y "editoriales" y en el mismo mo
 información:
 
 create table cantidadporeditorial
-select e.nombre,count(*) as cantidad
+select e.name,count(*) as cantidad
 from libros as l
 join editoriales as e
 on l.codigoeditorial=e.codigo
-group by e.nombre;
-La tabla "cantidadporeditorial" se ha creado con el campo llamado "nombre" seleccionado del campo
-"nombre" de "editoriales" y con el campo "cantidad" con el valor calculado con count() de la tabla
+group by e.name;
+La tabla "cantidadporeditorial" se ha creado con el campo llamado "name" seleccionado del campo
+"name" de "editoriales" y con el campo "cantidad" con el valor calculado con count() de la tabla
 "libros".
 
 Entonces, se realiza una consulta de la tabla "libros" y "editoriales" (con un "join") anteponiendo
@@ -4021,17 +4030,17 @@ de crearla.
 
 Si seleccionamos todos los registros de la tabla "cantidadporeditorial" aparece lo siguiente:
 
-nombre cantidad
+name cantidad
 _______________________
 Emece 3
 Paidos 4
 Planeta 2
-Si visualizamos la estructura de "cantidadporeditorial", vemos que el campo "nombre" se creó con el
-mismo tipo y longitud del campo "nombre" de "editoriales" y el campo "cantidad" se creó como
+Si visualizamos la estructura de "cantidadporeditorial", vemos que el campo "name" se creó con el
+mismo tipo y longitud del campo "name" de "editoriales" y el campo "cantidad" se creó como
 "bigint".
 
 
-## 75 - Insertar datos en una tabla buscando un valor en otra (insert - select)...........................................
+## 75 - Insertar datos en una tabla buscando un valor en otra (insert - select)...............
 
 ## valor en otra (insert - select)
 
@@ -4044,13 +4053,13 @@ La tabla "libros" tiene la siguiente estructura:
 -autor: varchar(30),
 -codigoeditorial: tinyint unsigned,
 -precio: decimal(5,2) unsigned,
--clave primaria: codigo.
+-key primaria: codigo.
 La tabla "editoriales" tiene la siguiente estructura:
 
 -codigo: tinyint unsigned auto_increment,
--nombre: varchar(20),
+-name: varchar(20),
 -domicilio: varchar(30),
--clave primaria: codigo.
+-key primaria: codigo.
 Ambas tablas contienen registros. La tabla "editoriales" contiene los siguientes registros:
 
 1,Planeta,San Martin 222,
@@ -4067,7 +4076,7 @@ Podemos lograrlo en 2 pasos:
 
 select codigo
 from editoriales
-where nombre='Emece';
+where name='Emece';
 nos devuelve el valor "2".
 
 2º paso: ingresar el registro en "libros":
@@ -4079,14 +4088,14 @@ O podemos realizar la consulta del código de la editorial al momento de la inse
 insert into libros (titulo,autor,codigoeditorial,precio)
 select 'Harry Potter y la camara secreta','J.K.Rowling',codigo,45.90
 from editoriales
-where nombre='Emece';
+where name='Emece';
 
 
 Entonces, para realizar una inserción y al mismo tiempo consultar un valor en otra tabla, colocamos
-"insert into" junto al nombre de la tabla ("libros") y los campos a insertar y luego un "select" en el cual
-disponemos todos los valores, excepto el valor que desconocemos, en su lugar colocamos el nombre
+"insert into" junto al name de la tabla ("libros") y los campos a insertar y luego un "select" en el cual
+disponemos todos los valores, excepto el valor que desconocemos, en su lugar colocamos el name
 del campo a consultar ("codigo"), luego se continúa con la consulta indicando la tabla de la cual
-extraemos el código ("editoriales") y la condición, en la cual damos el "nombre" de la editorial para
+extraemos el código ("editoriales") y la condición, en la cual damos el "name" de la editorial para
 que localice el código correspondiente.
 
 El registro se cargará con el valor de código de la editorial "Emece".
@@ -4097,7 +4106,7 @@ tabla "editoriales", aparece un mensaje indicando que no se ingresó ningún reg
 insert into libros (titulo,autor,codigoeditorial,precio)
 select 'Cervantes y el quijote','Borges',codigo,35
 from editoriales
-where nombre='Plaza & Janes';
+where name='Plaza & Janes';
 Hay que tener cuidado al establecer la condición en la consulta, el "insert" ingresará tantos registros
 como filas retorne la consulta. Si la consulta devuelve 2 filas, se insertarán 2 filas en el "insert". Por
 ello, el valor de la condición (o condiciones), por el cual se busca, debe retornar un sólo registro.
@@ -4105,7 +4114,7 @@ ello, el valor de la condición (o condiciones), por el cual se busca, debe reto
 Veamos un ejemplo. Queremos ingresar el siguiente registro:
 
 Harry Potter y la camara secreta, J.K. Rowling,54.
-pero no recordamos el código de la editorial ni su nombre, sólo sabemos que su domicilio es en calle
+pero no recordamos el código de la editorial ni su name, sólo sabemos que su domicilio es en calle
 "San Martin". Si con un "select" localizamos el código de todas las editoriales que tengan sede en "San
 Martin", el resultado retorna 2 filas, porque hay 2 editoriales en esa dirección ("Planeta" y "Emece").
 Tipeeemos la sentencia:
@@ -4123,7 +4132,7 @@ También se pueden consultar valores de varias tablas incluyendo en el "select" 
 ejemplos en "Ejercicios propuestos".
 
 
-## 76 - Insertar registros con valores de otra tabla (insert - select)............................................................
+## 76 - Insertar registros con valores de otra tabla (insert - select)....
 
 ## tabla (insert - select)
 
@@ -4136,16 +4145,16 @@ La tabla "libros" tiene la siguiente estructura:
 -autor: varchar(30),
 -editorial: varchar(20),
 -precio: decimal(5,2) unsigned,
--clave primaria: codigo.
+-key primaria: codigo.
 La tabla "editoriales" tiene la siguiente estructura:
 
--nombre: varchar(20).
-Queremos insertar registros en la tabla "editoriales", los nombres de las distintas editoriales de las
+-name: varchar(20).
+Queremos insertar registros en la tabla "editoriales", los names de las distintas editoriales de las
 cuales tenemos libros.
 
 Podemos lograrlo en 2 pasos, con varias sentencias:
 
-1º paso: consultar los nombres de las distintas editoriales de "libros":
+1º paso: consultar los names de las distintas editoriales de "libros":
 
 select distinct editorial
 from libros;
@@ -4158,15 +4167,15 @@ Paidos
 Planeta
 2º paso: insertar los registros uno a uno en la tabla "editoriales":
 
-insert into editoriales (nombre) values('Emece');
-insert into editoriales (nombre) values('Paidos');
-insert into editoriales (nombre) values('Planeta');
+insert into editoriales (name) values('Emece');
+insert into editoriales (name) values('Paidos');
+insert into editoriales (name) values('Planeta');
 O podemos lograrlo en un solo paso, realizando el "insert" y el "select" en una misma sentencia:
 
-insert into editoriales (nombre)
+insert into editoriales (name)
 select distinct editorial from libros;
 Entonces, se puede insertar registros en una tabla con la salida devuelta por una consulta; para ello
-escribimos la consulta y le anteponemos "insert into", el nombre de la tabla en la cual ingresaremos los
+escribimos la consulta y le anteponemos "insert into", el name de la tabla en la cual ingresaremos los
 registros y los campos que se cargarán.
 
 También podemos crear una tabla llamada "cantidadporeditorial":
@@ -4174,12 +4183,12 @@ También podemos crear una tabla llamada "cantidadporeditorial":
 create table cantidadporeditorial(
 
 
-nombre varchar(20),
+name varchar(20),
 cantidad smallint unsigned
 );
 e ingresar registros a partir de una consulta a la tabla "libros":
 
-insert into cantidadporeditorial (nombre,cantidad)
+insert into cantidadporeditorial (name,cantidad)
 select editorial,count(*) as cantidad
 from libros
 group by editorial;
@@ -4187,7 +4196,7 @@ Si los campos presentados entre paréntesis son menos (o más) que las columnas 
 consulta, aparece un mensaje de error y la sentencia no se ejecuta.
 
 
-## 77 - Insertar registros con valores de otra tabla (insert - select - join)...................................................
+## 77 - Insertar registros con valores de otra tabla (insert - select - join).......................
 
 ## tabla (insert - select - join)
 
@@ -4201,28 +4210,28 @@ La tabla "libros" tiene la siguiente estructura:
 -autor: varchar(30),
 -codigoeditorial: tinyint unsigned,
 -precio: decimal(5,2) unsigned,
--clave primaria: codigo.
+-key primaria: codigo.
 La tabla "editoriales":
 
 -codigo: tinyint unsigned auto_increment,
--nombre: varchar(20),
--clave primaria: codigo.
+-name: varchar(20),
+-key primaria: codigo.
 La tabla "cantidadporeditorial":
 
--nombre: varchar(20),
+-name: varchar(20),
 -cantidad: smallint unsigned.
-Queremos insertar registros en la tabla "cantidadporeditorial", los nombres de las distintas editoriales
+Queremos insertar registros en la tabla "cantidadporeditorial", los names de las distintas editoriales
 de las cuales tenemos libros y la cantidad de libros de cada una de ellas.
 
 Podemos lograrlo en 2 pasos:
 
-1º paso: consultar con un "join" los nombres de las distintas editoriales de "libros" y la cantidad:
+1º paso: consultar con un "join" los names de las distintas editoriales de "libros" y la cantidad:
 
-select e.nombre,count(l.codigoeditorial)
+select e.name,count(l.codigoeditorial)
 from editoriales as e
 left join libros as l
 on e.codigo=l.codigoeditorial
-group by e.nombre;
+group by e.name;
 obteniendo una salida como la siguiente:
 
 editorial cantidad
@@ -4242,13 +4251,13 @@ insert into cantidadporeditorial values('Plaza & Janes',0);
 O podemos lograrlo en un solo paso, realizando el "insert" y el "select" en una misma sentencia:
 
 insert into cantidadporeditorial
-select e.nombre,count(l.codigoeditorial)
+select e.name,count(l.codigoeditorial)
 from editoriales as e
 left join libros as l
 on e.codigo=l.codigoeditorial
-group by e.nombre;
+group by e.name;
 Entonces, se puede insertar registros en una tabla con la salida devuelta por una consulta que incluya un
-"join" o un "left join"; para ello escribimos la consulta y le anteponemos "insert into", el nombre de la
+"join" o un "left join"; para ello escribimos la consulta y le anteponemos "insert into", el name de la
 tabla en la cual ingresaremos los registros y los campos que se cargarán (si se ingresan todos los
 campos no es necesario listarlos).
 
@@ -4256,12 +4265,12 @@ Recuerde que la cantidad de columnas devueltas en la consulta debe ser la misma 
 campos a cargar en el "insert".
 
 
-## 78 - Actualizar datos con valores de otra tabla (update)........................................................................
+## 78 - Actualizar datos con valores de otra tabla (update)................
 
 ## (update)
 
 Tenemos la tabla "libros" en la cual almacenamos los datos de los libros de nuestra biblioteca y la tabla
-"editoriales" que almacena el nombre de las distintas editoriales y sus códigos.
+"editoriales" que almacena el name de las distintas editoriales y sus códigos.
 
 La tabla "libros" tiene la siguiente estructura:
 
@@ -4269,19 +4278,19 @@ La tabla "libros" tiene la siguiente estructura:
 -titulo: varchar(30),
 -autor: varchar(30),
 -codigoeditorial: tinyint unsigned,
--clave primaria: codigo.
+-key primaria: codigo.
 La tabla "editoriales" tiene esta estructura:
 
 -codigo: tinyint unsigned auto_increment,
--nombre: varchar(20),
--clave primaria: codigo.
+-name: varchar(20),
+-key primaria: codigo.
 Ambas tablas contienen registros.
 
 Queremos unir los datos de ambas tablas en una sola: "libros", es decir, alterar la tabla "libros" para que
-almacene el nombre de la editorial y eliminar la tabla "editoriales".
+almacene el name de la editorial y eliminar la tabla "editoriales".
 
 En primer lugar debemos alterar la tabla "libros", vamos a agregarle un campo llamado "editorial" en el
-cual guardaremos el nombre de la editorial.
+cual guardaremos el name de la editorial.
 
 alter table libros add editorial varchar(20);
 La tabla "libros" contiene un nuevo campo "editorial" con todos los registros con valor "null".
@@ -4292,11 +4301,11 @@ Podemos hacerlo en 2 pasos:
 
 1º paso: consultamos los códigos de las editoriales:
 
-select codigo,nombre
+select codigo,name
 from editoriales;
 obtenemos una salida similar a la siguiente:
 
-codigo nombre
+codigo name
 _____________
 1 Planeta
 2 Emece
@@ -4320,20 +4329,20 @@ Pero podemos simplificar la tarea actualizando el campo "editorial" de todos los
 update libros
 join editoriales
 on libros.codigoeditorial=editoriales.codigo
-set libros.editorial=editoriales.nombre;
+set libros.editorial=editoriales.name;
 Luego, eliminamos el campo "codigoeditorial" de "libros" con "alter table" y la tabla "editoriales" con
 "drop table".
 
-Entonces, se puede actualizar una tabla con valores de otra tabla. Se coloca "update" junto al nombre de
+Entonces, se puede actualizar una tabla con valores de otra tabla. Se coloca "update" junto al name de
 la tabla a actualizar, luego se realiza el "join" y el campo por el cual se enlazan las tablas y finalmente
 se especifica con "set" el campo a actualizar y su nuevo valor, que es el campo de la otra tabla con la
 cual se enlazó.
 
 
-## 79 - Actualización en cascada (update - join)........................................................................................
+## 79 - Actualización en cascada (update - join)..
 
 Tenemos la tabla "libros" en la cual almacenamos los datos de los libros de nuestra biblioteca y la tabla
-"editoriales" que almacena el nombre de las distintas editoriales y sus códigos.
+"editoriales" que almacena el name de las distintas editoriales y sus códigos.
 
 Las tablas tienen las siguientes estructuras:
 
@@ -4348,7 +4357,7 @@ primary key(codigo)
 
 create table editoriales(
 codigo tinyint unsigned auto_increment,
-nombre varchar(20),
+name varchar(20),
 primary key(codigo)
 );
 Ambas tablas contienen registros.
@@ -4359,14 +4368,14 @@ los libros de dicha editorial. Podemos hacerlo en 3 pasos:
 1) buscar el código de la editorial "Emece":
 
 select * from editoriales
-where nombre='Emece';
+where name='Emece';
 recordamos el valor devuelto (valor 2) o lo almacenamos en una variable;
 
 2) actualizar el código en la tabla "editoriales":
 
 update editoriales
 set codigo=9
-where nombre='Emece';
+where name='Emece';
 3) y finalmente actualizar todos los libros de dicha editorial:
 
 update libros
@@ -4378,24 +4387,24 @@ update libros as l
 join editoriales as e
 on l.codigoeditorial=e.codigo
 set l.codigoeditorial=9, e.codigo=9
-where e.nombre='Emece';
+where e.name='Emece';
 
 
 El cambio se realizó en ambas tablas.
 
 Si modificamos algún dato de un registro que se encuentra en registros de otras tablas (generalmente
-campos que son clave ajena) debemos modificar también los registros de otras tablas en los cuales se
-encuentre ese dato (generalmente clave primaria). Podemos realizar la actualización en cascada (es
+campos que son key ajena) debemos modificar también los registros de otras tablas en los cuales se
+encuentre ese dato (generalmente key primaria). Podemos realizar la actualización en cascada (es
 decir, en todos los registros de todas las tablas que contengan el dato modificado) en una sola sentencia,
 combinando "update" con "join" y seteando los campos involucrados de todas las tablas.
 
 
-## 80 - Borrar registros consultando otras tablas (delete - join).................................................................
+## 80 - Borrar registros consultando otras tablas (delete - join).........
 
 ## (delete - join)
 
 Tenemos la tabla "libros" en la cual almacenamos los datos de los libros de nuestra biblioteca y la tabla
-"editoriales" que almacena el nombre de las distintas editoriales y sus códigos.
+"editoriales" que almacena el name de las distintas editoriales y sus códigos.
 
 La tabla "libros" tiene la siguiente estructura:
 
@@ -4403,12 +4412,12 @@ La tabla "libros" tiene la siguiente estructura:
 -titulo: varchar(30),
 -autor: varchar(30),
 -codigoeditorial: tinyint unsigned,
--clave primaria: codigo.
+-key primaria: codigo.
 La tabla "editoriales" tiene esta estructura:
 
 -codigo: tinyint unsigned auto_increment,
--nombre: varchar(20),
--clave primaria: codigo.
+-name: varchar(20),
+-key primaria: codigo.
 Ambas tablas contienen registros.
 
 Queremos eliminar todos los libros de la editorial "Emece" pero no recordamos el código de dicha
@@ -4420,7 +4429,7 @@ Podemos hacerlo en 2 pasos:
 
 select codigo
 from editoriales
-where nombre='Emece';
+where name='Emece';
 recordamos el valor devuelto (valor 2) o lo almacenamos en una variable.
 
 2º paso: borramos todos los libros con código de editorial "2":
@@ -4433,19 +4442,19 @@ delete libros
 from libros
 join editoriales
 on libros.codigoeditorial=editoriales.codigo
-where editoriales.nombre='Emece';
-Es decir, usamos "delete" junto al nombre de la tabla de la cual queremos eliminar registros, luego
+where editoriales.name='Emece';
+Es decir, usamos "delete" junto al name de la tabla de la cual queremos eliminar registros, luego
 realizamos el "join" correspondiente nombrando las tablas involucradas y agregamos la condición
 "where".
 
 
 
-## 81 - Borrar registros buscando coincidencias en otras tablas (delete - join)..........................................
+## 81 - Borrar registros buscando coincidencias en otras tablas (delete - join)..............
 
 ## en otras tablas (delete - join)
 
 Tenemos la tabla "libros" en la cual almacenamos los datos de los libros de nuestra biblioteca y la tabla
-"editoriales" que almacena el nombre de las distintas editoriales y sus códigos.
+"editoriales" que almacena el name de las distintas editoriales y sus códigos.
 
 La tabla "libros" tiene la siguiente estructura:
 
@@ -4453,12 +4462,12 @@ La tabla "libros" tiene la siguiente estructura:
 -titulo: varchar(30),
 -autor: varchar(30),
 -codigoeditorial: tinyint unsigned,
--clave primaria: codigo.
+-key primaria: codigo.
 La tabla "editoriales" tiene esta estructura:
 
 -codigo: tinyint unsigned auto_increment,
--nombre: varchar(20),
--clave primaria: codigo.
+-name: varchar(20),
+-key primaria: codigo.
 Ambas tablas contienen registros.
 
 Queremos eliminar todos los libros cuyo código de editorial no exista en la tabla "editoriales".
@@ -4484,7 +4493,7 @@ FROM libros
 left join editoriales
 on libros.codigoeditorial=editoriales.codigo
 where editoriales.codigo is null;
-Es decir, usamos "delete" junto al nombre de la tabla de la cual queremos eliminar registros, luego
+Es decir, usamos "delete" junto al name de la tabla de la cual queremos eliminar registros, luego
 realizamos el "left join" correspondiente nombrando las tablas involucradas y agregamos la condición
 "where" para que seleccione solamente los libros cuyo código de editorial no se encuentre en
 "editoriales".
@@ -4499,10 +4508,10 @@ on libros.codigoeditorial=editoriales.codigo
 where libros.codigo is null;
 
 
-## 82 - Borrar registros en cascada (delete - join)......................................................................................
+## 82 - Borrar registros en cascada (delete - join)
 
 Tenemos la tabla "libros" en la cual almacenamos los datos de los libros de nuestra biblioteca y la tabla
-"editoriales" que almacena el nombre de las distintas editoriales y sus códigos.
+"editoriales" que almacena el name de las distintas editoriales y sus códigos.
 
 La tabla "libros" tiene la siguiente estructura:
 
@@ -4510,12 +4519,12 @@ La tabla "libros" tiene la siguiente estructura:
 -titulo: varchar(30),
 -autor: varchar(30),
 -codigoeditorial: tinyint unsigned,
--clave primaria: codigo.
+-key primaria: codigo.
 La tabla "editoriales" tiene esta estructura:
 
 -codigo: tinyint unsigned auto_increment,
--nombre: varchar(20),
--clave primaria: codigo.
+-name: varchar(20),
+-key primaria: codigo.
 Ambas tablas contienen registros.
 
 La librería ya no trabaja con la editorial "Emece", entonces quiere eliminar dicha editorial de la tabla
@@ -4524,7 +4533,7 @@ La librería ya no trabaja con la editorial "Emece", entonces quiere eliminar di
 1º paso: buscar el código de la editorial "Emece" y almacenarlo en una variable:
 
 select @valor:= codigo from editoriales
-where nombre='Emece';
+where name='Emece';
 2º paso: eliminar dicha editorial de la tabla "editoriales":
 
 delete editoriales
@@ -4539,17 +4548,17 @@ delete libros,editoriales
 from libros
 join editoriales
 on libros.codigoeditorial=editoriales.codigo
-where editoriales.nombre='Emece';
+where editoriales.name='Emece';
 La sentencia anterior elimina de la tabla "editoriales" la editorial "Emece" y de la tabla "libros" todos
 los registros con código de editorial correspondiente a "Emece".
 
 Es decir, podemos realizar la eliminación de registros de varias tablas (en cascada) empleando "delete"
-junto al nombre de las tablas de las cuales queremos eliminar registros y luego del correspondiente
+junto al name de las tablas de las cuales queremos eliminar registros y luego del correspondiente
 "join" colocar la condición "where" que afecte a los registros a eliminar.
 
 
 
-## 83 - Chequear y reparar tablas (check - repair)......................................................................................
+## 83 - Chequear y reparar tablas (check - repair)
 
 ## repair)
 
@@ -4557,7 +4566,7 @@ Para chequear el estado de una tabla usamos "check table":
 
 check table libros;
 "check table" chequea si una o más tablas tienen errores. Esta sentencia devuelve la siguiente
-información: en la columna "Table" muestra el nombre de la tabla; en "Op" muestra siempre "check";
+información: en la columna "Table" muestra el name de la tabla; en "Op" muestra siempre "check";
 en "Msg_type" muestra "status", "error", "info" o "warning" y en "Msg_text" muestra un mensaje,
 generalmente es "OK".
 
@@ -4570,7 +4579,7 @@ Los tipos de chequeo son:
 - changed: únicamente controla las tablas que se han cambiado desde el último chequeo o que no se
 cerraron correctamente.
 - medium: controla los registros para verificar que los enlaces borrados están bien.
-- extended: realiza una búsqueda completa para todas las claves de cada registro.
+- extended: realiza una búsqueda completa para todas las keys de cada registro.
 
 Se pueden combinar las opciones de control, por ejemplo, realizamos un chequeo rápido de la tabla
 "libros" y verificamos si se cerró correctamente:
@@ -4581,12 +4590,12 @@ Para reparar una tabla corrupta usamos "repair table":
 repair table libros;
 "repair table" puede recuperar los datos de una tabla.
 
-Devuelve la siguiente información: en la columna "Table" nuestra el nombre de la tabla; en "Op"
+Devuelve la siguiente información: en la columna "Table" nuestra el name de la tabla; en "Op"
 siempre muestra "repair"; en "Msg_type" muestra "status", "error", "info" o "warning" y en "Msg_text"
 muestra un mensaje que genealmente es "OK".
 
 
-## 84 - Encriptación de datos (encode - decode)........................................................................................
+## 84 - Encriptación de datos (encode - decode)..
 
 Las siguientes funciones encriptan y desencriptan valores.
 
@@ -4605,25 +4614,25 @@ el primero, la cadena a desencriptar; el segundo, la contraseña:
 select decode('§¡Ý7','dia');
 Si la cadena de contraseña es diferente a la ingresada al encriptar, el resultado será incorrecto.
 
-Retomamos la tabla "usuarios" que constaba de 2 campos: nombre del usuario (varchar de 30) y clave
+Retomamos la tabla "users" que constaba de 2 campos: name del usuario (varchar de 30) y key
 (varchar de 10).
 
-Podemos ingresar registros encriptando la clave:
+Podemos ingresar registros encriptando la key:
 
-insert into usuarios values ('MarioPerez',encode('Marito','octubre'));
+insert into users values ('MarioPerez',encode('Marito','octubre'));
 La forma más segura es no transferir la contraseña a través de la conexión, para ello podemos
-almacenar la clave en una variable y luego insertar la clave encriptada:
+almacenar la key en una variable y luego insertar la key encriptada:
 
-select @clave:=encode('RealMadrid','ganador');
-insert into usuarios values ('MariaGarcia',@clave);
+select @key:=encode('RealMadrid','ganador');
+insert into users values ('MariaGarcia',@key);
 Veamos los registros ingresados:
 
-select * from usuarios;
-Desencriptamos la clave del usuario "MarioPerez":
+select * from users;
+Desencriptamos la key del usuario "MarioPerez":
 
-select decode(clave,'octubre') from usuarios
-where nombre='MarioPerez';
-Desencriptamos la clave del usuario "MariaGarcia":
+select decode(key,'octubre') from users
+where name='MarioPerez';
+Desencriptamos la key del usuario "MariaGarcia":
 
-select decode(clave,'ganador') from usuarios
-where nombre='MariaGarcia';
+select decode(key,'ganador') from users
+where name='MariaGarcia';
