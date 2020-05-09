@@ -943,41 +943,21 @@ Los valores inválidos para otros tipos de campos lo trataremos más adelante.
 
 RESUMEN:
 
-Tipo Valor inválido
-Resultado
-___________________________________________________________________________________
-_______
-* caracter null/ not null 123 '123'
-* caracter null/ not null mayor longitud se corta
-* caracter not null null error
-* numérico null/not null '123' 0
-* numérico null/ not null fuera de rango
-límite más cercano
-numérico not null null
-error
-numérico decimal null/ not null más decimales que los definidos
-redondea al más cercano
-num. auto_incr. c/signo null/not null 0
-siguiente de la secuencia
-num. auto_incr. s/signo null/not null todos los menores a 1
-siguiente de la secuencia
-num. auto_incr. c/s signo null null
-siguiente de la secuencia
-num. auto_incr. c/s signo null/not null valor existente
-error
-fecha fuera de rango
-0000-00-00
-fecha '20-07-2006' (otro orden)
-0000-00-00
+| Tipo Resultado | Valor inválido |
+| -------- | -------- |
+| caracter null/ not null 123 | '123' |
+| caracter null/ not null | mayor longitud se corta |
+| caracter not null null  | error |
+| numérico null/not null | '123' 0 |
+| numérico null/ not null | fuera de rango límite más cercano |
+| numérico not null null | error |
+| numérico decimal null / not null | más decimales que los definidos, redondea al más cercano |
+
+| fecha fuera de rango | 0000-00-00 |
+| fecha '20-07-2006' | (otro orden) 0000-00-00 |
 
 
-hora fuera de rango
-límite más cercano
-fecha y hora not null null
-error
-
-
-## 22 - Atributo default en una columna de una tabla..........................
+## 22 - Atributo default en una columna de una tabla..
 
 Si al insertar registros no se especifica un valor para un campo, se inserta su valor por defecto implícito
 según el tipo de dato del campo. Por ejemplo:
