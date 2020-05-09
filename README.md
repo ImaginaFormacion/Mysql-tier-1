@@ -456,14 +456,16 @@ primaria y no acepta valores nulos(más adelante explicaremos esto detalladament
 Ingresamos algunos registros:
 
 
-```insert into users (name, key)
+```
+insert into users (name, key)
 values ('Leonardo','payaso');
 insert into users (name, key)
 values ('MarioPerez','Marito');
 insert into users (name, key)
 values ('Marcelo','River');
 insert into users (name, key)
-values ('Gustavo','River');```
+values ('Gustavo','River');
+```
 
 Si intentamos ingresar un valor para el campo key que ya existe, aparece un mensaje de error
 indicando que el registro no se cargó pues el dato key existe. Esto sucede porque los campos
