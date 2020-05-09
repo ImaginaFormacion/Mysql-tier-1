@@ -241,6 +241,7 @@ Al ingresar los datos de cada registro debe tenerse en cuenta la cantidad y el o
 Ahora vamos a agregar un registro a la tabla:
 
 > insert into users (name, key) values ('MarioPerez','Marito');
+
 Usamos "insert into". Especificamos los names de los campos entre paréntesis y separados por comas
 y luego los valores para cada campo, también entre paréntesis y separados por comas.
 
