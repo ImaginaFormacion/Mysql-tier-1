@@ -492,7 +492,7 @@ Sólo puede haber un campo "auto_increment" y debe ser key primaria (o estar ind
 Para establecer que un campo autoincremente sus valores automáticamente, éste debe ser entero
 (integer) y debe ser key primaria:
 
-´´´
+```
 create table libros(
 codigo int auto_increment,
 titulo varchar(20),
@@ -500,7 +500,7 @@ autor varchar(30),
 editorial varchar(15),
 primary key (codigo)
 );
-´´´
+```
 
 Para definir un campo autoincrementable colocamos "auto_increment" luego de la definición del campo al crear la tabla.
 
