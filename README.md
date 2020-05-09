@@ -630,7 +630,7 @@ seguirá la secuencia de incremento.
 El campo "titulo", no debería aceptar valores nulos, para establecer este atributo debemos crear la tabla
 con la siguiente sentencia:
 
-´´´
+```
 create table libros(
 codigo int auto_increment,
 titulo varchar(20) not null
@@ -639,7 +639,7 @@ editorial varchar(15),
 precio float,
 primary key (codigo)
 );
-´´´
+```
 
 Entonces, para que un campo no permita valores nulos debemos especificarlo luego de definir el
 campo, agregando "not null". Por defecto, los campos permiten valores nulos, pero podemos
