@@ -526,7 +526,7 @@ positivos. Más adelante explicaremos cómo definir un campo con sólo valores p
 
 Está permitido ingresar el valor correspondiente al campo "auto_increment", por ejemplo:
 
-insert into libros (codigo,titulo,autor,editorial) values(6,'Martin Fierro','Jose Hernandez','Paidos');
+> insert into libros (codigo,titulo,autor,editorial) values(6,'Martin Fierro' 'Jose Hernandez','Paidos');
 
 
 Pero debemos tener cuidado con la inserción de un dato en campos "auto_increment". Debemos tener
@@ -655,20 +655,20 @@ Para recuperar los registros que contengan el valor "null" en el campo "precio" 
 operadores relacionales vistos anteriormente: = (igual) y <> (distinto); debemos utilizar los operadores
 "is null" (es igual a null) y "is not null" (no es null):
 
-select * from libros
-where precio is null;
+> select * from libros where precio is null;
 La sentencia anterior tendrá una salida diferente a la siguiente:
 
-select * from libros
-where precio=0;
+> select * from libros where precio=0;
 Con la primera sentencia veremos los libros cuyo precio es igual a "null" (desconocido); con la
 segunda, los libros cuyo precio es 0.
 
 Igualmente para campos de tipo cadena, las siguientes sentencias "select" no retornan los mismos
 registros:
 
-select * from libros where editorial is null;
-select * from libros where editorial='';
+> select * from libros where editorial is null;
+
+> select * from libros where editorial = '';
+
 Con la primera sentencia veremos los libros cuya editorial es igual a "null", con la segunda, los libros
 cuya editorial guarda una cadena vacía.
 
@@ -676,8 +676,6 @@ cuya editorial guarda una cadena vacía.
 
 ## 15 - Valores numéricos sin signo (unsigned).....
 
-## 15 - Valores numéricos sin signo (unsigned).....
-
 Hemos visto algunos atributos extra para los campos.
 
 Los campos de tipo entero pueden tener el atributo "auto_increment", que incrementa automáticamente
@@ -694,6 +692,7 @@ Si necesitamos almacenar edades, por ejemplo, nunca guardaremos valores negativo
 adecuado definir un campo "edad" de tipo entero sin signo:
 
 edad integer unsigned;
+
 Si necesitamos almacenar el precio de los libros, definimos un campo de tipo "float unsigned" porque
 jamás guardaremos un valor negativo.
 
@@ -708,38 +707,9 @@ aprox.
 Los tipos de coma flotante (float por ejemplo) también aceptan el atributo "unsigned", pero el valor del
 límite superior del rango se mantiene.
 
+Otra buena práctica es cuando sabemos que la magnitud a almacenar tiene una precisión concreta como por ejemplo Longitud en la que la precision minima es el milimetro , Peso en el que la precisión minima sera el gramo, o Moneda en la que la precisión seria centimos.
 
-## 15 - Valores numéricos sin signo (unsigned)
-
-Hemos visto algunos atributos extra para los campos.
-
-Los campos de tipo entero pueden tener el atributo "auto_increment", que incrementa automáticamente
-el valor del campo en 1.
-
-Los campos de cualquier tipo aceptan el atributo "null" y "not null" con lo cual permiten o no valores
-nulos.
-
-Otro atributo que permiten los campos de tipo numérico es "unsigned".
-
-El atributo "unsigned" (sin signo) permite sólo valores positivos.
-
-Si necesitamos almacenar edades, por ejemplo, nunca guardaremos valores negativos, entonces sería
-adecuado definir un campo "edad" de tipo entero sin signo:
-
-edad integer unsigned;
-Si necesitamos almacenar el precio de los libros, definimos un campo de tipo "float unsigned" porque
-jamás guardaremos un valor negativo.
-
-Hemos aprendido que al crear una tabla, es importante elegir el tipo de dato adecuado, el más preciso,
-según el caso. Si un campo almacenará sólo valores positivos, es útil definir dicho campo con este
-atributo.
-
-En los tipos enteros, "unsigned" duplica el rango, es decir, el tipo "integer" permite valores de
--2000000000 a 2000000000 aprox., si se define "integer unsigned" el rango va de 0 a 4000000000
-aprox.
-
-Los tipos de coma flotante (float por ejemplo) también aceptan el atributo "unsigned", pero el valor del
-límite superior del rango se mantiene.
+Es mucho mas óptimo guardarlo en integer en su dimension minima, sin decimales
 
 
 ## 16 - Tipos de datos.................
