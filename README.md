@@ -353,21 +353,25 @@ Los operadores relacionales son los siguientes:
 ```
 Podemos seleccionar los registros cuyo autor sea diferente de 'Borges', para ello usamos la condición:
 
-select titulo,autor,editorial from libros where autor<>'Borges';
-Podemos comparar valores numéricos. Por ejemplo, queremos mostrar los libros cuyos precios sean
-mayores a 20 pesos:
+> select titulo,autor,editorial from libros where autor<>'Borges';
 
-select titulo,autor,editorial,precio from libros where precio>20;
+Podemos comparar valores numéricos. 
+Por ejemplo, queremos mostrar los libros cuyos precios sean
+mayores a 20 euros:
+
+>select titulo,autor,editorial,precio from libros where precio>20;
+
 También, los libros cuyo precio sea menor o igual a 30:
 
-select titulo,autor,editorial,precio from libros where precio<=30;
+> select titulo,autor,editorial,precio from libros where precio<=30;
 
 
 ## 9 - Borrado de registros de una tabla (delete)....
 
 Para eliminar los registros de una tabla usamos el comando "delete":
 
-delete from users;
+> delete from users;
+
 La ejecución del comando indicado en la línea anterior borra TODOS los registros de la tabla.
 
 Si queremos eliminar uno o varios registros debemos indicar cuál o cuáles, para ello utilizamos el
@@ -375,7 +379,8 @@ comando "delete" junto con la clausula "where" con la cual establecemos la condi
 cumplir los registros a borrar. Por ejemplo, queremos eliminar aquel registro cuyo name de usuario
 es 'Leonardo':
 
-delete from users where name='Leonardo';
+> delete from users where name='Leonardo';
+
 Si solicitamos el borrado de un registro que no existe, es decir, ningún registro cumple con la condición
 especificada, no se borrarán registros, pues no encontró registros con ese dato.
 
@@ -387,21 +392,23 @@ Para modificar uno o varios datos de uno o varios registros utilizamos "update" 
 Por ejemplo, en nuestra tabla "users", queremos cambiar los valores de todas las keys, por
 "RealMadrid":
 
-update users set key='RealMadrid';
+> update users set key='RealMadrid';
+
 Utilizamos "update" junto al name de la tabla y "set" junto con el campo a modificar y su nuevo
 valor.
 
 El cambio afectará a todos los registros.
 
 Podemos modificar algunos registros, para ello debemos establecer condiciones de selección con
+
 "where".
 
 Por ejemplo, queremos cambiar el valor correspondiente a la key de nuestro usuario llamado
 'MarioPerez', queremos como nueva key 'Boca', necesitamos una condición "where" que afecte
 solamente a este registro:
 
-update users set key='Boca'
-where name='MarioPerez';
+> update users set key='Boca' where name='MarioPerez';
+
 Si no encuentra registros que cumplan con la condición del "where", ningún registro es afectado.
 
 Las condiciones no son obligatorias, pero si omitimos la cláusula "where", la actualización afectará a
@@ -409,45 +416,9 @@ todos los registros.
 
 También se puede actualizar varios campos en una sola instrucción:
 
-update users set name='MarceloDuarte', key='Marce'
-where name='Marcelo';
-Para ello colocamos "update", el name de la tabla, "set" junto al name del campo y el nuevo valor y
-separado por coma, el otro name del campo con su nuevo valor.
+> update users set name='MarceloDuarte', key='Marce' where name='Marcelo';
 
-
-## 10 - Modificación de registros de una tabla (update).......................
-
-Para modificar uno o varios datos de uno o varios registros utilizamos "update" (actualizar).
-
-Por ejemplo, en nuestra tabla "users", queremos cambiar los valores de todas las keys, por
-"RealMadrid":
-
-update users set key='RealMadrid';
-Utilizamos "update" junto al name de la tabla y "set" junto con el campo a modificar y su nuevo
-valor.
-
-El cambio afectará a todos los registros.
-
-Podemos modificar algunos registros, para ello debemos establecer condiciones de selección con
-"where".
-
-Por ejemplo, queremos cambiar el valor correspondiente a la key de nuestro usuario llamado
-'MarioPerez', queremos como nueva key 'Boca', necesitamos una condición "where" que afecte
-solamente a este registro:
-
-update users set key='Boca'
-where name='MarioPerez';
-Si no encuentra registros que cumplan con la condición del "where", ningún registro es afectado.
-
-Las condiciones no son obligatorias, pero si omitimos la cláusula "where", la actualización afectará a
-todos los registros.
-
-También se puede actualizar varios campos en una sola instrucción:
-
-update users set name='MarceloDuarte', key='Marce'
-where name='Marcelo';
-Para ello colocamos "update", el name de la tabla, "set" junto al name del campo y el nuevo valor y
-separado por coma, el otro name del campo con su nuevo valor.
+Para ello colocamos "update", el name de la tabla, "set" junto al name del campo y el nuevo valor y separado por coma, el otro name del campo con su nuevo valor.
 
 
 ## 11 - key primaria.................
@@ -467,12 +438,14 @@ un valor que no se repite; puede haber users con igual key, pero su name de usua
 distinto.
 
 Establecemos que un campo sea key primaria al momento de creación de la tabla:
-
+´´´
 create table users (
-name varchar(20),
-key varchar(10),
-primary key(name)
+    name varchar(20),
+    key varchar(10),
+    primary key(name)
 );
+´´´
+
 Para definir un campo como key primaria agregamos "primary key" luego de la definición de todos
 los campos y entre paréntesis colocamos el name del campo que queremos como key.
 
@@ -481,6 +454,7 @@ primaria y no acepta valores nulos(más adelante explicaremos esto detalladament
 
 Ingresamos algunos registros:
 
+´´´
 insert into users (name, key)
 values ('Leonardo','payaso');
 insert into users (name, key)
@@ -489,16 +463,15 @@ insert into users (name, key)
 values ('Marcelo','River');
 insert into users (name, key)
 values ('Gustavo','River');
+´´´
 Si intentamos ingresar un valor para el campo key que ya existe, aparece un mensaje de error
 indicando que el registro no se cargó pues el dato key existe. Esto sucede porque los campos
 definidos como key primaria no pueden repetirse.
 
 Ingresamos un registro con un name de usuario repetido, por ejemplo:
 
-insert into users (name, key)
+> insert into users (name, key) values ('Gustavo','Boca');
 
-
-values ('Gustavo','Boca');
 Una tabla sólo puede tener una key primaria. Cualquier campo (de cualquier tipo) puede ser key
 primaria, debe cumplir como requisito, que sus valores no se repitan.
 
@@ -518,7 +491,7 @@ Sólo puede haber un campo "auto_increment" y debe ser key primaria (o estar ind
 
 Para establecer que un campo autoincremente sus valores automáticamente, éste debe ser entero
 (integer) y debe ser key primaria:
-
+´´´
 create table libros(
 codigo int auto_increment,
 titulo varchar(20),
@@ -526,8 +499,9 @@ autor varchar(30),
 editorial varchar(15),
 primary key (codigo)
 );
-Para definir un campo autoincrementable colocamos "auto_increment" luego de la definición del
-campo al crear la tabla.
+´´´
+
+Para definir un campo autoincrementable colocamos "auto_increment" luego de la definición del campo al crear la tabla.
 
 Hasta ahora, al ingresar registros, colocamos el name de todos los campos antes de los valores; es
 posible ingresar valores para algunos de los campos de la tabla, pero recuerde que al ingresar los
@@ -538,20 +512,20 @@ inserta automáticamente tomando el último valor como referencia, o 1 si es el 
 
 Para ingresar registros omitimos el campo definido como "auto_increment", por ejemplo:
 
-insert into libros (titulo,autor,editorial)
-values('El aleph','Borges','Planeta');
+> insert into libros (titulo,autor,editorial) values('El aleph','Borges' 'Planeta');
+
 Este primer registro ingresado guardará el valor 1 en el campo correspondiente al código.
 
 Si continuamos ingresando registros, el código (dato que no ingresamos) se cargará automáticamente
 siguiendo la secuencia de autoincremento.
 
 Un campo "auto_increment" funciona correctamente sólo cuando contiene únicamente valores
+
 positivos. Más adelante explicaremos cómo definir un campo con sólo valores positivos.
 
 Está permitido ingresar el valor correspondiente al campo "auto_increment", por ejemplo:
 
-insert into libros (codigo,titulo,autor,editorial)
-values(6,'Martin Fierro','Jose Hernandez','Paidos');
+insert into libros (codigo,titulo,autor,editorial) values(6,'Martin Fierro','Jose Hernandez','Paidos');
 
 
 Pero debemos tener cuidado con la inserción de un dato en campos "auto_increment". Debemos tener
@@ -643,8 +617,8 @@ Por defecto, es decir, si no lo aclaramos en la creación de la tabla, los campo
 Imaginemos que ingresamos los datos de un libro, para el cual aún no hemos definido el precio:
 
 
-insert into libros (titulo,autor,editorial,precio)
-values ('El aleph','Borges','Planeta',null);
+> insert into libros (titulo,autor,editorial,precio) values ('El aleph','Borges','Planeta',null);
+
 Note que el valor "null" no es una cadena de caracteres, no se coloca entre comillas.
 
 Si un campo acepta valores nulos, podemos ingresar "null" cuando no conocemos el valor.
@@ -656,6 +630,7 @@ seguirá la secuencia de incremento.
 El campo "titulo", no debería aceptar valores nulos, para establecer este atributo debemos crear la tabla
 con la siguiente sentencia:
 
+´´´
 create table libros(
 codigo int auto_increment,
 titulo varchar(20) not null
@@ -664,6 +639,8 @@ editorial varchar(15),
 precio float,
 primary key (codigo)
 );
+´´´
+
 Entonces, para que un campo no permita valores nulos debemos especificarlo luego de definir el
 campo, agregando "not null". Por defecto, los campos permiten valores nulos, pero podemos
 especificarlo igualmente agregando "null".
@@ -1627,7 +1604,7 @@ Son los siguientes:
 Los operadores lógicos se usan para combinar condiciones.
 
 Queremos recuperar todos los registros cuyo autor sea igual a "Borges" y cuyo precio no supere los 20
-pesos, para ello necesitamos 2 condiciones:
+euros, para ello necesitamos 2 condiciones:
 
 select * from libros
 where (autor='Borges') and
@@ -1963,7 +1940,7 @@ Veamos otros ejemplos. Queremos el promedio de los precios de los libros agrupad
 
 select editorial, avg(precio) from libros
 group by editorial;
-Ahora, sólo queremos aquellos cuyo promedio supere los 25 pesos:
+Ahora, sólo queremos aquellos cuyo promedio supere los 25 euros:
 
 select editorial, avg(precio) from libros
 group by editorial
