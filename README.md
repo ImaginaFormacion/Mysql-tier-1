@@ -781,8 +781,8 @@ almacenar un caracter, conviene usar char(1), que ocupa 1 byte y no varchar(1), 
 
 Tipo Bytes de almacenamiento
 _______________________________________
-char(x) x
-varchar(x) x+1
+* char(x) x
+* varchar(x) x+1
 
 
 
@@ -828,14 +828,14 @@ Tipo Bytes de almacenamiento
 
 
 _______________________________________
-tinyint 1
-smallint 2
-mediumint 3
-int 4
-bigint 8
+* tinyint 1
+* smallint 2
+* mediumint 3
+* int 4
+* bigint 8
 
-float 4
-decimal(t,d) t+2 si d>0, t+1 si d=0 y d+2 si t<d
+* float 4
+* decimal(t,d) t+2 si d>0, t+1 si d=0 y d+2 si t<d
 
 
 
@@ -866,16 +866,15 @@ campo "editorial" almacenará "null", porque no está definido "not null"; en el
 "cantidad" ingresará 0 porque es el valor por defecto de los campos numéricos que no admiten valores
 nulos.
 
-Tipo Valor por defecto Cláusula
-"default"
-___________________________________________________________________________________
-__
-caracter not null cadena vacía permite
-numerico not null 0 permite
-fecha not null 0000-00-00 permite
-hora not null 00:00:00 permite
-auto_increment siguiente de la sec., empieza en 1 no permite
-carac.,numer.,fecha,hora null null permite
+
+| Tipo "default" | Valor por defecto | Cláusula |
+| -------- | -------- | -------- |
+| caracter not null     | cadena vacía     | permite     |
+| numerico not null |0 |permite |
+| fecha not null  | 0000-00-00  | permite |
+| hora not null | 00:00:00 | permite |
+| auto_increment | siguiente de la sec., empieza en 1 |  no permite
+| carac.,numer.,fecha,hora null | null | permite
 
 
 ## 21 - Valores inválidos.............
@@ -948,14 +947,11 @@ Tipo Valor inválido
 Resultado
 ___________________________________________________________________________________
 _______
-caracter null/ not null 123
-'123'
-caracter null/ not null mayor longitud se
-corta
-caracter not null null
-error
-numérico null/ not null '123' 0
-numérico null/ not null fuera de rango
+* caracter null/ not null 123 '123'
+* caracter null/ not null mayor longitud se corta
+* caracter not null null error
+* numérico null/not null '123' 0
+* numérico null/ not null fuera de rango
 límite más cercano
 numérico not null null
 error
@@ -982,8 +978,6 @@ error
 
 
 ## 22 - Atributo default en una columna de una tabla..........................
-
-## tabla.
 
 Si al insertar registros no se especifica un valor para un campo, se inserta su valor por defecto implícito
 según el tipo de dato del campo. Por ejemplo:
