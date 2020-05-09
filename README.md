@@ -343,13 +343,14 @@ Los operadores relacionales vinculan un campo con un valor para que MySQL compar
 (el campo especificado) con el valor dado.
 
 Los operadores relacionales son los siguientes:
-
+```
 = igual
 <> distinto
 > mayor
 < menor
 >= mayor o igual
 <= menor o igual
+```
 Podemos seleccionar los registros cuyo autor sea diferente de 'Borges', para ello usamos la condición:
 
 select titulo,autor,editorial from libros where autor<>'Borges';
