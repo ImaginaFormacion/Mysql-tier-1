@@ -1001,22 +1001,21 @@ por defecto de los tipos numéricos que no aceptan valores nulos es 0.
 Podemos establecer valores por defecto para los campos cuando creamos la tabla. Para ello utilizamos
 "default" al definir el campo. Por ejemplo, queremos que el valor por defecto del campo "precio" sea
 1.11 y el valor por defecto del campo "autor" sea "Desconocido":
-
+```
 create table libros(
 codigo int unsigned auto_increment,
-
-
 titulo varchar(40) not null,
 autor varchar(30) default 'Desconocido',
 precio decimal(5,2) unsigned default 1.11,
 cantidad int unsigned not null,
 primary key (codigo)
 );
+```
 Si al ingresar un nuevo registro omitimos los valores para el campo "autor" y "precio", MySQL
 insertará los valores por defecto definidos con la palabra key "default":
 
-insert into libros (titulo,editorial,cantidad)
-values('Java en 10 minutos','Paidos',200);
+> insert into libros (titulo,editorial,cantidad) values('Java en 10 minutos','Paidos',200);
+
 MySQL insertará el registro con el siguiente valor de la secuencia en "codigo", con el título, editorial y
 cantidad ingresados, en "autor" colocará "Desconocido" y en precio "1.11".
 
