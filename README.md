@@ -491,6 +491,7 @@ Sólo puede haber un campo "auto_increment" y debe ser key primaria (o estar ind
 
 Para establecer que un campo autoincremente sus valores automáticamente, éste debe ser entero
 (integer) y debe ser key primaria:
+
 ´´´
 create table libros(
 codigo int auto_increment,
