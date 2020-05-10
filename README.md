@@ -2216,6 +2216,7 @@ Puede ser multicolumna, es decir, pueden estar formados por más de 1 campo.
 
 Veamos un ejemplo definiendo la tabla "libros" con una key primaria:
 
+```
 create table libros(
 codigo int unsigned auto_increment,
 titulo varchar(40) not null,
@@ -2223,6 +2224,7 @@ autor varchar(30),
 editorial varchar(15),
 primary key(codigo)
 );
+```
 Podemos ver la estructura de los índices de una tabla con "show index". Por ejemplo:
 
 show index from libros;
