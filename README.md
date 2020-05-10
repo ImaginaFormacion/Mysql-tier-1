@@ -2317,14 +2317,20 @@ paréntesis el o los campos por los cuales se indexará dicho índice.
 
 "show index" muestra la estructura de los índices:
 
-show index from libros;
+> show index from libros;
+
 RESUMEN: Hay 3 tipos de índices con las siguientes características:
 
-Tipo name Palabra key Valores únicos Acepta null
-Cantidad por tabla
+| Tipo clave | nombre | Palabra Clave | Valores únicos |  Acepta null | Cantidad por tabla | 
+|------------|--------|---------------|----------------|--------------|--------------------|
+| primaria | PRIMARY | no | si | no | 1 |
+| común | by default | "index" o "key" | no | si | varios |
+| único | by default | "unique" | si | si | varios |
+
+
 ___________________________________________________________________________________
 ________________________
-key primaria PRIMARY no Si No
+ PRIMARY no Si No
 1
 común darlo o por defecto "index" o "key" No Si
 varios
