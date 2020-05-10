@@ -1335,73 +1335,73 @@ retorna 1.
 Los operadores aritméticos son "+","-","*" y "/". Todas las operaciones matemáticas retornan "null" en
 caso de error. Ejemplo:
 
-select 5/0;
+> select 5/0;
 MySQL tiene algunas funciones para trabajar con números. Aquí presentamos algunas.
 
 RECUERDE que NO debe haber espacios entre un name de función y los paréntesis porque MySQL
 puede confundir una llamada a una función con una referencia a una tabla o campo que tenga el mismo
 name de una función.
 
--abs(x): retorna el valor absoluto del argumento "x". Ejemplo:
+- abs(x): retorna el valor absoluto del argumento "x". Ejemplo:
 
-select abs(-20);
+> select abs(-20);
 retorna 20.
 
--ceiling(x): redondea hacia arriba el argumento "x". Ejemplo:
+- ceiling(x): redondea hacia arriba el argumento "x". Ejemplo:
 
-select ceiling(12.34),
+> select ceiling(12.34),
 retorna 13.
 
--floor(x): redondea hacia abajo el argumento "x". Ejemplo:
+- floor(x): redondea hacia abajo el argumento "x". Ejemplo:
 
-select floor(12.34);
+> select floor(12.34);
 retorna 12.
 
--greatest(x,y,..): retorna el argumento de máximo valor.
+- greatest(x,y,..): retorna el argumento de máximo valor.
 
--least(x,y,...): con dos o más argumentos, retorna el argumento más pequeño.
+- least(x,y,...): con dos o más argumentos, retorna el argumento más pequeño.
 
--mod(n,m): significa "módulo aritmético"; retorna el resto de "n" dividido en "m". Ejemplos:
+- mod(n,m): significa "módulo aritmético"; retorna el resto de "n" dividido en "m". Ejemplos:
 
-select mod(10,3);
+> select mod(10,3);
 retorna 1.
 
-select mod(10,2);
+> select mod(10,2);
 retorna 0.
 
 - %:
 
-select 10%3;
+> select 10%3;
 retorna 1.
 
-select 10%2;
+> select 10%2;
 retorna 0.
 
--power(x,y): retorna el valor de "x" elevado a la "y" potencia. Ejemplo:
+- power(x,y): retorna el valor de "x" elevado a la "y" potencia. Ejemplo:
 
 
-select power(2,3);
+> select power(2,3);
 retorna 8.
 
--rand(): retorna un valor de coma flotante aleatorio dentro del rango 0 a 1.0.
+- rand(): retorna un valor de coma flotante aleatorio dentro del rango 0 a 1.0.
 
--round(x): retorna el argumento "x" redondeado al entero más cercano. Ejemplos:
+- round(x): retorna el argumento "x" redondeado al entero más cercano. Ejemplos:
 
-select round(12.34);
+> select round(12.34);
 retorna 12.
 
-select round(12.64);
+> select round(12.64);
 retorna 13.
 
--srqt(): devuelve la raiz cuadrada del valor enviado como argumento.
+- srqt(): devuelve la raiz cuadrada del valor enviado como argumento.
 
--truncate(x,d): retorna el número "x", truncado a "d" decimales. Si "d" es 0, el resultado no tendrá parte
+- truncate(x,d): retorna el número "x", truncado a "d" decimales. Si "d" es 0, el resultado no tendrá parte
 fraccionaria. Ejemplos:
 
-select truncate(123.4567,2);
+> select truncate(123.4567,2);
 retorna 123.45;
 
-select truncate (123.4567,0);
+> select truncate (123.4567,0);
 retorna 123.
 
 Todas retornan null en caso de error.
@@ -1411,95 +1411,133 @@ Todas retornan null en caso de error.
 
 MySQL tiene algunas funciones para trabajar con fechas y horas. Estas son algunas:
 
--adddate(fecha, interval expresion): retorna la fecha agregándole el intervalo especificado. Ejemplos:
-adddate('2006-10-10',interval 25 day) retorna "2006-11-04". adddate('2006-10-10',interval 5 month)
+- adddate(fecha, interval expresion): retorna la fecha agregándole el intervalo especificado. 
+
+Ejemplos:
+
+> adddate('2006-10-10',interval 25 day) 
+retorna "2006-11-04". 
+
+> adddate('2006-10-10',interval 5 month)
 retorna "2007-03-10".
 
--adddate(fecha, dias): retorna la fecha agregándole a fecha "dias". Ejemplo: adddate('2006-10-10',25),
+- adddate(fecha, dias): retorna la fecha agregándole a fecha "dias". 
+Ejemplo: 
+> adddate('2006-10-10',25),
 retorna "2006-11-04".
 
--addtime(expresion1,expresion2): agrega expresion2 a expresion1 y retorna el resultado.
+- addtime(expresion1,expresion2): agrega expresion2 a expresion1 y retorna el resultado.
 
--current_date: retorna la fecha de hoy con formato "YYYY-MM-DD" o "YYYYMMDD".
+- current_date: retorna la fecha de hoy con formato "YYYY-MM-DD" o "YYYYMMDD".
 
--current_time: retorna la hora actual con formato "HH:MM:SS" o "HHMMSS".
+- current_time: retorna la hora actual con formato "HH:MM:SS" o "HHMMSS".
 
--date_add(fecha,interval expresion tipo) y date_sub(fecha,interval expresion tipo): el argumento
+- date_add(fecha,interval expresion tipo) y date_sub(fecha,interval expresion tipo): el argumento
 "fecha" es un valor "date" o "datetime", "expresion" especifica el valor de intervalo a ser añadido o
 substraído de la fecha indicada (puede empezar con "-", para intervalos negativos), "tipo" indica la
-medida de adición o substracción. Ejemplo: date_add('2006-08-10', interval 1 month) retorna "2006-
-09-10"; date_add('2006-08-10', interval -1 day) retorna "2006-09-09"; date_sub('2006-08-10 18:55:44',
-interval 2 minute) retorna "2006-08-10 18:53:44"; date_sub('2006-08-10 18:55:44', interval '2:3'
-minute_second) retorna "2006-08-10 18:52:41". Los valores para "tipo" pueden ser: second, minute,
+medida de adición o substracción. 
+Ejemplo: 
+> date_add('2006-08-10', interval 1 month) 
+retorna "2006-09-10"; 
+> date_add('2006-08-10', interval -1 day) 
+retorna "2006-09-09"; 
+> date_sub('2006-08-10 18:55:44', interval 2 minute) 
+retorna "2006-08-10 18:53:44"; 
+> date_sub('2006-08-10 18:55:44', interval '2:3' minute_second) 
+retorna "2006-08-10 18:52:41". 
+
+Los valores para "tipo" pueden ser: second, minute,
 hour, day, month, year, minute_second (minutos y segundos), hour_minute (horas y minutos), day_hour
 (días y horas), year_month (año y mes), hour_second (hora, minuto y segundo), day_minute (dias,
 horas y minutos), day_second(dias a segundos).
 
--datediff(fecha1,fecha2): retorna la cantidad de días entre fecha1 y fecha2.
+- datediff(fecha1,fecha2): retorna la cantidad de días entre fecha1 y fecha2.
 
--dayname(fecha): retorna el name del día de la semana de la fecha. Ejemplo: dayname('2006-08-10')
+- dayname(fecha): retorna el name del día de la semana de la fecha. 
+Ejemplo: 
+> dayname('2006-08-10')
 retorna "thursday".
 
--dayofmonth(fecha): retorna el día del mes para la fecha dada, dentro del rango 1 a 31. Ejemplo:
-dayofmonth('2006-08-10') retorna 10.
+- dayofmonth(fecha): retorna el día del mes para la fecha dada, dentro del rango 1 a 31. 
+Ejemplo:
+> dayofmonth('2006-08-10') 
+retorna 10.
 
--dayofweek(fecha): retorna el índice del día de semana para la fecha pasada como argumento. Los
-valores de los índices son: 1=domingo, 2=lunes,... 7=sábado). Ejemplo: dayofweek('2006-08-10')
+- dayofweek(fecha): retorna el índice del día de semana para la fecha pasada como argumento. Los
+valores de los índices son: 1=domingo, 2=lunes,... 7=sábado). 
+Ejemplo: 
+> dayofweek('2006-08-10')
 retorna 5, o sea jueves.
 
--dayofyear(fecha): retorna el día del año para la fecha dada, dentro del rango 1 a 366. Ejemplo:
-dayofmonth('2006-08-10') retorna 222.
+- dayofyear(fecha): retorna el día del año para la fecha dada, dentro del rango 1 a 366. Ejemplo:
+> dayofmonth('2006-08-10') 
+retorna 222.
 
 
--extract(tipo from fecha): extrae partes de una fecha.
+- extract(tipo from fecha): extrae partes de una fecha.
 
 Ejemplos:
 
-extract(year from '2006-10-10'), retorna "2006".
-extract(year_month from '2006-10-10 10:15:25') retorna "200610".
-extract(day_minute from '2006-10-10 10:15:25') retorna "101015";
+> extract(year from '2006-10-10')
+ retorna "2006".
+> extract(year_month from '2006-10-10 10:15:25')
+ retorna "200610".
+> extract(day_minute from '2006-10-10 10:15:25')
+ retorna "101015";
+
 Los valores para tipo pueden ser: second, minute, hour, day, month, year, minute_second, hour_minute,
 day_hour, year_month, hour_second (horas, minutos y segundos), day_minute (días, horas y minutos),
 day_second (días a segundos).
 
--hour(hora): retorna la hora para el dato dado, en el rango de 0 a 23.
+- hour(hora): retorna la hora para el dato dado, en el rango de 0 a 23.
 
-Ejemplo: hour('18:25:09') retorna "18";
+Ejemplo: 
+> hour('18:25:09') 
+retorna "18";
 
--minute(hora): retorna los minutos de la hora dada, en el rango de 0 a 59.
+- minute(hora): retorna los minutos de la hora dada, en el rango de 0 a 59.
 
--monthname(fecha): retorna el name del mes de la fecha dada.
+- monthname(fecha): retorna el name del mes de la fecha dada.
 
-Ejemplo: monthname('2006-08-10') retorna "August".
+Ejemplo: 
+> monthname('2006-08-10') 
+retorna "August".
 
--month(fecha): retorna el mes de la fecha dada, en el rango de 1 a 12.
+- month(fecha): retorna el mes de la fecha dada, en el rango de 1 a 12.
 
--now() y sysdate(): retornan la fecha y hora actuales.
+- now() y sysdate(): retornan la fecha y hora actuales.
 
--period_add(p,n): agrega "n" meses al periodo "p", en el formato "YYMM" o "YYYYMM"; retorna un
-valor en el formato "YYYYMM". El argumento "p" no es una fecha, sino un año y un mes. Ejemplo:
-period_add('200608',2) retorna "200610".
+- period_add(p,n): agrega "n" meses al periodo "p", en el formato "YYMM" o "YYYYMM"; retorna un
+valor en el formato "YYYYMM". El argumento "p" no es una fecha, sino un año y un mes. 
+Ejemplo:
+> period_add('200608',2)
+retorna "200610".
 
--period_diff(p1,p2): retorna el número de meses entre los períodos "p1" y "p2", en el formato
+- period_diff(p1,p2): retorna el número de meses entre los períodos "p1" y "p2", en el formato
 "YYMM" o "YYYYMM". Los argumentos de período no son fechas sino un año y un mes. Ejemplo:
-period_diff('200608','200602') retorna 6.
+> period_diff('200608','200602') 
+retorna 6.
 
--second(hora): retorna los segundos para la hora dada, en el rango de 0 a 59.
+- second(hora): retorna los segundos para la hora dada, en el rango de 0 a 59.
 
--sec_to_time(segundos): retorna el argumento "segundos" convertido a horas, minutos y segundos.
-Ejemplo: sec_to_time(90) retorna "1:30".
+- sec_to_time(segundos): retorna el argumento "segundos" convertido a horas, minutos y segundos.
+Ejemplo: 
+> sec_to_time(90) 
+retorna "1:30".
 
--timediff(hora1,hora2): retorna la cantidad de horas, minutos y segundos entre hora1 y hora2.
+- timediff(hora1,hora2): retorna la cantidad de horas, minutos y segundos entre hora1 y hora2.
 
--time_to_sec(hora): retorna el argumento "hora" convertido en segundos.
+- time_to_sec(hora): retorna el argumento "hora" convertido en segundos.
 
--to_days(fecha): retorna el número de día (el número de día desde el año 0).
+- to_days(fecha): retorna el número de día (el número de día desde el año 0).
 
--weekday(fecha): retorna el índice del día de la semana para la fecha pasada como argumento. Los
-índices son: 0=lunes, 1=martes,... 6=domingo). Ejemplo: weekday('2006-08-10') retorna 3, o sea
-jueves.
+- weekday(fecha): retorna el índice del día de la semana para la fecha pasada como argumento. Los
+índices son: 0=lunes, 1=martes,... 6=domingo). Ejemplo: 
+> weekday('2006-08-10') 
+retorna 3, o sea jueves.
 
--year(fecha): retorna el año de la fecha dada, en el rango de 1000 a 9999. Ejemplo: year('06-08-10')
+- year(fecha): retorna el año de la fecha dada, en el rango de 1000 a 9999. Ejemplo: 
+> year('06-08-10')
 retorna "2006".
 
 
