@@ -2333,8 +2333,10 @@ RESUMEN: Hay 3 tipos de índices con las siguientes características:
 
 Para eliminar un índice usamos "drop index". Ejemplo:
 
-drop index i_editorial on libros;
-drop index i_tituloeditorial on libros;
+> drop index i_editorial on libros;
+
+> drop index i_tituloeditorial on libros;
+
 Se elimina el índice con "drop index" seguido de su name y "on" seguido del name de la tabla a la
 cual pertenece.
 
@@ -2345,19 +2347,19 @@ que veremos más adelante).
 
 ## 45 - Creación de índices a tablas existentes (create index)..............
 
-## (create index)
-
 Podemos agregar un índice a una tabla existente.
 
 Para agregar un índice común a la tabla "libros" tipeamos:
 
-create index i_editorial on libros (editorial);
+> create index i_editorial on libros (editorial);
+
 Entonces, para agregar un índice común a una tabla existente usamos "create index", indicamos el
 name, sobre qué tabla y el o los campos por los cuales se indexará, entre paréntesis.
 
 Para agregar un índice único a la tabla "libros" tipeamos:
 
-create unique index i_tituloeditorial on libros (titulo,editorial);
+> create unique index i_tituloeditorial on libros (titulo,editorial);
+
 Para agregar un índice único a una tabla existente usamos "create unique index", indicamos el name,
 sobre qué tabla y entre paréntesis, el o los campos por los cuales se indexará.
 
@@ -2376,36 +2378,39 @@ Si el segundo argumento supera la cantidad de registros de la tabla, se limita h
 
 Ejemplo:
 
-select * from libros limit 0,4;
+> select * from libros limit 0,4;
+
 Muestra los primeros 4 registros, 0,1,2 y 3.
 
 Si tipeamos:
 
-select * from libros limit 5,4;
+> select * from libros limit 5,4;
+
 recuperamos 4 registros, desde el 5 al 8.
 
 Si se coloca un solo argumento, indica el máximo número de registros a retornar, comenzando desde 0.
 Ejemplo:
 
-select * from libros limit 8;
+> select * from libros limit 8;
+
 Muestra los primeros 8 registros.
 
 Para recuperar los registros desde cierto número hasta el final, se puede colocar un número grande para
 el segundo argumento:
 
-select * from libros limit 6,10000;
+> select * from libros limit 6,10000;
+
 recupera los registros 7 al último.
 
 "limit" puede combinarse con el comando "delete". Si queremos eliminar 2 registros de la tabla "libros"
 Usamos:
 
-delete from libros
-limit 2;
+> delete from libros limit 2;
+
 Podemos ordenar los regitros por precio (por ejemplo) y borrar 2:
 
-delete from libros
-order by precio
-limit 2;
+> delete from libros order by precio limit 2;
+
 esta sentencia borrará los 2 primeros registros, es decir, los de precio más bajo.
 
 Podemos emplear la cláusula "limit" para eliminar registros duplicados. Por ejemplo, continuamos con
@@ -2416,33 +2421,34 @@ la tabla "libros" de una librería, ya hemos almacenado el libro "El aleph" de "
 veces más, es un error que no controla MySQL. Para eliminar el libro duplicado y que sólo quede un
 registro de él vemos cuántos tenemos:
 
-select * from libros
+> select * from libros
 where titulo='El aleph' and
 autor='Borges' and
 editorial='Planeta';
+
 Luego eliminamos con "limit" la cantidad sobrante (tenemos 3 y queremos solo 1):
 
-delete from libros
+> delete from libros
 where titulo='El aleph" and
 autor='Borges' and
 editorial='Planeta'
 limit 2;
+
 Un mensaje nos muestra la cantidad de registros eliminados.
 
 Es decir, con "limit" indicamos la cantidad a eliminar.
 
 Veamos cuántos hay ahora:
 
-select * from libros
+> select * from libros
 where titulo='El aleph" and
 autor='Borges' and
 editorial='Planeta';
+
 Sólo queda 1.
 
 
 ## 47 - Recuperación de registros en forma aleatoria(rand).................
-
-## aleatoria(rand)
 
 Una librería que tiene almacenados los datos de sus libros en una tabla llamada "libros" quiere donar a
 una institución 5 libros tomados al azar.
@@ -2450,9 +2456,10 @@ una institución 5 libros tomados al azar.
 Para recuperar de una tabla registros aleatorios se puede utilizar la función "rand()" combinada con
 "order by" y "limit":
 
-select * from libros
+> select * from libros
 order by rand()
 limit 5;
+
 Nos devuelve 5 registros tomados al azar de la tabla "libros".
 
 Podemos ejecutar la sentencia anterior varias veces seguidas y veremos que los registros recuperados
