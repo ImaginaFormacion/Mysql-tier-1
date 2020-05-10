@@ -2301,6 +2301,7 @@ Vamos a trabajar con nuestra tabla "libros".
 
 Crearemos dos índices únicos, uno por un solo campo y otro multicolumna:
 
+```
 create table libros(
 codigo int unsigned auto_increment,
 titulo varchar(40) not null,
@@ -2309,6 +2310,8 @@ editorial varchar(15),
 unique i_codigo(codigo),
 unique i_tituloeditorial (titulo,editorial)
 );
+```
+
 Luego de la definición de los campos colocamos "unique" seguido del name que le damos y entre
 paréntesis el o los campos por los cuales se indexará dicho índice.
 
