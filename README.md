@@ -2783,12 +2783,11 @@ defecto, como cuando los creamos junto con la tabla.
 
 ## 55 - Borrado de índices (alter table - drop index)
 
-## index)
-
 Los índices común y únicos se eliminan con "alter table".
 
 Trabajamos con la tabla "libros" de una librería, que tiene los siguientes campos e índices:
 
+```
 create table libros(
 codigo int unsigned auto_increment,
 titulo varchar(40) not null,
@@ -2798,6 +2797,8 @@ primary key(codigo),
 index i_editorial (editorial),
 unique i_tituloeditorial (titulo,editorial)
 );
+```
+
 Para eliminar un índice usamos la siguiente sintaxis:
 
 alter table libros
