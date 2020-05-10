@@ -95,6 +95,15 @@ Fundamentos: Operaciones y optimización con MYSQL
 - 83 - Chequear y reparar tablas (check - repair)
 - 84 - Encriptación de datos (encode - decode)..
 
+* Motores - Myisam vs InnoDB
+* Optimización
+    * Deteccion y solución de consultas lentas
+    * Benchmarks
+* Herramientas
+* De SQL Server a Mysql
+
+
+
 ## 0 - Setup (entorno de prácticas)
 
 Con el fin de agilizar la clase practica y que puedan probarse todos los comandos y operaciones tratadas para su mayor comprension, se recomienda el uso de docker y docker-compose de manera que cada alumno pueda instanciar de manera local un sistema MYSQL con todas las herramientas necesarias
