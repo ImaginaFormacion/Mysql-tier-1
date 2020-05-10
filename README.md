@@ -1230,12 +1230,12 @@ desde la posición indicada por el segundo argumento. Ejemplo:
 > select substring('Margarita',4);
 retorna "garita".
 
--substring(cadena from posicion): variante de "substring(cadena,posicion)". Ejemplo:
+- substring(cadena from posicion): variante de "substring(cadena,posicion)". Ejemplo:
 
 > select substring('Margarita' from 4);
 retorna "garita".
 
--substring_index(cadena,delimitador,ocurrencia): retorna la subcadena de la cadena enviada como
+- substring_index(cadena,delimitador,ocurrencia): retorna la subcadena de la cadena enviada como
 argumento antes o después de la "ocurrencia" de la cadena enviada como delimitador. Si "ocurrencia"
 es positiva, retorna la subcadena anterior al delimitador (comienza desde la izquierda); si "ocurrencia"
 es negativa, retorna la subcadena posterior al delimitador (comienza desde la derecha). Ejemplo:
@@ -1246,13 +1246,12 @@ retorna "marg", todo lo anterior a la segunda ocurrencia de "ar".
 > select substring_index( 'margarita','ar',-2);
 retorna "garita", todo lo posterior a la segunda ocurrencia de "ar".
 
--ltrim(cadena): retorna la cadena con los espacios de la izquierda eliminados. Ejemplo:
+- ltrim(cadena): retorna la cadena con los espacios de la izquierda eliminados. Ejemplo:
 
 > select ltrim(' Hola ');
 retorna
 
 "Hola "
-.
 
 - rtrim(cadena): retorna la cadena con los espacios de la derecha eliminados. Ejemplo:
 
@@ -1261,76 +1260,73 @@ retorna
 
 " Hola"
 
-
-### .
-
--trim([[both|leading|trailing] [subcadena] from] cadena): retorna una cadena igual a la enviada pero
+- trim([[both|leading|trailing] [subcadena] from] cadena): retorna una cadena igual a la enviada pero
 eliminando la subcadena prefijo y/o sufijo. Si no se indica ningún especificador (both, leading o
 trailing) se asume "both" (ambos). Si no se especifica prefijos o sufijos elimina los espacios. Ejemplos:
 
-select trim(' Hola ');
+> select trim(' Hola ');
 retorna 'Hola'.
 
-select trim (leading '0' from '00hola00');
+> select trim (leading '0' from '00hola00');
 retorna "hola00".
 
-select trim (trailing '0' from '00hola00');
+> select trim (trailing '0' from '00hola00');
 retorna "00hola".
 
-select trim (both '0' from '00hola00');
+> select trim (both '0' from '00hola00');
 retorna "hola".
 
-select trim ('0' from '00hola00');
+> select trim ('0' from '00hola00');
 retorna "hola".
 
-select trim (' hola ');
+> select trim (' hola ');
 retorna "hola".
 
--replace(cadena,cadenareemplazo,cadenareemplazar): retorna la cadena con todas las ocurrencias de la
+- replace(cadena,cadenareemplazo,cadenareemplazar): retorna la cadena con todas las ocurrencias de la
 subcadena reemplazo por la subcadena a reemplazar. Ejemplo:
 
-select replace('xxx.mysql.com','x','w');
+> select replace('xxx.mysql.com','x','w');
 retorna "www.mysql.com'.
 
--repeat(cadena,cantidad): devuelve una cadena consistente en la cadena repetida la cantidad de veces
+- repeat(cadena,cantidad): devuelve una cadena consistente en la cadena repetida la cantidad de veces
 especificada. Si "cantidad" es menor o igual a cero, retorna una cadena vacía. Ejemplo:
 
-select repeat('hola',3);
+> select repeat('hola',3);
 retorna "holaholahola".
 
--reverse(cadena): devuelve la cadena invirtiendo el order de los caracteres. Ejemplo:
+- reverse(cadena): devuelve la cadena invirtiendo el order de los caracteres. Ejemplo:
 
-select reverse('Hola');
+> select reverse('Hola');
 retorna "aloH".
 
--insert(cadena,posicion,longitud,nuevacadena): retorna la cadena con la nueva cadena colocándola en
+- insert(cadena,posicion,longitud,nuevacadena): retorna la cadena con la nueva cadena colocándola en
 la posición indicada por "posicion" y elimina la cantidad de caracteres indicados por "longitud".
 Ejemplo:
 
-select insert('buenas tardes',2,6,'xx');
+> select insert('buenas tardes',2,6,'xx');
 retorna ""bxxtardes".
 
--lcase(cadena) y lower(cadena): retornan la cadena con todos los caracteres en minúsculas. Ejemplo:
+- lcase(cadena) y lower(cadena): retornan la cadena con todos los caracteres en minúsculas. Ejemplo:
 
-select lower('HOLA ESTUDIAnte');
+> select lower('HOLA ESTUDIAnte');
 retorna "hola estudiante".
 
 
-select lcase('HOLA ESTUDIAnte');
+> select lcase('HOLA ESTUDIAnte');
 retorna "hola estudiante".
 
--ucase(cadena) y upper(cadena): retornan la cadena con todos los caracteres en mayúsculas. Ejemplo:
+- ucase(cadena) y upper(cadena): retornan la cadena con todos los caracteres en mayúsculas. Ejemplo:
 
-select upper('HOLA ESTUDIAnte');
+> select upper('HOLA ESTUDIAnte');
 retorna "HOLA ESTUDIANTE".
 
-select ucase('HOLA ESTUDIAnte');
+> select ucase('HOLA ESTUDIAnte');
 retorna "HOLA ESTUDIANTE".
 
--strcmp(cadena1,cadena2): retorna 0 si las cadenas son iguales, -1 si la primera es menor que la
+- strcmp(cadena1,cadena2): retorna 0 si las cadenas son iguales, -1 si la primera es menor que la
 segunda y 1 si la primera es mayor que la segunda. Ejemplo:
 
-select strcmp('Hola','Chau');
+> select strcmp('Hola','Chau');
 retorna 1.
 
 
