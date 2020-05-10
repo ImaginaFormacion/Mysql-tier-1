@@ -1,5 +1,12 @@
-# Tutorial MySql
+# MySql
 
+´´´
+IMAGINAGROUP FORMACIÓN
+--------------------------------------------------
+Profesor: David Pestana
+Duracion: 2 sesiones de 3,5 horas
+Fundamentos: Operaciones y optimización con MYSQL
+´´´
 
 ## Índice
 
@@ -4737,3 +4744,26 @@ Desencriptamos la key del usuario "MariaGarcia":
 
 > select decode(key,'ganador') from users
 where name='MariaGarcia';
+
+
+
+# MYSAM VS INNODB
+
+
+Las únicas razones para usar MyISAM en versiones de MySQL previas a la 5.5, era que InnoDB no soportaba particionar tablas ni crear índices FULLTEXT.
+
+Esas restricciones ya no existen.
+
+La única razón para usar MyISAM es que es más rápido para leer y ligeramente más rápido para insertar (en masa y midiendo un proceso aislado), pero eso es porque tales operaciones efectúan un bloqueo de tabla.
+
+Si vas a tener múltiples updates, o inserciones concurrentes, por ejemplo, un bloqueo a nivel de tabla es muy ineficiente, versus un update sobre una tabla InnoDB que utiliza bloqueo a nivel de fila, y por tanto permite operaciones concurrentes.
+
+Súmale a todo eso que InnoDB permite el uso de llaves foráneas que son indispensables para mantener la integridad referencial de un modelo de datos, el soporte para transacciones.
+
+En resumen, usa InnoDB porque
+
+En la versión MySQL actual soporta todo lo que soporta MyISAM
+Llaves foráneas / Integridad relacional
+Bloqueo a nivel de fila
+Transacciones
+Todas esas ventajas superan con creces una merma en velocidad de los select.
