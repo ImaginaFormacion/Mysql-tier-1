@@ -3473,15 +3473,16 @@ y
 -editoriales: codigo (key primaria), name.
 Estas sentencias devuelven el mismo resultado:
 
-select name,titulo
+> select name,titulo
 from editoriales as e
 left join libros as l
 on e.codigo=l.codigoeditorial;
 
-select name,titulo
+> select name,titulo
 from libros as l
 right join editoriales as e
 on e.codigo=l.codigoeditorial;
+
 La primera busca valores de "codigo" de la tabla "editoriales" (tabla de la izquierda) coincidentes con
 los valores de "codigoeditorial" de la tabla "libros" (tabla de la derecha). La segunda busca valores de
 la tabla de la derecha coincidentes con los valores de la tabla de la izquierda.
@@ -3498,27 +3499,31 @@ Un pequeño restaurante tiene almacenados los names y precios de sus comidas en 
 El restaurante quiere combinar los registros de ambas tablas para mostrar los distintos menúes que
 ofrece. Podemos usar "cross join":
 
-select c.*,p.*
+> select c.*,p.*
 from comidas as c
 cross join postres as p;
+
 es igual a un simple "join" sin parte "on":
 
-select c.*,p.*
+> select c.*,p.*
 from comidas as c
 join postres as p;
+
 Podemos organizar la salida del "cross join" para obtener el name del plato principal, del postre y el
 precio total de cada combinación (menú):
 
-select c.name,p.name,
+> select c.name,p.name,
 c.precio+p.precio as total
 from comidas as c
 cross join postres as p;
+
 Para realizar un "join" no es necesario utilizar 2 tablas, podemos combinar los registros de una misma
 tabla. Para ello debemos utilizar 2 alias para la tabla.
 
 Si los datos de las tablas anteriores ("comidas" y "postres") estuvieran en una sola tabla con la siguiente
 estructura:
 
+```
 create table comidas(
 codigo tinyint unsigned auto_increment,
 name varchar(30),
@@ -3526,10 +3531,12 @@ rubro varchar(20),/*plato principal y postre*/
 precio decimal (5,2) unsigned,
 primary key(codigo)
 );
+```
+
 Podemos obtener la combinación de platos principales con postres empleando un "cross join" con una
 sola tabla:
 
-select c1.name,c1.precio,c2.name,c2.precio
+> select c1.name,c1.precio,c2.name,c2.precio
 from comidas as c1
 cross join comidas as c2
 where c1.rubro='plato principal' and
@@ -3540,7 +3547,7 @@ Se empleó un "where" para combinar "plato principal" con "postre".
 
 Si queremos el monto total de cada combinación:
 
-select c1.name,c2.name,
+> select c1.name,c2.name,
 c1.precio+c2.precio as total
 from comidas as c1
 cross join comidas as c2
@@ -3562,26 +3569,30 @@ Como en ambas tablas, el código de la editorial se denomina "codigoeditorial", 
 "on" que indica los names de los campos por el cual se enlazan las tablas, empleando "natural join",
 se unirán por el campo que tienen en común:
 
-select titulo,name
+> select titulo,name
 from libros as l
 natural join editoriales as e;
+
 La siguiente sentencia tiene la misma salida anterior:
 
-select titulo,name
+> select titulo,name
 from libros as l
 join editoriales as e
 on l.codigoeditorial=e.codigoeditorial;
+
 También se puede usar "natural" con "left join" y "right join":
 
-select name,titulo
+> select name,titulo
 from editoriales as e
 natural left join libros as l;
+
 que tiene la misma salida que:
 
-select name,titulo
+> select name,titulo
 from editoriales as e
 left join libros as l
 on e.codigoeditorial=l.codigoeditorial;
+
 Es decir, con "natural join" no se coloca la parte "on" que especifica los campos por los cuales se
 enlazan las tablas, porque MySQL busca los campos con igual name y enlaza las tablas por ese
 campo.
@@ -3608,64 +3619,68 @@ join". Veámoslos.
 "inner join" es igual que "join". Con "inner join", todos los registros no coincidentes son descartados,
 sólo los coincidentes se muestran en el resultado:
 
-select name,titulo
+> select name,titulo
 from editoriales as e
 inner join libros as l
 on e.codigo=l.codigoeditorial;
+
 Tiene la misma salida que un simple "join":
 
-select name,titulo
+> select name,titulo
 from editoriales as e
 join libros as l
 on e.codigo=l.codigoeditorial;
+
 "straight join" es igual a "join", sólo que la tabla de la izquierda es leída siempre antes que la de la
 derecha.
 
 
 ## 69 - join, group by y funciones de agrupamiento...........................
 
-## agrupamiento.
-
 Podemos usar "group by" y las funciones de agrupamiento con "join".
 
 Para ver todas las editoriales, agrupadas por name, con una columna llamada "Cantidad de libros" en
 la que aparece la cantidad calculada con "count()" de todos los libros de cada editorial tipeamos:
 
-select e.name,count(l.codigoeditorial) as 'Cantidad de libros'
+> select e.name,count(l.codigoeditorial) as 'Cantidad de libros'
 from editoriales as e
 left join libros as l
 on l.codigoeditorial=e.codigo
 group by e.name;
+
 Si usamos "left join" la consulta mostrará todas las editoriales, y para cualquier editorial que no
 encontrara coincidencia en la tabla "libros" colocará "0" en "Cantidad de libros". Si usamos "join" en
 lugar de "left join":
 
-select e.name,count(l.codigoeditorial) as 'Cantidad de libros'
+> select e.name,count(l.codigoeditorial) as 'Cantidad de libros'
 from editoriales as e
 join libros as l
 on l.codigoeditorial=e.codigo
 group by e.name;
+
 solamente mostrará las editoriales para las cuales encuentra valores coincidentes para el código de la
 editorial en la tabla "libros".
 
 Para conocer el mayor precio de los libros de cada editorial usamos la función "max()", hacemos una
 unión y agrupamos por name de la editorial:
 
-select e.name,
+> select e.name,
 max(l.precio) as 'Mayor precio'
 from editoriales as e
 left join libros as l
 on l.codigoeditorial=e.codigo
 group by e.name;
+
 En la sentencia anterior, mostrará, para la editorial de la cual no haya libros, el valor "null" en la
 columna calculada; si realizamos un simple "join":
 
-select e.name,
+> select e.name,
 max(l.precio) as 'Mayor precio'
 from editoriales as e
 join libros as l
 on l.codigoeditorial=e.codigo
 group by e.name;
+
 sólo mostrará las editoriales para las cuales encuentra correspondencia en la tabla de la derecha.
 
 
