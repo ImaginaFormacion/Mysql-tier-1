@@ -2328,15 +2328,6 @@ RESUMEN: Hay 3 tipos de índices con las siguientes características:
 | único | by default | "unique" | si | si | varios |
 
 
-___________________________________________________________________________________
-________________________
- PRIMARY no Si No
-1
-común darlo o por defecto "index" o "key" No Si
-varios
-único darlo o por defecto "unique" Si Si
-varios
-
 
 ## 44 - Borrar indice (drop index)..........................
 
