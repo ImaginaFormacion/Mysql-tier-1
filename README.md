@@ -2869,21 +2869,22 @@ por defecto es el primer valor de la lista de permitidos.
 Si se ingresa un valor numérico, lo interpreta como índice de la enumeración y almacena el valor de la
 lista con dicho número de índice. Por ejemplo:
 
-insert into postulantes (documento,name,estudios)
+> insert into postulantes (documento,name,estudios)
 values('22255265','Juana Pereyra',5);
+
 En el campo "estudios" almacenará "universitario" que es valor de índice 5.
 
 Si se ingresa un valor inválido, puede ser un valor no presente en la lista o un valor de índice fuera de
 rango, coloca una cadena vacía. Por ejemplo:
 
-insert into postulantes (documento,name,estudios)
+> insert into postulantes (documento,name,estudios)
 values('22255265','Juana Pereyra',0);
-insert into postulantes (documento,name,estudios)
+
+> insert into postulantes (documento,name,estudios)
 values('22255265','Juana Pereyra',6);
-insert into postulantes (documento,name,estudios)
 
+> insert into postulantes (documento,name,estudios) values('22255265','Juana Pereyra','PostGrado');
 
-values('22255265','Juana Pereyra','PostGrado');
 En los 3 casos guarda una cadena vacía, en los 2 primeros porque los índices ingresados están fuera de
 rango y en el tercero porque el valor no está incluido en la lista de permitidos.
 
@@ -2891,15 +2892,15 @@ Esta cadena vacía de error, se diferencia de una cadena vacía permitida porque
 de índice 0; entonces, podemos seleccionar los registros con valores inválidos en el campo de tipo
 "enum" así:
 
-select * from postulantes
-where estudios=0;
+> select * from postulantes where estudios=0;
+
 El índice de un valor "null" es "null".
 
 Para seleccionar registros con un valor específico de un campo enumerado usamos "where", por
 ejemplo, queremos todos los postulantes con estudios universitarios:
 
-select * from postulantes
-where estudios='universitario';
+> select * from postulantes where estudios='universitario';
+
 Los tipos "enum" aceptan cláusula "default".
 
 Si el campo está definido como "not null" e intenta almacenar el valor "null" aparece un mensaje de
@@ -2926,6 +2927,7 @@ campo de tipo "set" en el cual guardará los distintos idiomas que conoce cada p
 
 Para definir un campo de tipo "set" usamos la siguiente sintaxis:
 
+```
 create table postulantes(
 numero int unsigned auto_increment,
 documento char(8),
@@ -2933,26 +2935,31 @@ name varchar(30),
 idioma set('ingles','italiano','portuges'),
 primary key(numero)
 );
+```
+
 Ingresamos un registro:
 
-insert into postulantes (documento,name,idioma)
+> insert into postulantes (documento,name,idioma)
 values('22555444','Ana Acosta','ingles');
+
 Para ingresar un valor que contenga más de un elemento del conjunto, se separan por comas, por
 ejemplo:
 
-insert into postulantes (documento,name,idioma)
+> insert into postulantes (documento,name,idioma)
 values('23555444','Juana Pereyra','ingles,italiano');
+
 No importa el orden en el que se inserten, se almacenan en el orden que han sido definidos, por
 ejemplo, si ingresamos:
 
-insert into postulantes (documento,name,idioma)
+> insert into postulantes (documento,name,idioma)
 values('23555444','Juana Pereyra','italiano,ingles');
+
 en el campo "idioma" guardará 'ingles,italiano'.
 
 Tampoco importa si se repite algún valor, cada elemento repetido, se ignora y se guarda una vez y en el
 orden que ha sido definido, por ejemplo, si ingresamos:
 
-insert into postulantes (documento,name,idioma)
+> insert into postulantes (documento,name,idioma)
 values('23555444','Juana Pereyra','italiano,ingles,italiano');
 
 
@@ -2960,34 +2967,39 @@ en el campo "idioma" guardará 'ingles,italiano'.
 Si ingresamos un valor que no está en la lista "set", se ignora y se almacena una cadena vacía, por
 ejemplo:
 
-insert into postulantes (documento,name,idioma)
+> insert into postulantes (documento,name,idioma)
 values('22255265','Juana Pereyra','frances');
+
 Si un "set" permite valores nulos, el valor por defecto es "null"; si no permite valores nulos, el valor por
 defecto es una cadena vacía.
 
 Si se ingresa un valor de índice fuera de rango, coloca una cadena vacía. Por ejemplo:
 
-insert into postulantes (documento,name,idioma)
+> insert into postulantes (documento,name,idioma)
 values('22255265','Juana Pereyra',0);
-insert into postulantes (documento,name,idioma)
+
+> insert into postulantes (documento,name,idioma)
 values('22255265','Juana Pereyra',8);
+
 Si se ingresa un valor numérico, lo interpreta como índice de la enumeración y almacena el valor de la
 lista con dicho número de índice. Los valores de índice se definen en el siguiente orden, en este
 ejemplo:
 
-1='ingles',
-2='italiano',
-3='ingles,italiano',
-4='portugues',
-5='ingles,portugues',
-6='italiano,portugues',
-7='ingles,italiano,portugues'.
+* 1='ingles',
+* 2='italiano',
+* 3='ingles,italiano',
+* 4='portugues',
+* 5='ingles,portugues',
+* 6='italiano,portugues',
+* 7='ingles,italiano,portugues'.
+
 Ingresamos algunos registros con valores de índice:
 
-insert into postulantes (documento,name,idioma)
+> insert into postulantes (documento,name,idioma)
 values('22255265','Juana Pereyra',2);
-insert into postulantes (documento,name,idioma)
+> insert into postulantes (documento,name,idioma)
 values('22555888','Juana Pereyra',3);
+
 En el campo "idioma", con la primera inserción se almacenará "italiano" que es valor de índice 2 y con
 la segunda inserción, "ingles,italiano" que es el valor con índice 3.
 
@@ -2996,18 +3008,19 @@ Para búsquedas de valores en campos "set" se utiliza el operador "like" o la fu
 Para recuperar todos los valores que contengan la cadena "ingles" podemos usar cualquiera de las
 siguientes sentencias:
 
-select * from postulantes
+> select * from postulantes
 where idioma like '%ingles%';
-select * from postulantes
+
+> select * from postulantes
 where find_in_set('ingles',idioma)>0;
+
 La función "find_in_set()" retorna 0 si el primer argumento (cadena) no se encuentra en el campo set
 colocado como segundo argumento. Esta función no funciona correctamente si el primer argumento
 contiene una coma.
 
 Para recuperar todos los valores que incluyan "ingles,italiano" tipeamos:
 
-select * from postulantes
-where idioma like '%ingles,italiano%';
+> select * from postulantes where idioma like '%ingles,italiano%';
 
 
 Para realizar búsquedas, es importante respetar el orden en que se presentaron los valores en la
@@ -3016,26 +3029,25 @@ retornará registros.
 
 Para buscar registros que contengan sólo el primer miembro del conjunto "set" usamos:
 
-select * from postulantes
-where idioma='ingles';
+> select * from postulantes where idioma='ingles';
+
 También podemos buscar por el número de índice:
 
-select * from postulantes
-where idioma=1;
+> select * from postulantes where idioma=1;
+
 Para buscar los registros que contengan el valor "ingles,italiano" podemos utilizar cualquiera de las
 siguientes sentencias:
 
-select * from postulantes
-where idioma='ingles,italiano';
-select * from postulantes
-where idioma=3;
+> select * from postulantes where idioma='ingles,italiano';
+
+> select * from postulantes where idioma=3;
+
 También podemos usar el operador "not". Para recuperar todos los valores que no contengan la cadena
 "ingles" podemos usar cualquiera de las siguientes sentencias:
 
-select * from postulantes
-where idioma not like '%ingles%';
-select * from postulantes
-where not find_in_set('ingles',idioma)>0;
+> select * from postulantes where idioma not like '%ingles%';
+> select * from postulantes where not find_in_set('ingles',idioma)>0;
+
 Los tipos "set" admiten cláusula "default".
 
 Los bytes de almacenamiento del tipo "set" depende del número de miembros, se calcula así: (cantidad
