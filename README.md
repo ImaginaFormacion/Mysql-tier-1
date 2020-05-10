@@ -2813,24 +2813,23 @@ drop index i_tituloeditorial;
 
 ## 56 - renombrar tablas (alter table - rename - rename table).............
 
-## rename table)
 
 Podemos cambiar el name de una tabla con "alter table".
 
 Para cambiar el name de una tabla llamada "amigos" por "contactos" usamos esta sintaxis:
 
-alter table amigos rename contactos;
+> alter table amigos rename contactos;
+
 Entonces usamos "alter table" seguido del name actual, "rename" y el nuevo name.
 
 También podemos cambiar el name a una tabla usando la siguiente sintaxis:
 
-rename table amigos to contactos;
+> rename table amigos to contactos;
+
 La renombración se hace de izquierda a derecha, con lo cual, si queremos intercambiar los names de
 dos tablas, debemos tipear lo siguiente:
 
-rename table amigos to auxiliar,
-contactos to amigos,
-auxiliar to contactos;
+> rename table amigos to auxiliar, contactos to amigos, auxiliar to contactos;
 
 
 ## 57 - Tipo de dato enum..........
@@ -2852,6 +2851,7 @@ valores.
 
 Para definir un campo de tipo "enum" usamos la siguiente sintaxis al crear la tabla:
 
+```
 create table postulantes(
 numero int unsigned auto_increment,
 documento char(8),
@@ -2859,6 +2859,8 @@ name varchar(30),
 estudios enum('ninguno','primario','secundario', 'terciario','universitario'),
 primary key(numero)
 );
+```
+
 Los valores presentados deben ser cadenas de caracteres.
 
 Si un "enum" permite valores nulos, el valor por defecto el "null"; si no permite valores nulos, el valor
