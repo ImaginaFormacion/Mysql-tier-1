@@ -3695,20 +3695,25 @@ socios en "socios" y los préstamos en una tabla "prestamos".
 En la tabla "prestamos" haremos referencia al libro y al socio que lo solicita colocando un código que
 los identifique. Veamos:
 
+```
 create table libros(
 codigo int unsigned auto_increment,
 titulo varchar(40) not null,
 autor varchar(20) default 'Desconocido',
 primary key (codigo)
 );
+```
 
+```
 create socios(
 documento char(8) not null,
 name varchar(30),
 domicilio varchar(30),
 primary key (numero)
 );
+```
 
+```
 create table prestamos(
 documento char(8) not null,
 codigolibro int unsigned,
@@ -3716,21 +3721,25 @@ fechaprestamo date not null,
 fechadevolucion date,
 primary key (codigolibro,fechaprestamo)
 );
+```
+
 Al recuperar los datos de los prestamos:
 
-select * from prestamos;
+> select * from prestamos;
+
 aparece el código del libro pero no sabemos el name y tampoco el name del socio sino su
 documento. Para obtener los datos completos de cada préstamo, incluyendo esos datos, necesitamos
 consultar las tres tablas.
 
 Hacemos un "join" (unión):
 
-select name,titulo,fechaprestamo
+> select name,titulo,fechaprestamo
 from prestamos as p
 join socios as s
 on s.documento=p.documento
 join libros as l
 on codigolibro=codigo;
+
 Analicemos la consulta anterior. Indicamos el name de la tabla luego del "from" ("prestamos"),
 unimos esa tabla con la tabla "socios" especificando con "on" el campo por el cual se combinarán: el
 
@@ -3746,16 +3755,17 @@ campo "documento" aparece un mensaje de error indicando que "documento" es ambig
 
 Para ver todos los prestamos, incluso los que no encuentran coincidencia en las otras tablas, usamos:
 
-select name,titulo,fechaprestamo
+> select name,titulo,fechaprestamo
 from prestamos as p
 left join socios as s
 on p.documento=s.documento
 left join libros as l
 on l.codigo=p.codigolibro;
+
 Podemos ver aquellos prestamos con valor coincidente para "libros" pero para "socio" con y sin
 coincidencia:
 
-select name,titulo,fechaprestamo
+> select name,titulo,fechaprestamo
 from prestamos as p
 left join socios as s
 on p.documento=s.documento
@@ -3770,15 +3780,16 @@ Podemos emplear "if" y "case" en la misma sentencia que usamos un "join".
 Por ejemplo, tenemos las tablas "libros" y "editoriales" y queremos saber si hay libros de cada una de
 las editoriales:
 
-select e.name,
+> select e.name,
 if (count(l.codigoeditorial)>0,'Si','No') as hay
 from editoriales as e
 left join libros as l
 on e.codigo=l.codigoeditorial
 group by e.name;
+
 Podemos obtener una salida similar usando "case" en lugar de "if":
 
-select e.name,
+> select e.name,
 case count(l.codigoeditorial)
 when 0 then 'No'
 else 'Si' end as 'Hay'
@@ -3795,14 +3806,16 @@ devuelve el máximo valor de un campo de una tabla, pero no nos muestra los valo
 del mismo registro. Por ejemplo, queremos saber todos los datos del libro con mayor precio de la tabla
 "libros" de una librería, tipeamos:
 
-select max(precio) from libros;
+> select max(precio) from libros;
 Para obtener todos los datos del libro podemos emplear una variable para almacenar el precio más alto:
 
-select @mayorprecio:=max(precio) from libros;
+> select @mayorprecio:=max(precio) from libros;
+
 y luego mostrar todos los datos de dicho libro empleando la variable anterior:
 
-select * from libros
+> select * from libros
 where precio=@mayorprecio;
+
 Es decir, guardamos en la variable el precio más alto y luego, en otra sentencia, mostramos los datos de
 todos los libros cuyo precio es igual al valor de la variable.
 
@@ -3822,11 +3835,12 @@ valor a asignar.
 En el ejemplo, mostramos todos los datos del libro com precio más alto, pero, si además, necesitamos
 el name de la editorial podemos emplear un "join":
 
-select l.titulo,l.autor,e.name
+> select l.titulo,l.autor,e.name
 from libros as l
 join editoriales as e
 on l.codigoeditorial=e.codigo
 where l.precio = @mayorprecio;
+
 La utilidad de las variables consiste en que almacenan valores para utilizarlos en otras consultas.
 
 Por ejemplo, queremos ver todos los libros de la editorial que tenga el libro más caro. Debemos buscar
@@ -3836,15 +3850,15 @@ el precio más alto y almacenarlo en una variable, luego buscar el name de la ed
 precio igual al valor de la variable y guardarlo en otra variable, finalmente buscar todos los libros de
 esa editorial:
 
-select @mayorprecio:=max(precio) from libros;
+> select @mayorprecio:=max(precio) from libros;
 
-select @editorial:=e.name
+> select @editorial:=e.name 
 from libros as l
 join editoriales as e
 on l.codigoeditorial=e.codigo
 where precio=@mayorprecio;
 
-select l.titulo,l.autor,e.name
+> select l.titulo,l.autor,e.name
 from libros as l
 join editoriales as e
 on l.codigoeditorial=e.codigo
@@ -3852,8 +3866,6 @@ where e.name=@editorial;
 
 
 ## 73 - Crear tabla a partir de otra (create - insert).
-
-## insert)
 
 Tenemos la tabla "libros" de una librería y queremos crear una tabla llamada "editoriales" que contenga
 los names de las editoriales.
@@ -3875,12 +3887,16 @@ Para guardar en "editoriales" los names de las editoriales, podemos hacerlo en 3
 
 1º paso: crear la tabla "editoriales":
 
+```
 create table editoriales(
 name varchar(20)
 );
+```
+
 2º paso: realizar la consulta en la tabla "libros" para obtener los names de las distintas editoriales:
 
-select distinct editorial as name
+
+> select distinct editorial as name
 from libros;
 obteniendo una salida como la siguiente:
 
@@ -3889,15 +3905,19 @@ _________
 Emece
 Paidos
 Planeta
+
 3º paso: insertar los registros necesarios en la tabla "editoriales":
 
-insert into editoriales (name) values('Emece');
-insert into editoriales (name) values('Paidos');
-insert into editoriales (name) values('Planeta');
+> insert into editoriales (name) values('Emece');
+
+> insert into editoriales (name) values('Paidos');
+
+> insert into editoriales (name) values('Planeta');
+
 Pero existe otra manera simplificando los pasos. Podemos crear la tabla "editoriales" con los campos
 necesarios consultando la tabla "libros" y en el mismo momento insertar la información:
 
-create table editoriales
+> create table editoriales
 select distinct editorial as name
 from libros;
 
@@ -3912,9 +3932,10 @@ Si seleccionamos todos los registros de la tabla "editoriales" aparece lo siguie
 
 name
 ______
-Emece
-Paidos
-Planeta
+ * Emece
+ * Paidos
+ * Planeta
+
 Si visualizamos la estructura de "editoriales" con "describe editoriales" vemos que el campo "name"
 se creó con el mismo tipo y longitud del campo "editorial" de "libros".
 
@@ -3928,41 +3949,48 @@ La tabla "cantidadporeditorial", que no está creada, debe tener la siguiente es
 
 -name: name de la editorial,
 -cantidad: cantidad de libros.
+
 Podemos lograrlo en 3 pasos:
 
 1º paso: crear la tabla "cantidadporeditorial":
 
-create table editoriales(
+> create table editoriales(
 name varchar(20),
 cantidad smallint
 );
+
 2º paso: realizar la consulta en la tabla "libros" para obtener la cantidad de libros de cada editorial
 agrupando por "editorial" y calculando la cantidad con "count()":
 
-select editorial,count(*)
+> select editorial,count(*)
 from libros
 group by editorial;
+
 obteniendo una salida como la siguiente:
 
 name cantidad
 ________________
-Emece 3
-Paidos 4
-Planeta 2
+* Emece 3
+* Paidos 4
+* Planeta 2
+
 3º paso: insertar los registros necesarios en la tabla "editoriales":
 
-insert into cantidadporeditorial values('Emece',3);
-insert into cantidadporeditorial values('Paidos',4);
-insert into cantidadporeditorial values('Planeta',2);
+> insert into cantidadporeditorial values('Emece',3);
+
+> insert into cantidadporeditorial values('Paidos',4);
+
+> insert into cantidadporeditorial values('Planeta',2);
 
 
 Pero existe otra manera simplificando los pasos. Podemos crear la tabla "cantidadporeditorial" con los
 campos necesarios consultando la tabla "libros" y en el mismo momento insertar la información:
 
-create table cantidadporeditorial
+> create table cantidadporeditorial
 select editorial as name,count(*) as cantidad
 from libros
 group by editorial;
+
 La tabla "cantidadporeditorial" se ha creado con el campo llamado "name" seleccionado del campo
 "editorial" de "libros" y con el campo "cantidad" con el valor calculado con count() de la tabla "libros".
 
@@ -3973,17 +4001,15 @@ Si seleccionamos todos los registros de la tabla "cantidadporeditorial" aparece 
 
 name cantidad
 _______________________
-Emece 3
-Paidos 4
-Planeta 2
+ * Emece 3
+ * Paidos 4
+ * Planeta 2
+
 Si visualizamos la estructura de "cantidadporeditorial" con "describe cantidadporeditorial", vemos que
 el campo "name" se creó con el mismo tipo y longitud del campo "editorial" de "libros" y el campo
 "cantidad" se creó como "bigint".
 
-
 ## 74 - Crear tabla a partir de otras (create - insert - join)..................
-
-## insert - join)
 
 Tenemos las tablas "libros" y "editoriales" y queremos crear una tabla llamada "cantidadporeditorial"
 que contenga la cantidad de libros de cada editorial.
