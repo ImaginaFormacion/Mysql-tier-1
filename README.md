@@ -2560,7 +2560,7 @@ su tipo y los modificadores.
 
 Agreguemos otro campo a la tabla:
 
-alter table libros
+> alter table libros
 add edicion date;
 
 
@@ -2570,13 +2570,11 @@ campo ya existe y la sentencia no se ejecuta.
 Cuando se agrega un campo, si no especificamos, lo coloca al final, después de todos los campos
 existentes; podemos indicar su posición (luego de qué campo debe aparecer) con "after":
 
-alter table libros
-add cantidad tinyint unsigned after autor;
+> alter table libros add cantidad tinyint unsigned after autor;
 
 
 ## 50 - Eliminar campos de una tabla (alter table - drop).....................
 
-## - drop)
 
 "alter table" nos permite alterar la estructura de la tabla, podemos usarla para eliminar un campo.
 
@@ -2584,8 +2582,9 @@ Continuamos con nuestra tabla "libros".
 
 Para eliminar el campo "edicion" tipeamos:
 
-alter table libros
+> alter table libros
 drop edicion;
+
 Entonces, para borrar un campo de una tabla usamos "alter table" junto con "drop" y el name del
 campo a eliminar.
 
@@ -2593,8 +2592,9 @@ Si intentamos borrar un campo inexistente aparece un mensaje de error y la acci�
 
 Podemos eliminar 2 campos en una misma sentencia:
 
-alter table libros
+> alter table libros
 drop editorial, drop cantidad;
+
 Si se borra un campo de una tabla que es parte de un índice, también se borra el índice.
 
 Si una tabla tiene sólo un campo, éste no puede ser borrado.
@@ -2602,14 +2602,15 @@ Si una tabla tiene sólo un campo, éste no puede ser borrado.
 Hay que tener cuidado al eliminar un campo, éste puede ser key primaria. Es posible eliminar un
 campo que es key primaria, no aparece ningún mensaje:
 
-alter table libros
+> alter table libros
 drop codigo;
+
 Si eliminamos un campo key, la key también se elimina.
 
 
 ## 51 - Modificar campos de una tabla (alter table - modify)..............
 
-## table - modify)
+
 
 Con "alter table" podemos modificar el tipo de algún campo incluidos sus atributos.
 
@@ -2621,19 +2622,21 @@ Continuamos con nuestra tabla "libros", definida con la siguiente estructura:
 - editorial, varchar (20),
 - precio, decimal(5,2) unsigned,
 - cantidad int unsigned.
+
 Queremos modificar el tipo del campo "cantidad", como guardaremos valores que no superarán los
 50000 usaremos smallint unsigned, tipeamos:
 
-alter table libros
-modify cantidad smallint unsigned;
+> alter table libros modify cantidad smallint unsigned;
+
 Usamos "alter table" seguido del name de la tabla y "modify" seguido del name del nuevo campo
 con su tipo y los modificadores.
 
 Queremos modificar el tipo del campo "titulo" para poder almacenar una longitud de 40 caracteres y
 que no permita valores nulos, tipeamos:
 
-alter table libros
+> alter table libros
 modify titulo varchar(40) not null;
+
 Hay que tener cuidado al alterar los tipos de los campos de una tabla que ya tiene registros cargados. Si
 tenemos un campo de texto de longitud 50 y lo cambiamos a 30 de longitud, los registros cargados en
 ese campo que superen los 30 caracteres, se cortarán.
@@ -2650,7 +2653,7 @@ tipo, entonces guarda en su lugar, el valor límite más cercano, "99.99".
 Si intentamos definir "auto_increment" un campo que no es key primaria, aparece un mensaje de
 error indicando que el campo debe ser key primaria. Por ejemplo:
 
-alter table libros
+> alter table libros
 modify codigo int unsigned auto_increment;
 
 
@@ -2659,17 +2662,14 @@ modificar el valor por defecto ("default") de un campo podemos usar también "mo
 colocar el tipo y sus modificadores, entonces resulta muy extenso, podemos setear sólo el valor por
 defecto con la siguienmte sintaxis:
 
-alter table libros
-alter autor set default 'Varios';
+> alter table libros alter autor set default 'Varios';
+
 Para eliminar el valor por defecto podemos emplear:
 
-alter table libros
-alter autor drop default;
+> alter table libros alter autor drop default;
 
 
 ## 52 - Cambiar el name de un campo de una tabla (alter table - change)....................
-
-## tabla (alter table - change)
 
 Con "alter table" podemos cambiar el name de los campos de una tabla.
 
@@ -2685,8 +2685,8 @@ Continuamos con nuestra tabla "libros", definida con la siguiente estructura:
 
 Queremos cambiar el name del campo "costo" por "precio", tipeamos:
 
-alter table libros
-change costo precio decimal (5,2);
+> alter table libros change costo precio decimal (5,2);
+
 Usamos "alter table" seguido del name de la tabla y "change" seguido del name actual y el name
 nuevo con su tipo y los modificadores.
 
@@ -2694,13 +2694,10 @@ Con "change" cambiamos el name de un campo y también podemos cambiar el tipo y 
 modificadores. Por ejemplo, queremos cambiar el name del campo "name" por "titulo" y
 redefinirlo como "not null", tipeamos:
 
-alter table libros
-change name titulo varchar(40) not null;
+> alter table libros change name titulo varchar(40) not null;
 
 
 ## 53 - Agregar y eliminar la key primaria (alter table).....................
-
-## (alter table)
 
 Hasta ahora hemos aprendido a definir una key primaria al momento de crear una tabla. Con "alter
 table" podemos agregar una key primaria a una tabla existente.
@@ -2715,8 +2712,8 @@ Continuamos con nuestra tabla "libros", definida con la siguiente estructura:
 - cantidad smallint unsigned.
 Para agregar una key primaria a una tabla existente usamos:
 
-alter table libros
-add primary key (codigo);
+> alter table libros add primary key (codigo);
+
 Usamos "alter table" con "add primary key" y entre paréntesis el name del campo que será key.
 
 Si intentamos agregar otra key primaria, aparecerá un mensaje de error porque (recuerde) una tabla
