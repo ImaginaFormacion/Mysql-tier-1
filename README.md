@@ -1549,25 +1549,24 @@ campo, para ello usamos la cláusula "order by".
 
 Por ejemplo, recuperamos los registros de la tabla "libros" ordenados por el título:
 
-select codigo,titulo,autor,editorial,precio from libros order by titulo;
+> select codigo,titulo,autor,editorial,precio from libros order by titulo;
 Aparecen los registros ordenados alfabéticamente por el campo especificado.
 
 También podemos colocar el número de orden del campo por el que queremos que se ordene en lugar
 de su name. Por ejemplo, queremos el resultado del "select" ordenado por "precio":
 
-select codigo,titulo,autor,editorial,precio from libros order by 5;
+> select codigo,titulo,autor,editorial,precio from libros order by 5;
 Por defecto, si no aclaramos en la sentencia, los ordena de manera ascendente (de menor a mayor).
 Podemos ordenarlos de mayor a menor, para ello agregamos la palabra key "desc":
 
-select codigo,titulo,autor,editorial,precio from libros order by editorial desc;
+> select codigo,titulo,autor,editorial,precio from libros order by editorial desc;
 También podemos ordenar por varios campos, por ejemplo, por "titulo" y "editorial":
 
-select codigo,titulo,autor,editorial,precio from libros order by titulo, editorial;
+> select codigo,titulo,autor,editorial,precio from libros order by titulo, editorial;
 Incluso, podemos ordenar en distintos sentidos, por ejemplo, por "titulo" en sentido ascendente y
 "editorial" en sentido descendente:
 
-select codigo,titulo,autor,editorial,precio
-from libros order by titulo asc, editorial desc;
+> select codigo,titulo,autor,editorial,precio from libros order by titulo asc, editorial desc;
 Debe aclararse al lado de cada campo, pues estas palabras keys afectan al campo inmediatamente
 anterior.
 
