@@ -1055,9 +1055,8 @@ values ('El gato con botas',default,default,100);
 
 
 
-## 23 - Atributo zerofill en una columna de una tabla..........................
+## 23 - Atributo zerofill en una columna de una tabla.........
 
-## tabla.
 
 Cualquier campo numérico puede tener otro atributo extra "zerofill".
 
@@ -1066,6 +1065,7 @@ Cualquier campo numérico puede tener otro atributo extra "zerofill".
 Por ejemplo, creamos la tabla "libros", definiendo los campos "codigo" y "cantidad" con el atributo
 "zerofill":
 
+```
 create table libros(
 codigo int(6) zerofill auto_increment,
 titulo varchar(40) not null,
@@ -1075,6 +1075,8 @@ precio decimal(5,2) unsigned,
 cantidad smallint zerofill,
 primary key (codigo)
 );
+```
+
 Note que especificamos el tamaño del tipo "int" entre paréntesis para que muestre por la izquierda
 ceros, cuando los valores son inferiores al indicado; dicho parámetro no restringe el rango de valores
 que se pueden almacenar ni el número de digitos.
@@ -1095,19 +1097,18 @@ una tabla.
 
 Si queremos ver los títulos, precio y cantidad de cada libro escribimos la siguiente sentencia:
 
-select titulo,precio,cantidad
-from libros;
+> select titulo,precio,cantidad from libros;
+
 Si queremos saber el monto total en dinero de un título podemos multiplicar el precio por la cantidad
 por cada título, pero también podemos hacer que MySQL realice el cálculo y lo incluya en una
 columna extra en la salida:
 
-select titulo, precio,cantidad,precio*cantidad
-from libros;
+> select titulo, precio,cantidad,precio*cantidad from libros;
+
 Si queremos saber el precio de cada libro con un 10% de descuento podemos incluir en la sentencia los
 siguientes cálculos:
 
-select titulo, precio,precio*0.1,precio-(precio*0.1)
-from libros;
+> select titulo, precio,precio*0.1,precio-(precio*0.1) from libros;
 
 
 ## 25 - Funciones para el manejo de cadenas.........
