@@ -3902,9 +3902,9 @@ obteniendo una salida como la siguiente:
 
 editorial
 _________
-Emece
-Paidos
-Planeta
+ * Emece
+ * Paidos
+ * Planeta
 
 3º paso: insertar los registros necesarios en la tabla "editoriales":
 
