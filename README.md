@@ -1679,12 +1679,14 @@ Existen otros que simplifican algunas consultas:
 Para recuperar de nuestra tabla "libros" los registros que tienen precio mayor o igual a 20 y menor o
 igual a 40, usamos 2 condiciones unidas por el operador lógico "and":
 
-select * from libros
+> select * from libros
 where precio>=20 and precio<=40;
+
 Podemos usar "between":
 
-select * from libros
+> select * from libros
 where precio between 20 and 40;
+
 "between" significa "entre". Averiguamos si el valor de un campo dado (precio) está entre los valores
 mínimo y máximo especificados (20 y 40 respectivamente).
 
@@ -1692,26 +1694,27 @@ Si agregamos el operador "not" antes de "between" el resultado se invierte.
 
 Para recuperar los libros cuyo autor sea 'Paenza' o 'Borges' usamos 2 condiciones:
 
-select * from libros
-where autor='Borges' or autor='Paenza';
+> select * from libros where autor='Borges' or autor='Paenza';
+
 Podemos usar "in":
 
-select * from libros
+> select * from libros
 where autor in('Borges','Paenza');
+
 Con "in" averiguamos si el valor de un campo dado (autor) está incluido en la lista de valores
 especificada (en este caso, 2 cadenas).
 
 Para recuperar los libros cuyo autor no sea 'Paenza' ni 'Borges' usamos:
 
-select * from libros where autor<>'Borges' and autor<>'Paenza';
+> select * from libros where autor<>'Borges' and autor<>'Paenza';
+
 También podemos usar "in" :
 
-select * from libros
+> select * from libros
 where autor not in ('Borges','Paenza');
+
 Con "in" averiguamos si el valor del campo está incluido en la lista, con "not" antecediendo la
 condición, invertimos el resultado.
-
-
 
 ## 31 - Búsqueda de patrones (like y not like)........
 
