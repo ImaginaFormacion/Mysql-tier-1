@@ -955,7 +955,6 @@ RESUMEN:
 | numérico null/ not null | fuera de rango límite más cercano |
 | numérico not null null | error |
 | numérico decimal null / not null | más decimales que los definidos, redondea al más cercano |
-
 | fecha fuera de rango | 0000-00-00 |
 | fecha '20-07-2006' | (otro orden) 0000-00-00 |
 
