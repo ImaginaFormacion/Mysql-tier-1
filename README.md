@@ -3267,7 +3267,7 @@ campo referente al código de la editorial en la tabla "libros" y en "editoriale
 
 Al recuperar los datos de los libros:
 
-select * from libros;
+> select * from libros;
 vemos que en el campo "editorial" aparece el código, pero no sabemos el name de la editorial. Para
 obtener los datos de cada libro, incluyendo el name de la editorial, necesitamos consultar ambas
 tablas, traer información de las dos.
@@ -3275,9 +3275,10 @@ tablas, traer información de las dos.
 Cuando obtenemos información de más de una tabla decimos que hacemos un "join" (unión). Veamos
 un ejemplo:
 
-select * from libros
+> select * from libros
 join editoriales
 on libros.codigoeditorial=editoriales.codigo;
+
 Analicemos la consulta anterior.
 
 
@@ -3292,17 +3293,19 @@ tabla se combinará con qué registro de la otra tabla.
 
 Si no especificamos por qué campo relacionamos ambas tablas, por ejemplo:
 
-select * from libros
+> select * from libros
 join editoriales;
+
 el resultado es el producto cartesiano de ambas tablas (cada registro de la primera tabla se combina con
 cada registro de la segunda tabla), un "join" sin condición "on" genera un resultado en el que aparecen
 todas las combinaciones de los registros de ambas tablas. La información no sirve.
 
 Note que en la consulta
 
-select * from libros
+> select * from libros
 join editoriales
 on libros.codigoeditorial=editoriales.codigo;
+
 al nombrar el campo usamos el name de la tabla también. Cuando las tablas referenciadas tienen
 campos con igual name, esto es necesario para evitar confusiones y ambiguedades al momento de
 referenciar un campo. En este ejemplo, si no especificamos "editoriales.codigo" y solamente tipeamos
@@ -3311,9 +3314,10 @@ referenciar un campo. En este ejemplo, si no especificamos "editoriales.codigo" 
 Si omitimos la referencia a las tablas al nombrar el campo "codigo" (name de campo que contienen
 ambas tablas):
 
-select * from libros
+> select * from libros
 join editoriales
 on codigoeditorial=codigo;
+
 aparece un mensaje de error indicando que "codigo" es ambiguo.
 
 Entonces, si en las tablas, los campos tienen el mismo name, debemos especificar a cuál tabla
@@ -3326,7 +3330,7 @@ los valores de un campo en común en ambas tablas, que será el enlace.
 
 Para simplificar la sentencia podemos usar un alias para cada tabla:
 
-select * from libros as l
+> select * from libros as l
 join editoriales as e
 on l.codigoeditorial=e.codigo;
 
@@ -3337,16 +3341,18 @@ el uso de alias es para fines de simplificación, pero en algunas consultas es a
 En la consulta anterior vemos que el código de la editorial aparece 2 veces, desde la tabla "libros" y
 "editoriales". Podemos solicitar que nos muestre algunos campos:
 
-select titulo,autor,name from libros as l
+> select titulo,autor,name from libros as l
 join editoriales as e
 on l.codigoeditorial=e.codigo;
+
 Al presentar los campos, en este caso, no es necesario aclarar a qué tabla pertenecen porque los campos
 solicitados no se repiten en ambas tablas, pero si solicitáramos el código del libro, debemos especificar
 de qué tabla porque el campo "codigo" se repite en ambas tablas ("libros" y "editoriales"):
 
-select l.codigo,titulo,autor,name from libros as l
+> select l.codigo,titulo,autor,name from libros as l
 join editoriales as e
 on l.codigoeditorial=e.codigo;
+
 Si obviamos la referencia a la tabla, la sentencia no se ejecuta y aparece un mensaje indicando que el
 campo "codigo" es ambiguo.
 
