@@ -3241,6 +3241,7 @@ Por ejemplo, los datos de nuestra tabla "libros" podrían separarse en 2 tablas,
 "editoriales" que guardará la información de las editoriales. En nuestra tabla "libros" haremos
 referencia a la editorial colocando un código que la identifique. Veamos:
 
+```
 create table libros(
 codigo int unsigned auto_increment,
 titulo varchar(40) not null,
@@ -3250,12 +3251,16 @@ precio decimal(5,2) unsigned,
 cantidad smallint unsigned default 0,
 primary key (codigo)
 );
+```
 
+```
 create table editoriales(
 codigo tinyint unsigned auto_increment,
 name varchar(20) not null,
 primary key(codigo)
 );
+```
+
 De este modo, evitamos almacenar tantas veces los names de las editoriales en la tabla "libros" y
 guardamos el name en la tabla "editoriales"; para indicar la editorial de cada libro agregamos un
 campo referente al código de la editorial en la tabla "libros" y en "editoriales".
