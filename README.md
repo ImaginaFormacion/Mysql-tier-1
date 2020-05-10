@@ -2247,6 +2247,7 @@ campo sería útil.
 
 Creamos un índice al momento de crear la tabla:
 
+```
 create table libros(
 codigo int unsigned auto_increment,
 titulo varchar(40) not null,
@@ -2255,12 +2256,15 @@ editorial varchar(15),
 primary key(codigo),
 index i_editorial (editorial)
 );
+```
+
 Luego de la definición de los campos colocamos "index" seguido del name que le damos y entre
 paréntesis el o los campos por los cuales se indexará dicho índice.
 
 "show index" muestra la estructura de los índices:
 
-show index from libros;
+> show index from libros;
+
 Si no le asignamos un name a un índice, por defecto tomará el name del primer campo que forma
 parte del índice, con un sufijo opcional (_2,_3,...) para que sea único.
 
@@ -2269,6 +2273,7 @@ otras no, debiendo definirse el campo como "not null".
 
 Se pueden crear índices por varios campos:
 
+```
 create table libros(
 codigo int unsigned auto_increment,
 titulo varchar(40) not null,
@@ -2276,6 +2281,8 @@ autor varchar(30),
 editorial varchar(15),
 index i_tituloeditorial (titulo,editorial)
 );
+```
+
 Para crear índices por múltiple campos se listan los campos dentro de los paréntesis separados con
 comas. Los valores de los índices se crean concatenando los valores de los campos mencionados.
 
