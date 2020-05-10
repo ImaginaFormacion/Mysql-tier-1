@@ -964,36 +964,36 @@ RESUMEN:
 Si al insertar registros no se especifica un valor para un campo, se inserta su valor por defecto implícito
 según el tipo de dato del campo. Por ejemplo:
 
-insert into libros (titulo,autor,editorial,precio,cantidad)
-values('Java en 10 minutos','Juan Pereyra','Paidos',25.7,100);
+> insert into libros (titulo,autor,editorial,precio,cantidad) values('Java en 10 minutos','Juan Pereyra','Paidos',25.7,100);
+
 Como no ingresamos valor para el campo "codigo", MySQL insertará el valor por defecto, como
 "codigo" es un campo "auto_increment", el valor por defecto es el siguiente de la secuencia.
 
 Si omitimos el valor correspondiente al autor:
 
-insert into libros (titulo,editorial,precio,cantidad)
-values('Java en 10 minutos','Paidos',25.7,200);
+> insert into libros (titulo,editorial,precio,cantidad) values('Java en 10 minutos','Paidos',25.7,200);
+
 MySQL insertará "null", porque el valor por defecto de un campo (de cualquier tipo) que acepta valores
 nulos, es "null".
 
 Lo mismo sucede si no ingresamos el valor del precio:
 
-insert into libros (titulo,autor,editorial,cantidad)
-values('Java en 10 minutos','Juan Pereyra',Paidos',150);
+> insert into libros (titulo,autor,editorial,cantidad) values('Java en 10 minutos','Juan Pereyra',Paidos',150);
+
 MySQL insertará el valor "null" porque el valor por defecto de un campo (de cualquier tipo) que acepta
 valores nulos, es "null".
 
 Si omitimos el valor correspondiente al título:
 
-insert into libros (autor,editorial,precio,cantidad)
-values ('Borges','Paidos',25.7,200);
+> insert into libros (autor,editorial,precio,cantidad) values ('Borges','Paidos',25.7,200);
+
 MySQL guardará una cadena vacía, ya que éste es el valor por defecto de un campo de tipo cadena
 definido como "not null" (no acepta valores nulos).
 
 Si omitimos el valor correspondiente a la cantidad:
 
-insert into libros (titulo,autor,editorial,precio)
-values('Alicia a traves del espejo','Lewis Carroll','Emece',34.5);
+> insert into libros (titulo,autor,editorial,precio) values('Alicia a traves del espejo','Lewis Carroll','Emece',34.5);
+
 el valor que se almacenará será 0, porque el campo "precio" es de tipo numérico "not null" y el valor
 por defecto de los tipos numéricos que no aceptan valores nulos es 0.
 
