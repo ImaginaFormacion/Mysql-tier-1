@@ -2089,6 +2089,7 @@ que ingresan en la tabla llamada "vehiculos" con los siguientes campos:
 - tipo char (4),
 - horallegada time not null,
 - horasalida time,
+
 Necesitamos definir una key primaria para una tabla con los datos descriptos arriba. No podemos usar
 la patente porque un mismo auto puede ingresar más de una vez en el día a la playa; tampoco podemos
 usar la hora de entrada porque varios autos pueden ingresar a una misma hora. Tampoco sirven los
@@ -2107,7 +2108,7 @@ Usamos 2 campos como key, la patente junto con la hora de llegada, así identifi
 cada registro.
 
 Para establecer más de un campo como key primaria usamos la siguiente sintaxis:
-
+´´´
 create table vehiculos(
 patente char(6) not null,
 tipo char(4),
@@ -2115,6 +2116,7 @@ horallegada time not null
 horasalida time,
 primary key(patente,horallegada)
 );
+´´´
 Nombramos los campos que formarán parte de la key separados por comas.
 
 Si vemos la estructura de la tabla con "describe" vemos que en la columna "key", en ambos campos
