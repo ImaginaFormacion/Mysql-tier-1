@@ -1589,22 +1589,25 @@ Son los siguientes:
 - xor, significa "o",
 - not, significa "no", invierte el resultado
 - (), paréntesis
+
 Los operadores lógicos se usan para combinar condiciones.
 
 Queremos recuperar todos los registros cuyo autor sea igual a "Borges" y cuyo precio no supere los 20
 euros, para ello necesitamos 2 condiciones:
 
-select * from libros
+> select * from libros
 where (autor='Borges') and
 (precio<=20);
+
 Los registros recuperados en una sentencia que une 2 condiciones con el operador "and", cumplen con
 las 2 condiciones.
 
 Queremos ver los libros cuyo autor sea "Borges" y/o cuya editorial sea "Planeta":
 
-select * from libros
+> select * from libros
 where autor='Borges' or
 editorial='Planeta';
+
 En la sentencia anterior usamos el operador "or", indicamos que recupere los libros en los cuales el
 valor del campo "autor" sea "Borges" y/o el valor del campo "editorial" sea "Planeta", es decir,
 seleccionará los registros que cumplan con la primera condición, con la segunda condición o con ambas
@@ -1615,9 +1618,10 @@ las condiciones o ambas.
 
 Queremos ver los libros cuyo autor sea "Borges" o cuya editorial sea "Planeta":
 
-select * from libros
+> select * from libros
 where (autor='Borges') xor
 (editorial='Planeta');
+
 En la sentencia anterior usamos el operador "xor", indicamos que recupere los libros en los cuales el
 valor del campo "autor" sea "Borges" o el valor del campo "editorial" sea "Planeta", es decir,
 seleccionará los registros que cumplan con la primera condición o con la segunda condición pero no los
@@ -1629,8 +1633,9 @@ condiciones con el operador "xor", cumplen 1 de las condiciones, no ambas.
 Queremos recuperar los libros que no cumplan la condición dada, por ejemplo, aquellos cuya editorial
 NO sea "Planeta":
 
-select * from libros
+> select * from libros
 where not (editorial='Planeta');
+
 El operador "not" invierte el resultado de la condición a la cual antecede.
 
 Los registros recuperados en una sentencia en la cual aparece el operador "not", no cumplen con la
@@ -1644,13 +1649,14 @@ más claramente.
 
 Por ejemplo, las siguientes expresiones devuelven un resultado diferente:
 
-select * from libros
+> select * from libros
 where (autor='Borges') or
 (editorial='Paidos' and precio<20);
 
-select*from libros
+> select*from libros
 where (autor='Borges' or editorial='Paidos') and
 (precio<20);
+
 Si bien los paréntesis no son obligatorios en todos los casos, se recomienda utilizarlos para evitar
 confusiones.
 
@@ -1662,8 +1668,6 @@ recomienda usar los paréntesis.
 
 
 ## 30 - Otros operadores relacionales (between - in)...........................
-
-## in)
 
 Hemos visto los operadores relacionales:
 
