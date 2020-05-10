@@ -2049,15 +2049,13 @@ utilizan más de una tabla (tema que veremos más adelante).
 
 Cuando usamos una función de agrupamiento, por ejemplo:
 
-select count(*)
-from libros
-where autor like '%Borges%';
+> select count(*) from libros where autor like '%Borges%';
+
 la columna en la salida tiene como encabezado "count(*)", para que el resultado sea más claro podemos
 utilizar un alias:
 
-select count(*) as librosdeborges
-from libros
-where autor like '%Borges%';
+> select count(*) as librosdeborges from libros where autor like '%Borges%';
+
 La columna de la salida ahora tiene como encabezado el alias, lo que hace más comprensible el
 resultado.
 
@@ -2067,21 +2065,15 @@ necesarias, pero si contiene más de una palabra, es necesario colocarla entre c
 
 Se pueden utilizar alias en las clásulas "group by", "order by", "having". Por ejemplo:
 
-select editorial as 'name de editorial'
-from libros
-group by 'name de editorial';
-select editorial, count(*) as cantidad
-from libros
-group by editorial
-order by cantidad;
-select editorial, count(*) as cantidad
-from libros
-group by editorial
-having cantidad>2;
+> select editorial as 'name de editorial' from libros group by 'name de editorial';
+
+> select editorial, count(*) as cantidad from libros group by editorial order by cantidad;
+
+> select editorial, count(*) as cantidad from libros group by editorial having cantidad>2;
+
 No está permitido utilizar alias de campos en las cláusulas "where".
 
 Los alias serán de suma importancia cuando rescate datos desde el lenguaje PHP
-
 
 ## 39 - key primaria compuesta..........................
 
