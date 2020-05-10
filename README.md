@@ -2489,20 +2489,21 @@ _______________________________________________________________
 23 El aleph Borges Planeta 23.0
 Intentamos insertar un registro con valor de key repetida (código 23):
 
-insert into libros values(23,'Java en 10 minutos','Mario Molina','Emece',25.5);
+> insert into libros values(23,'Java en 10 minutos','Mario Molina','Emece',25.5);
 Aparece un mensaje de error indicando que hay registros duplicados.
 
 Si empleamos "replace":
 
-replace into libros values(23,'Java en 10 minutos','Mario Molina','Emece',25.5);
+> replace into libros values(23,'Java en 10 minutos','Mario Molina','Emece',25.5);
+
 la sentencia se ejecuta y aparece un mensaje indicando que se afectaron 2 filas, esto es porque un
 registro se eliminó y otro se insertó.
 
 "replace" funciona como "insert" en los siguientes casos: - si los datos ingresados no afectan al campo
 único, es decir no se ingresa valor para el campo indexado:
 
-replace into libros(titulo,autor,editorial,precio)
-values('Cervantes y el quijote','Borges','Paidos',28);
+> replace into libros(titulo,autor,editorial,precio) values('Cervantes y el quijote','Borges','Paidos',28);
+
 aparece un mensaje indicando que se afectó un solo registro, el ingresado, que se guarda con valor de
 código 0.
 
@@ -2516,15 +2517,13 @@ existía antes de la nueva inserción.
 - si la tabla no tiene indexación. Si la tabla "libros" no tuviera establecida ninguna key primaria (ni
 índice único), podríamos ingresar varios registros con igual código:
 
-replace into libros values(1,'Harry Potter ya la piedra
-filosofal','Hawking','Emece',48);
+> replace into libros values(1,'Harry Potter ya la piedra filosofal','Hawking','Emece',48);
+
 aparecería un mensaje indicando que se afectó 1 registro (el ingresado), no se reemplazó ninguno y
 ahora habría 2 libros con código 1.
 
 
 ## 49 - Agregar campos a una tabla (alter table - add).........................
-
-## add)
 
 Para modificar la estructura de una tabla existente, usamos "alter table".
 
