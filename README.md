@@ -2132,7 +2132,8 @@ Es posible eliminar un campo que es parte de una key primaria, la key queda con 
 restantes. Esto, siempre que no queden registros con key repetida. Por ejemplo, podemos eliminar el
 campo "horallegada":
 
-alter table vehiculos drop horallegada;
+> alter table vehiculos drop horallegada;
+
 siempre que no haya registros con "patente" duplicada, en ese caso aparece un mensaje de error y la
 eliminación del campo no se realiza.
 
@@ -2199,7 +2200,7 @@ indexar por un campo que contenga valores NULL, excepto los PRIMARY.
 
 "show index" muestra información sobre los índices de una tabla. Por ejemplo:
 
-show index from libros;
+> show index from libros;
 
 
 ## 41 - Indice de tipo primary.....
