@@ -4016,63 +4016,73 @@ que contenga la cantidad de libros de cada editorial.
 
 La tabla "libros" tiene la siguiente estructura:
 
--codigo: int unsigned auto_increment,
--titulo: varchar(40) not null,
--autor: varchar(30),
--codigoeditorial: tinyint unsigned,
--precio: decimal(5,2) unsigned,
--key primaria: codigo.
+- codigo: int unsigned auto_increment,
+- titulo: varchar(40) not null,
+- autor: varchar(30),
+- codigoeditorial: tinyint unsigned,
+- precio: decimal(5,2) unsigned,
+- key primaria: codigo.
+
 La tabla "editoriales" tiene esta estructura:
 
--codigo: tinyint unsigned auto_increment,
--name: varchar(20),
-key primaria: codigo.
+- codigo: tinyint unsigned auto_increment,
+- name: varchar(20), key primaria: codigo.
+
 Las tablas "libros" y "editoriales" contienen varios registros.
 
 La tabla "cantidadporeditorial", que no existe, debe tener la siguiente estructura:
 
--name: name de la editorial,
--cantidad: cantidad de libros.
+- name: name de la editorial,
+- cantidad: cantidad de libros.
+
 Podemos guardar en la tabla "cantidadporeditorial" la cantidad de libros de cada editorial en 3 pasos:
 
 1º paso: crear la tabla "cantidadporeditorial":
 
+```
 create table cantidadporeditorial(
 name varchar(20),
 cantidad smallint
 );
+```
+
 2º paso: realizar la consulta en la tabla "libros" y "editoriales", con un "join" para obtener la cantidad de
 libros de cada editorial agrupando por el name de la editorial y calculando la cantidad con "count()":
 
-select e.name,count(*)
+
+> select e.name,count(*)
 from libros as l
 join editoriales as e
 on l.codigoeditorial=e.codigo
 group by e.name;
+
 obteniendo una salida como la siguiente:
 
 name cantidad
 ________________
-Emece 3
-Paidos 4
-Planeta 2
-
+ * Emece 3
+ * Paidos 4
+ * Planeta 2
 
 3º paso: insertar los registros necesarios en la tabla "editoriales":
 
-insert into editoriales values('Emece',3);
-insert into editoriales values('Paidos',4);
-insert into editoriales values('Planeta',2);
+> insert into editoriales values('Emece',3);
+> insert into editoriales values('Paidos',4);
+> insert into editoriales values('Planeta',2);
+
 Pero existe otra manera simplificando los pasos. Podemos crear la tabla "cantidadporeditorial" con los
 campos necesarios consultando la tabla "libros" y "editoriales" y en el mismo momento insertar la
 información:
 
+```
 create table cantidadporeditorial
 select e.name,count(*) as cantidad
 from libros as l
 join editoriales as e
 on l.codigoeditorial=e.codigo
 group by e.name;
+```
+
 La tabla "cantidadporeditorial" se ha creado con el campo llamado "name" seleccionado del campo
 "name" de "editoriales" y con el campo "cantidad" con el valor calculado con count() de la tabla
 "libros".
@@ -4085,9 +4095,10 @@ Si seleccionamos todos los registros de la tabla "cantidadporeditorial" aparece 
 
 name cantidad
 _______________________
-Emece 3
-Paidos 4
-Planeta 2
+ * Emece 3
+ * Paidos 4
+ * Planeta 2
+
 Si visualizamos la estructura de "cantidadporeditorial", vemos que el campo "name" se creó con el
 mismo tipo y longitud del campo "name" de "editoriales" y el campo "cantidad" se creó como
 "bigint".
@@ -4095,29 +4106,30 @@ mismo tipo y longitud del campo "name" de "editoriales" y el campo "cantidad" se
 
 ## 75 - Insertar datos en una tabla buscando un valor en otra (insert - select)...............
 
-## valor en otra (insert - select)
-
 Trabajamos con las tablas "libros" y "editoriales" de una librería.
 
 La tabla "libros" tiene la siguiente estructura:
 
--codigo: int unsigned auto_increment,
--titulo: varchar(40) not null,
--autor: varchar(30),
--codigoeditorial: tinyint unsigned,
--precio: decimal(5,2) unsigned,
--key primaria: codigo.
+- codigo: int unsigned auto_increment,
+- titulo: varchar(40) not null,
+- autor: varchar(30),
+- codigoeditorial: tinyint unsigned,
+- precio: decimal(5,2) unsigned,
+- key primaria: codigo.
+
 La tabla "editoriales" tiene la siguiente estructura:
 
--codigo: tinyint unsigned auto_increment,
--name: varchar(20),
--domicilio: varchar(30),
--key primaria: codigo.
+- codigo: tinyint unsigned auto_increment,
+- name: varchar(20),
+- domicilio: varchar(30),
+- key primaria: codigo.
+
 Ambas tablas contienen registros. La tabla "editoriales" contiene los siguientes registros:
 
 1,Planeta,San Martin 222,
 2,Emece,San Martin 590,
 3,Paidos,Colon 245.
+
 Queremos ingresar en "libros", el siguiente libro: Harry Potter y la piedra filosofal, J.K. Rowling,
 Emece, 45.90.
 
@@ -4127,21 +4139,21 @@ Podemos lograrlo en 2 pasos:
 
 1º paso: consultar en la tabla "editoriales" el código de la editorial "Emece":
 
-select codigo
+> select codigo
 from editoriales
 where name='Emece';
 nos devuelve el valor "2".
 
 2º paso: ingresar el registro en "libros":
 
-insert into libros (titulo,autor,codigoeditorial,precio)
+> insert into libros (titulo,autor,codigoeditorial,precio)
 values('Harry Potter y la piedra filosofal','J.K.Rowling',2,45.90);
+
 O podemos realizar la consulta del código de la editorial al momento de la inserción:
 
-insert into libros (titulo,autor,codigoeditorial,precio)
-select 'Harry Potter y la camara secreta','J.K.Rowling',codigo,45.90
-from editoriales
-where name='Emece';
+> insert into libros (titulo,autor,codigoeditorial,precio)
+
+> select 'Harry Potter y la camara secreta','J.K.Rowling',codigo,45.90 from editoriales where name='Emece';
 
 
 Entonces, para realizar una inserción y al mismo tiempo consultar un valor en otra tabla, colocamos
@@ -4156,10 +4168,11 @@ El registro se cargará con el valor de código de la editorial "Emece".
 Si la consulta no devuelve ningún valor, porque buscamos el código de una editorial que no existe en la
 tabla "editoriales", aparece un mensaje indicando que no se ingresó ningún registro. Por ejemplo:
 
-insert into libros (titulo,autor,codigoeditorial,precio)
+> insert into libros (titulo,autor,codigoeditorial,precio)
 select 'Cervantes y el quijote','Borges',codigo,35
 from editoriales
 where name='Plaza & Janes';
+
 Hay que tener cuidado al establecer la condición en la consulta, el "insert" ingresará tantos registros
 como filas retorne la consulta. Si la consulta devuelve 2 filas, se insertarán 2 filas en el "insert". Por
 ello, el valor de la condición (o condiciones), por el cual se busca, debe retornar un sólo registro.
@@ -4172,10 +4185,11 @@ pero no recordamos el código de la editorial ni su name, sólo sabemos que su d
 Martin", el resultado retorna 2 filas, porque hay 2 editoriales en esa dirección ("Planeta" y "Emece").
 Tipeeemos la sentencia:
 
-insert into libros (titulo,autor,codigoeditorial,precio)
+> insert into libros (titulo,autor,codigoeditorial,precio)
 select 'Harry Potter y la camara secreta','J.K. Rowling',codigo,54
 from editoriales
 where domicilio like 'San Martin%';
+
 Se ingresarán 2 registros con los mismos datos, excepto el código de la editorial.
 
 Recuerde entonces, el valor de la condición (condiciones), por el cual se busca el dato desconocido en
@@ -4187,21 +4201,21 @@ ejemplos en "Ejercicios propuestos".
 
 ## 76 - Insertar registros con valores de otra tabla (insert - select)....
 
-## tabla (insert - select)
-
 Tenemos las tabla "libros" y "editoriales" creadas. La tabla "libros" contiene registros; "editoriales", no.
 
 La tabla "libros" tiene la siguiente estructura:
 
--codigo: int unsigned auto_increment,
--titulo: varchar(30),
--autor: varchar(30),
--editorial: varchar(20),
--precio: decimal(5,2) unsigned,
--key primaria: codigo.
+- codigo: int unsigned auto_increment,
+- titulo: varchar(30),
+- autor: varchar(30),
+- editorial: varchar(20),
+- precio: decimal(5,2) unsigned,
+- key primaria: codigo.
+
 La tabla "editoriales" tiene la siguiente estructura:
 
--name: varchar(20).
+- name: varchar(20).
+
 Queremos insertar registros en la tabla "editoriales", los names de las distintas editoriales de las
 cuales tenemos libros.
 
@@ -4209,70 +4223,75 @@ Podemos lograrlo en 2 pasos, con varias sentencias:
 
 1º paso: consultar los names de las distintas editoriales de "libros":
 
-select distinct editorial
+> select distinct editorial
 from libros;
+
 obteniendo una salida como la siguiente:
 
 editorial
 _________
-Emece
-Paidos
-Planeta
+ * Emece
+ * Paidos
+ * Planeta
+
 2º paso: insertar los registros uno a uno en la tabla "editoriales":
 
-insert into editoriales (name) values('Emece');
-insert into editoriales (name) values('Paidos');
-insert into editoriales (name) values('Planeta');
+> insert into editoriales (name) values('Emece');
+> insert into editoriales (name) values('Paidos');
+> insert into editoriales (name) values('Planeta');
+
 O podemos lograrlo en un solo paso, realizando el "insert" y el "select" en una misma sentencia:
 
-insert into editoriales (name)
+> insert into editoriales (name)
 select distinct editorial from libros;
+
 Entonces, se puede insertar registros en una tabla con la salida devuelta por una consulta; para ello
 escribimos la consulta y le anteponemos "insert into", el name de la tabla en la cual ingresaremos los
 registros y los campos que se cargarán.
 
 También podemos crear una tabla llamada "cantidadporeditorial":
 
-create table cantidadporeditorial(
-
-
+> create table cantidadporeditorial(
 name varchar(20),
 cantidad smallint unsigned
 );
+
 e ingresar registros a partir de una consulta a la tabla "libros":
 
-insert into cantidadporeditorial (name,cantidad)
+> insert into cantidadporeditorial (name,cantidad)
 select editorial,count(*) as cantidad
 from libros
 group by editorial;
+
 Si los campos presentados entre paréntesis son menos (o más) que las columnas devueltas por la
 consulta, aparece un mensaje de error y la sentencia no se ejecuta.
 
 
 ## 77 - Insertar registros con valores de otra tabla (insert - select - join).......................
 
-## tabla (insert - select - join)
-
 Tenemos las tabla "libros" y "editoriales", que contienen registros, y la tabla "cantidadporeditorial", que
 no contiene registros.
 
 La tabla "libros" tiene la siguiente estructura:
 
--codigo: int unsigned auto_increment,
--titulo: varchar(30),
--autor: varchar(30),
--codigoeditorial: tinyint unsigned,
--precio: decimal(5,2) unsigned,
--key primaria: codigo.
+- codigo: int unsigned auto_increment,
+- titulo: varchar(30),
+- autor: varchar(30),
+- codigoeditorial: tinyint unsigned,
+- precio: decimal(5,2) unsigned,
+- key primaria: codigo.
+
 La tabla "editoriales":
 
--codigo: tinyint unsigned auto_increment,
--name: varchar(20),
--key primaria: codigo.
+- codigo: tinyint unsigned auto_increment,
+- name: varchar(20),
+- key primaria: codigo.
+
 La tabla "cantidadporeditorial":
 
--name: varchar(20),
--cantidad: smallint unsigned.
+- name: varchar(20),
+- cantidad: smallint unsigned.
+
 Queremos insertar registros en la tabla "cantidadporeditorial", los names de las distintas editoriales
 de las cuales tenemos libros y la cantidad de libros de cada una de ellas.
 
@@ -4280,35 +4299,37 @@ Podemos lograrlo en 2 pasos:
 
 1º paso: consultar con un "join" los names de las distintas editoriales de "libros" y la cantidad:
 
-select e.name,count(l.codigoeditorial)
+> select e.name,count(l.codigoeditorial)
 from editoriales as e
 left join libros as l
 on e.codigo=l.codigoeditorial
 group by e.name;
+
 obteniendo una salida como la siguiente:
 
 editorial cantidad
 ______________________
-Emece 3
-Paidos 1
-Planeta 1
-Plaza & Janes 0
+ * Emece 3
+ * Paidos 1
+ * Planeta 1
+ * Plaza & Janes 0
+
 2º paso: insertar los registros uno a uno en la tabla "cantidadporeditorial":
 
-insert into cantidadporeditorial values('Emece',3);
-insert into cantidadporeditorial values('Paidos',1);
-insert into cantidadporeditorial values('Planeta',1);
+> insert into cantidadporeditorial values('Emece',3);
+> insert into cantidadporeditorial values('Paidos',1);
+> insert into cantidadporeditorial values('Planeta',1);
+> insert into cantidadporeditorial values('Plaza & Janes',0);
 
-
-insert into cantidadporeditorial values('Plaza & Janes',0);
 O podemos lograrlo en un solo paso, realizando el "insert" y el "select" en una misma sentencia:
 
-insert into cantidadporeditorial
+> insert into cantidadporeditorial
 select e.name,count(l.codigoeditorial)
 from editoriales as e
 left join libros as l
 on e.codigo=l.codigoeditorial
 group by e.name;
+
 Entonces, se puede insertar registros en una tabla con la salida devuelta por una consulta que incluya un
 "join" o un "left join"; para ello escribimos la consulta y le anteponemos "insert into", el name de la
 tabla en la cual ingresaremos los registros y los campos que se cargarán (si se ingresan todos los
@@ -4320,23 +4341,23 @@ campos a cargar en el "insert".
 
 ## 78 - Actualizar datos con valores de otra tabla (update)................
 
-## (update)
-
 Tenemos la tabla "libros" en la cual almacenamos los datos de los libros de nuestra biblioteca y la tabla
 "editoriales" que almacena el name de las distintas editoriales y sus códigos.
 
 La tabla "libros" tiene la siguiente estructura:
 
--codigo: int unsigned auto_increment,
--titulo: varchar(30),
--autor: varchar(30),
--codigoeditorial: tinyint unsigned,
--key primaria: codigo.
+- codigo: int unsigned auto_increment,
+- titulo: varchar(30),
+- autor: varchar(30),
+- codigoeditorial: tinyint unsigned,
+- key primaria: codigo.
+
 La tabla "editoriales" tiene esta estructura:
 
--codigo: tinyint unsigned auto_increment,
--name: varchar(20),
--key primaria: codigo.
+- codigo: tinyint unsigned auto_increment,
+- name: varchar(20),
+- key primaria: codigo.
+
 Ambas tablas contienen registros.
 
 Queremos unir los datos de ambas tablas en una sola: "libros", es decir, alterar la tabla "libros" para que
@@ -4345,7 +4366,8 @@ almacene el name de la editorial y eliminar la tabla "editoriales".
 En primer lugar debemos alterar la tabla "libros", vamos a agregarle un campo llamado "editorial" en el
 cual guardaremos el name de la editorial.
 
-alter table libros add editorial varchar(20);
+> alter table libros add editorial varchar(20);
+
 La tabla "libros" contiene un nuevo campo "editorial" con todos los registros con valor "null".
 
 Ahora debemos actualizar los valores para ese campo.
@@ -4354,35 +4376,38 @@ Podemos hacerlo en 2 pasos:
 
 1º paso: consultamos los códigos de las editoriales:
 
-select codigo,name
+
+> select codigo,name
 from editoriales;
+
 obtenemos una salida similar a la siguiente:
 
 codigo name
 _____________
-1 Planeta
-2 Emece
-3 Paidos
+ * 1 Planeta
+ * 2 Emece
+ * 3 Paidos
+
 2º paso: comenzamos a actualizar el campo "editorial" de los registros de "libros" uno a uno:
 
-update libros set editorial='Planeta'
-where codigoeditorial=1;
+> update libros set editorial='Planeta' where codigoeditorial=1;
 
+> update libros set editorial='Emece' where codigoeditorial=2;
 
-update libros set editorial='Emece'
-where codigoeditorial=2;
-update libros set editorial='Paidos'
-where codigoeditorial=3;
+> update libros set editorial='Paidos' where codigoeditorial=3;
+
 ... con cada editorial...
+
 Luego, eliminamos el campo "codigoeditorial" de "libros" y la tabla "editoriales".
 
 Pero podemos simplificar la tarea actualizando el campo "editorial" de todos los registros de la tabla
 "libros" al mismo tiempo que realizamos el "join" (paso 1 y 2 en una sola sentencia):
 
-update libros
+>update libros
 join editoriales
 on libros.codigoeditorial=editoriales.codigo
 set libros.editorial=editoriales.name;
+
 Luego, eliminamos el campo "codigoeditorial" de "libros" con "alter table" y la tabla "editoriales" con
 "drop table".
 
@@ -4399,6 +4424,7 @@ Tenemos la tabla "libros" en la cual almacenamos los datos de los libros de nues
 
 Las tablas tienen las siguientes estructuras:
 
+```
 create table libros(
 codigo int unsigned auto_increment,
 titulo varchar(30),
@@ -4407,12 +4433,15 @@ codigoeditorial tinyint unsigned,
 precio decimal(5,2) unsigned,
 primary key(codigo)
 );
-
+```
+```
 create table editoriales(
 codigo tinyint unsigned auto_increment,
 name varchar(20),
 primary key(codigo)
 );
+```
+
 Ambas tablas contienen registros.
 
 Queremos modificar el código de la editorial "Emece" a "9" y también todos los "codigoeditorial" de
@@ -4420,23 +4449,26 @@ los libros de dicha editorial. Podemos hacerlo en 3 pasos:
 
 1) buscar el código de la editorial "Emece":
 
-select * from editoriales
+> select * from editoriales
 where name='Emece';
+
 recordamos el valor devuelto (valor 2) o lo almacenamos en una variable;
 
 2) actualizar el código en la tabla "editoriales":
 
-update editoriales
+> update editoriales
 set codigo=9
 where name='Emece';
+
 3) y finalmente actualizar todos los libros de dicha editorial:
 
-update libros
+> update libros
 set codigoeditorial=9
 where codigoeditorial=2;
+
 O podemos hacerlo en una sola sentencia:
 
-update libros as l
+> update libros as l
 join editoriales as e
 on l.codigoeditorial=e.codigo
 set l.codigoeditorial=9, e.codigo=9
@@ -4454,23 +4486,23 @@ combinando "update" con "join" y seteando los campos involucrados de todas las t
 
 ## 80 - Borrar registros consultando otras tablas (delete - join).........
 
-## (delete - join)
-
 Tenemos la tabla "libros" en la cual almacenamos los datos de los libros de nuestra biblioteca y la tabla
 "editoriales" que almacena el name de las distintas editoriales y sus códigos.
 
 La tabla "libros" tiene la siguiente estructura:
 
--codigo: int unsigned auto_increment,
--titulo: varchar(30),
--autor: varchar(30),
--codigoeditorial: tinyint unsigned,
--key primaria: codigo.
+- codigo: int unsigned auto_increment,
+- titulo: varchar(30),
+- autor: varchar(30),
+- codigoeditorial: tinyint unsigned,
+- key primaria: codigo.
+
 La tabla "editoriales" tiene esta estructura:
 
--codigo: tinyint unsigned auto_increment,
--name: varchar(20),
--key primaria: codigo.
+- codigo: tinyint unsigned auto_increment,
+- name: varchar(20),
+- key primaria: codigo.
+
 Ambas tablas contienen registros.
 
 Queremos eliminar todos los libros de la editorial "Emece" pero no recordamos el código de dicha
@@ -4480,22 +4512,25 @@ Podemos hacerlo en 2 pasos:
 
 1º paso: consultamos el código de la editorial "Emece":
 
-select codigo
+> select codigo
 from editoriales
 where name='Emece';
+
 recordamos el valor devuelto (valor 2) o lo almacenamos en una variable.
 
 2º paso: borramos todos los libros con código de editorial "2":
 
-delete libros
+> delete libros
 where codigoeditorial=2;
+
 O podemos realizar todo en un solo paso:
 
-delete libros
+> delete libros
 from libros
 join editoriales
 on libros.codigoeditorial=editoriales.codigo
 where editoriales.name='Emece';
+
 Es decir, usamos "delete" junto al name de la tabla de la cual queremos eliminar registros, luego
 realizamos el "join" correspondiente nombrando las tablas involucradas y agregamos la condición
 "where".
@@ -4504,23 +4539,24 @@ realizamos el "join" correspondiente nombrando las tablas involucradas y agregam
 
 ## 81 - Borrar registros buscando coincidencias en otras tablas (delete - join)..............
 
-## en otras tablas (delete - join)
 
 Tenemos la tabla "libros" en la cual almacenamos los datos de los libros de nuestra biblioteca y la tabla
 "editoriales" que almacena el name de las distintas editoriales y sus códigos.
 
 La tabla "libros" tiene la siguiente estructura:
 
--codigo: int unsigned auto_increment,
--titulo: varchar(30),
--autor: varchar(30),
--codigoeditorial: tinyint unsigned,
--key primaria: codigo.
+- codigo: int unsigned auto_increment,
+- titulo: varchar(30),
+- autor: varchar(30),
+- codigoeditorial: tinyint unsigned,
+- key primaria: codigo.
+
 La tabla "editoriales" tiene esta estructura:
 
--codigo: tinyint unsigned auto_increment,
--name: varchar(20),
--key primaria: codigo.
+- codigo: tinyint unsigned auto_increment,
+- name: varchar(20),
+- key primaria: codigo.
+
 Ambas tablas contienen registros.
 
 Queremos eliminar todos los libros cuyo código de editorial no exista en la tabla "editoriales".
@@ -4529,23 +4565,26 @@ Podemos hacerlo en 2 pasos:
 
 1º paso: realizamos un left join para ver qué "codigoeditorial" en "libros" no existe en "editoriales":
 
-select l.* from libros as l
+> select l.* from libros as l
 left join editoriales as e
 on l.codigoeditorial=e.codigo
 where e.codigo is null;
+
 recordamos el valor de los códigos de libro devueltos (valor 5) o lo almacenamos en una variable.
 
 2º paso: borramos todos los libros mostrados en la consulta anterior (uno solo, con código 5):
 
-delete libros
+> delete libros
 where codigo=5;
+
 O podemos realizar la eliminción en el mismo momento que realizamos el "left join":
 
-delete libros
+> delete libros
 FROM libros
 left join editoriales
 on libros.codigoeditorial=editoriales.codigo
 where editoriales.codigo is null;
+
 Es decir, usamos "delete" junto al name de la tabla de la cual queremos eliminar registros, luego
 realizamos el "left join" correspondiente nombrando las tablas involucradas y agregamos la condición
 "where" para que seleccione solamente los libros cuyo código de editorial no se encuentre en
@@ -4554,7 +4593,7 @@ realizamos el "left join" correspondiente nombrando las tablas involucradas y ag
 
 Ahora queremos eliminar todas las editoriales de las cuales no haya libros:
 
-delete editoriales
+> delete editoriales
 from editoriales
 left join libros
 on libros.codigoeditorial=editoriales.codigo
@@ -4568,16 +4607,18 @@ Tenemos la tabla "libros" en la cual almacenamos los datos de los libros de nues
 
 La tabla "libros" tiene la siguiente estructura:
 
--codigo: int unsigned auto_increment,
--titulo: varchar(30),
--autor: varchar(30),
--codigoeditorial: tinyint unsigned,
--key primaria: codigo.
+- codigo: int unsigned auto_increment,
+- titulo: varchar(30),
+- autor: varchar(30),
+- codigoeditorial: tinyint unsigned,
+- key primaria: codigo.
+
 La tabla "editoriales" tiene esta estructura:
 
--codigo: tinyint unsigned auto_increment,
--name: varchar(20),
--key primaria: codigo.
+- codigo: tinyint unsigned auto_increment,
+- name: varchar(20),
+- key primaria: codigo.
+
 Ambas tablas contienen registros.
 
 La librería ya no trabaja con la editorial "Emece", entonces quiere eliminar dicha editorial de la tabla
@@ -4585,23 +4626,26 @@ La librería ya no trabaja con la editorial "Emece", entonces quiere eliminar di
 
 1º paso: buscar el código de la editorial "Emece" y almacenarlo en una variable:
 
-select @valor:= codigo from editoriales
+> select @valor:= codigo from editoriales
 where name='Emece';
+
 2º paso: eliminar dicha editorial de la tabla "editoriales":
 
-delete editoriales
+> delete editoriales
 where codigo=@valor;
+
 3º paso: eliminar todos los libros cuyo código de editorial sea igual a la variable:
 
-delete libros where codigoeditorial=@valor;
+> delete libros where codigoeditorial=@valor;
 
 O podemos hacerlo en una sola consulta:
 
-delete libros,editoriales
+> delete libros,editoriales
 from libros
 join editoriales
 on libros.codigoeditorial=editoriales.codigo
 where editoriales.name='Emece';
+
 La sentencia anterior elimina de la tabla "editoriales" la editorial "Emece" y de la tabla "libros" todos
 los registros con código de editorial correspondiente a "Emece".
 
@@ -4613,11 +4657,10 @@ junto al name de las tablas de las cuales queremos eliminar registros y luego de
 
 ## 83 - Chequear y reparar tablas (check - repair)
 
-## repair)
-
 Para chequear el estado de una tabla usamos "check table":
 
-check table libros;
+> check table libros;
+
 "check table" chequea si una o más tablas tienen errores. Esta sentencia devuelve la siguiente
 información: en la columna "Table" muestra el name de la tabla; en "Op" muestra siempre "check";
 en "Msg_type" muestra "status", "error", "info" o "warning" y en "Msg_text" muestra un mensaje,
@@ -4637,10 +4680,10 @@ cerraron correctamente.
 Se pueden combinar las opciones de control, por ejemplo, realizamos un chequeo rápido de la tabla
 "libros" y verificamos si se cerró correctamente:
 
-check table libros fast quick;
+> check table libros fast quick;
 Para reparar una tabla corrupta usamos "repair table":
 
-repair table libros;
+> repair table libros;
 "repair table" puede recuperar los datos de una tabla.
 
 Devuelve la siguiente información: en la columna "Table" nuestra el name de la tabla; en "Op"
@@ -4658,13 +4701,13 @@ decir, transformarlo a un código que no pueda leerse.
 Con "encode" se encripta una cadena. La función recibe 2 argumentos: el primero, la cadena a
 encriptar; el segundo, una cadena usada como contraseña para luego desencriptar:
 
-select encode('feliz','dia');
+> select encode('feliz','dia');
 El resultado es una cadena binaria de la misma longitud que el primer argumento.
 
 Con "decode" desencriptamos una cadena encriptada con "encode". Esta función recibe 2 argumentos:
 el primero, la cadena a desencriptar; el segundo, la contraseña:
 
-select decode('§¡Ý7','dia');
+> select decode('§¡Ý7','dia');
 Si la cadena de contraseña es diferente a la ingresada al encriptar, el resultado será incorrecto.
 
 Retomamos la tabla "users" que constaba de 2 campos: name del usuario (varchar de 30) y key
@@ -4672,20 +4715,25 @@ Retomamos la tabla "users" que constaba de 2 campos: name del usuario (varchar d
 
 Podemos ingresar registros encriptando la key:
 
-insert into users values ('MarioPerez',encode('Marito','octubre'));
+> insert into users values ('MarioPerez',encode('Marito','octubre'));
+
 La forma más segura es no transferir la contraseña a través de la conexión, para ello podemos
 almacenar la key en una variable y luego insertar la key encriptada:
 
-select @key:=encode('RealMadrid','ganador');
-insert into users values ('MariaGarcia',@key);
+> select @key:=encode('RealMadrid','ganador');
+
+> insert into users values ('MariaGarcia',@key);
+
 Veamos los registros ingresados:
 
-select * from users;
+> select * from users;
+
 Desencriptamos la key del usuario "MarioPerez":
 
-select decode(key,'octubre') from users
+> select decode(key,'octubre') from users
 where name='MarioPerez';
+
 Desencriptamos la key del usuario "MariaGarcia":
 
-select decode(key,'ganador') from users
+> select decode(key,'ganador') from users
 where name='MariaGarcia';
