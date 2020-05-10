@@ -1840,22 +1840,24 @@ valores máximos y mínimos. Veamos algunas de ellas.
 Imaginemos que nuestra tabla "libros" contiene muchos registros. Para averiguar la cantidad sin
 necesidad de contarlos manualmente usamos la función "count()":
 
-select count(*) from libros;
+> select count(*) from libros;
+
 La función "count()" cuenta la cantidad de registros de una tabla, incluyendo los que tienen valor nulo.
 
 Para saber la cantidad de libros de la editorial "Planeta" tipeamos:
 
-select count(*) from libros
-where editorial='Planeta';
+> select count(*) from libros where editorial='Planeta';
+
 También podemos utilizar esta función junto con la clausula "where" para una consulta más específica.
 Por ejemplo, solicitamos la cantidad de libros que contienen la cadena "Borges":
 
-select count(*) from libros
-where autor like '%Borges%';
+> select count(*) from libros where autor like '%Borges%';
+
 Para contar los registros que tienen precio (sin tener en cuenta los que tienen valor nulo), usamos la
 función "count()" y en los paréntesis colocamos el name del campo que necesitamos contar:
 
-select count(precio) from libros;
+> select count(precio) from libros;
+
 Note que "count(*)" retorna la cantidad de registros de una tabla (incluyendo los que tienen valor
 "null") mientras que "count(precio)" retorna la cantidad de registros en los cuales el campo "precio" no
 es nulo. No es lo mismo. "count(*)" cuenta registros, si en lugar de un asterisco colocamos como
@@ -1864,14 +1866,14 @@ argumento el name de un campo, se contabilizan los registros cuyo valor en ese c
 Tenga en cuenta que no debe haber espacio entre el name de la función y el paréntesis, porque puede
 confundirse con una referencia a una tabla o campo. Las siguientes sentencias son distintas:
 
-select count(*) from libros;
-select count (*) from libros;
+> select count(*) from libros;
+
+> select count (*) from libros;
+
 La primera es correcta, la segunda incorrecta.
 
 
 ## 34 - Funciones de agrupamiento (count - max - min - sum - avg)...
-
-## min - sum - avg)
 
 Existen en MySQL funciones que nos permiten contar registros, calcular sumas, promedios, obtener
 valores máximos y mínimos. Ya hemos aprendido "count()", veamos otras.
@@ -1883,35 +1885,27 @@ select sum(cantidad) from libros;
 También podemos combinarla con "where". Por ejemplo, queremos saber cuántos libros tenemos de la
 editorial "Planeta":
 
-select sum(cantidad) from libros
-where editorial ='Planeta';
+> select sum(cantidad) from libros where editorial ='Planeta';
+
 Para averiguar el valor máximo o mínimo de un campo usamos las funciones "max()" y "min()"
 respectivamente. Ejemplo, queremos saber cuál es el mayor precio de todos los libros:
 
-select max(precio) from libros;
+> select max(precio) from libros;
+
 Queremos saber cuál es el valor mínimo de los libros de "Rowling":
 
-select min(precio) from libros
-where autor like '%Rowling%';
+> select min(precio) from libros where autor like '%Rowling%';
+
 La función avg() retorna el valor promedio de los valores del campo especificado. Por ejemplo,
 queremos saber el promedio del precio de los libros referentes a "PHP":
 
-select avg(precio) from libros
-where titulo like '%PHP%';
+> select avg(precio) from libros where titulo like '%PHP%';
+
 Estas funciones se denominan "funciones de agrupamiento" porque operan sobre conjuntos de
 registros, no con datos individuales.
 
-Tenga en cuenta que no debe haber espacio entre el name de la función y el paréntesis, porque puede
-confundirse con una referencia a una tabla o campo. Las siguientes sentencias son distintas:
-
-select count(*) from libros;
-select count (*) from libros;
-La primera es correcta, la segunda incorrecta.
-
 
 ## 36 - Selección de un grupo de registros (having).
-
-## (having)
 
 Así como la cláusula "where" permite seleccionar (o rechazar) registros individuales; la cláusula
 "having" permite seleccionar (o rechazar) un grupo de registros.
@@ -1919,37 +1913,33 @@ Así como la cláusula "where" permite seleccionar (o rechazar) registros indivi
 Si queremos saber la cantidad de libros agrupados por editorial usamos la siguiente instrucción ya
 aprendida:
 
-select editorial, count(*) from libros
-group by editorial;
+> select editorial, count(*) from libros group by editorial;
+
 Si queremos saber la cantidad de libros agrupados por editorial pero considerando sólo algunos grupos,
 por ejemplo, los que devuelvan un valor mayor a 2, usamos la siguiente instrucción:
 
-select editorial, count(*) from libros
-group by editorial
-having count(*)>2;
+> select editorial, count(*) from libros group by editorial having count(*)>2;
+
 Se utiliza "having", seguido de la condición de búsqueda, para seleccionar ciertas filas retornadas por la
 cláusula "group by".
 
 Veamos otros ejemplos. Queremos el promedio de los precios de los libros agrupados por editorial:
 
-select editorial, avg(precio) from libros
-group by editorial;
+> select editorial, avg(precio) from libros group by editorial;
+
 Ahora, sólo queremos aquellos cuyo promedio supere los 25 euros:
 
-select editorial, avg(precio) from libros
-group by editorial
-having avg(precio)>25;
+> select editorial, avg(precio) from libros group by editorial having avg(precio)>25;
+
 En algunos casos es posible confundir las cláusulas "where" y "having". Queremos contar los registros
 agrupados por editorial sin tener en cuenta a la editorial "Planeta".
 
 Analicemos las siguientes sentencias:
 
-select editorial, count(*) from libros
-where editorial<>'Planeta'
-group by editorial;
-select editorial, count(*) from libros
-group by editorial
-having editorial<>'Planeta';
+> select editorial, count(*) from libros where editorial<>'Planeta' group by editorial;
+
+> select editorial, count(*) from libros group by editorial having editorial<>'Planeta';
+
 Ambas devuelven el mismo resultado, pero son diferentes.
 
 La primera, selecciona todos los registros rechazando los de editorial "Planeta" y luego los agrupa para
@@ -1966,10 +1956,8 @@ Veamos otros ejemplos combinando "where" y "having".
 Queremos la cantidad de libros, sin considerar los que tienen precio nulo, agrupados por editorial, sin
 considerar la editorial "Planeta":
 
-select editorial, count(*) from libros
-where precio is not null
-group by editorial
-having editorial<>'Planeta';
+> select editorial, count(*) from libros where precio is not null group by editorial having editorial<>'Planeta';
+
 Aquí, selecciona los registros rechazando los que no cumplan con la condición dada en "where", luego
 los agrupa por "editorial" y finalmente rechaza los grupos que no cumplan con la condición dada en el
 "having".
@@ -1978,21 +1966,17 @@ Generalmente se usa la cláusula "having" con funciones de agrupamiento, esto no
 cláusula "where". Por ejemplo queremos el promedio de los precios agrupados por editorial, de
 aquellas editoriales que tienen más de 2 libros:
 
-select editorial, avg(precio) from libros
-group by editorial
-having count(*) > 2;
+> select editorial, avg(precio) from libros group by editorial having count(*) > 2;
+
 Podemos encontrar el mayor valor de los libros agrupados por editorial y luego seleccionar las filas que
 tengan un valor mayor o igual a 30:
 
-select editorial, max(precio) from libros
-group by editorial
-having max(precio)>=30;
+> select editorial, max(precio) from libros group by editorial having max(precio)>=30;
+
 Esta misma sentencia puede usarse empleando un "alias", para hacer referencia a la columna de la
 expresión:
 
-select editorial, max(precio) as 'mayor' from libros
-group by editorial
-having mayor>=30;
+> select editorial, max(precio) as 'mayor' from libros group by editorial having mayor>=30;
 
 
 ## 37 - Registros duplicados (distinct)...................
@@ -2001,61 +1985,59 @@ Con la cláusula "distinct" se especifica que los registros con ciertos datos du
 el resultado. Por ejemplo, queremos conocer todos los autores de los cuales tenemos libros, si
 utilizamos esta sentencia:
 
-select autor from libros;
+> select autor from libros;
 Aparecen repetidos. Para obtener la lista de autores sin repetición usamos:
 
-select distinct autor from libros;
+> select distinct autor from libros;
 También podemos tipear:
 
-select autor from libros
-group by autor;
+> select autor from libros group by autor;
+
 Note que en los tres casos anteriores aparece "null" como un valor para "autor"· Si sólo queremos la
 lista de autores conocidos, es decir, no queremos incluir "null" en la lista, podemos utilizar la sentencia
 siguiente:
 
-select distinct autor from libros
-where autor is not null;
+> select distinct autor from libros where autor is not null;
+
 Para contar los distintos autores, sin considerar el valor "null" usamos:
 
-select count(distinct autor)
-from libros;
+> select count(distinct autor) from libros;
+
 Note que si contamos los autores sin "distinct", no incluirá los valores "null" pero si los repetidos:
 
-select count(autor)
-from libros;
+> select count(autor) from libros;
+
 Esta sentencia cuenta los registros que tienen autor.
 
 Para obtener los names de las editoriales usamos:
 
-select editoriales from libros;
+> select editoriales from libros;
+
 Para una consulta en la cual los names no se repitan tipeamos:
 
-select distinct editorial from libros;
+> select distinct editorial from libros;
+
 Podemos saber la cantidad de editoriales distintas usamos:
 
-select count(distinct editoriales) from libros;
-Podemos combinarla con "where". Por ejemplo, queremos conocer los distintos autores de la editorial
-"Planeta":
+> select count(distinct editoriales) from libros;
 
-select distinct autor from libros
-where editorial='Planeta';
+Podemos combinarla con "where". Por ejemplo, queremos conocer los distintos autores de la editorial "Planeta":
+
+> select distinct autor from libros where editorial='Planeta';
+
 También puede utilizarse con "group by":
 
-select editorial, count(distinct autor)
-from libros
+> select editorial, count(distinct autor) from libros group by editorial;
 
-
-group by editorial;
 Para mostrar los títulos de los libros sin repetir títulos, usamos:
 
-select distinct titulo from libros
-order by titulo;
+> select distinct titulo from libros order by titulo;
+
 La cláusula "distinct" afecta a todos los campos presentados. Para mostrar los títulos y editoriales de
 los libros sin repetir títulos ni editoriales, usamos:
 
-select distinct titulo,editorial
-from libros
-order by titulo;
+> select distinct titulo,editorial from libros order by titulo;
+
 Note que los registros no están duplicados, aparecen títulos iguales pero con editorial diferente, cada
 registro es diferente.
 
