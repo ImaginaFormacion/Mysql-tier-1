@@ -1721,8 +1721,9 @@ condición, invertimos el resultado.
 Hemos realizado consultas utilizando operadores relacionales para comparar cadenas. Por ejemplo,
 sabemos recuperar los libros cuyo autor sea igual a la cadena "Borges":
 
-select * from libros
+> select * from libros
 where autor='Borges';
+
 Los operadores relacionales nos permiten comparar valores numéricos y cadenas de caracteres. Pero al
 realizar la comparación de cadenas, busca coincidencias de cadenas completas.
 
@@ -1732,8 +1733,9 @@ El Aleph de Borges;
 Antologia poetica de J.L. Borges;
 Si queremos recuperar todos los libros cuyo autor sea "Borges", y especificamos la siguiente condición:
 
-select * from libros
+> select * from libros
 where autor='Borges';
+
 sólo aparecerá el primer registro, ya que la cadena "Borges" no es igual a la cadena "J.L. Borges".
 
 Esto sucede porque el operador "=" (igual), también el operador "<>" (distinto) comparan cadenas de
@@ -1742,30 +1744,30 @@ caracteres completas. Para comparar porciones de cadenas utilizamos los operador
 Entonces, podemos comparar trozos de cadenas de caracteres para realizar consultas. Para recuperar
 todos los registros cuyo autor contenga la cadena "Borges" debemos tipear:
 
-select * from libros
-where autor like "%Borges%";
+> select * from libros where autor like "%Borges%";
+
 El símbolo "%" (porcentaje) reemplaza cualquier cantidad de caracteres (incluyendo ningún caracter).
 Es un caracter comodín. "like" y "not like" son operadores de comparación que señalan igualdad o
 diferencia.
 
 Para seleccionar todos los libros que comiencen con "A":
 
-select * from libros
-where titulo like 'A%';
+> select * from libros where titulo like 'A%';
+
 Note que el símbolo "%" ya no está al comienzo, con esto indicamos que el título debe tener como
 primera letra la "A" y luego, cualquier cantidad de caracteres.
 
 Para seleccionar todos los libros que no comiencen con "A":
 
-select * from libros
-where titulo not like 'A%';
+> select * from libros where titulo not like 'A%';
+
 Así como "%" reemplaza cualquier cantidad de caracteres, el guión bajo "_" reemplaza un caracter, es
 el otro caracter comodín. Por ejemplo, queremos ver los libros de "Lewis Carroll" pero no recordamos
 si se escribe "Carroll" o "Carrolt", entonces tipeamos esta condición:
 
 
-select * from libros
-where autor like "%Carrol_";
+> select * from libros where autor like "%Carrol_";
+
 Si necesitamos buscar un patrón en el que aparezcan los caracteres comodines, por ejemplo, queremos
 ver todos los registros que comiencen con un guión bajo, si utilizamos '_%', mostrará todos los
 registros porque lo interpreta como "patrón que comienza con un caracter cualquiera y sigue con
@@ -1782,53 +1784,50 @@ Los operadores "regexp" y "not regexp" busca patrones de modo similar a "like" y
 
 Para buscar libros que contengan la cadena "Ma" usamos:
 
-select titulo from libros
-where titulo regexp 'Ma';
+> select titulo from libros where titulo regexp 'Ma';
 Para buscar los autores que tienen al menos una "h" o una "k" o una "w" tipeamos:
 
-select autor from libros
-where autor regexp '[hkw]';
+> select autor from libros where autor regexp '[hkw]';
+
 Para buscar los autores que no tienen ni "h" o una "k" o una "w" tipeamos:
 
-select autor from libros
-where autor not regexp '[hkw]';
+> select autor from libros where autor not regexp '[hkw]';
+
 Para buscar los autores que tienen por lo menos una de las letras de la "a" hasta la "d", es decir,
 "a,b,c,d", usamos:
 
-select autor from libros
-where autor regexp '[a-d]';
+> select autor from libros where autor regexp '[a-d]';
+
 Para ver los títulos que comienzan con "A" tipeamos:
 
-select titulo from libros
-where titulo regexp '^A';
+> select titulo from libros where titulo regexp '^A';
 Para ver los títulos que terminan en "HP" usamos:
 
-select titulo from libros
-where titulo regexp 'HP$';
+> select titulo from libros where titulo regexp 'HP$';
+
 Para buscar títulos que contengan una "a" luego un caracter cualquiera y luego una "e" utilizamos la
 siguiente sentencia:
 
-select titulo from libros
-where titulo regexp 'a.e';
+> select titulo from libros where titulo regexp 'a.e';
 El punto (.) identifica cualquier caracter.
 
 Podemos mostrar los títulos que contienen una "a" seguida de 2 caracteres y luego una "e":
 
-select titulo from libros
-where titulo regexp 'a..e';
+> select titulo from libros where titulo regexp 'a..e';
+
 Para buscar autores que tengan 6 caracteres exactamente usamos:
 
-select autor from libros
-where autor regexp '^......$';
+> select autor from libros where autor regexp '^......$';
+
 Para buscar autores que tengan al menos 6 caracteres usamos:
 
-select autor from libros
-where autor regexp '......';
+> select autor from libros where autor regexp '......';
+
 Para buscar títulos que contengan 2 letras "a" usamos:
 
 
-select titulo from libros
-where titulo regexp 'a.*a';
+> select titulo from libros where titulo regexp 'a.*a';
+
 El asterisco indica que busque el caracter inmediatamente anterior, en este caso cualquiera porque hay
 un punto.
 
