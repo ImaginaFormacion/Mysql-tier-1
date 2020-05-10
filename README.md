@@ -10,7 +10,7 @@ Fundamentos: Operaciones y optimización con MYSQL
 
 ## Índice
 
-
+- 0 - Setup ( entorno de practicas )
 - 1 - Introducción........................
 - 2 - show databases....................
 - 3 - Creación de una tabla y mostrar sus campos (create table - show tables - describe - drop table)........
@@ -95,6 +95,17 @@ Fundamentos: Operaciones y optimización con MYSQL
 - 83 - Chequear y reparar tablas (check - repair)
 - 84 - Encriptación de datos (encode - decode)..
 
+## 0 - Setup (entorno de prácticas)
+
+Con el fin de agilizar la clase practica y que puedan probarse todos los comandos y operaciones tratadas para su mayor comprension, se recomienda el uso de docker y docker-compose de manera que cada alumno pueda instanciar de manera local un sistema MYSQL con todas las herramientas necesarias
+
+Se provee junto con este repositorio una configuracion de docker compose que despliega los servicios necesarios para realizar todas las prácticas
+
+Para poner en marcha dicho setup, necesitas tener instalado docker y docker-compose en tu sistema y ejecutar 
+
+> docker-compose up -d 
+
+desde el directorio principal de este repositorio
 
 ## 1 - Introducción y entorno........................
 
