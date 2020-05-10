@@ -3872,12 +3872,12 @@ los names de las editoriales.
 
 La tabla "libros" tiene esta estructura:
 
--codigo: int unsigned auto_increment,
--titulo: varchar(40) not null,
--autor: varchar(30),
--editorial: varchar(20) not null,
--precio: decimal(5,2) unsigned,
--key primaria: codigo.
+- codigo: int unsigned auto_increment,
+- titulo: varchar(40) not null,
+- autor: varchar(30),
+- editorial: varchar(20) not null,
+- precio: decimal(5,2) unsigned,
+- key primaria: codigo.
 La tabla "editoriales", que no existe, debe tener la siguiente estructura:
 
 -name: name de la editorial.
@@ -3947,8 +3947,8 @@ la cantidad de libros de cada editorial.
 
 La tabla "cantidadporeditorial", que no está creada, debe tener la siguiente estructura:
 
--name: name de la editorial,
--cantidad: cantidad de libros.
+- name: name de la editorial,
+- cantidad: cantidad de libros.
 
 Podemos lograrlo en 3 pasos:
 
