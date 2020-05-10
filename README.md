@@ -2729,8 +2729,8 @@ También usamos "alter table" para eliminar una key primaria.
 
 Para eliminar una key primaria usamos:
 
-alter table libros
-drop primary key;
+> alter table libros drop primary key;
+
 Con "alter table" y "drop primary key" eliminamos una key primaria definida al crear la tabla o
 agregada luego.
 
@@ -2751,6 +2751,7 @@ tabla, con "create index". También podemos agregarlos a una tabla usando "alter
 
 Creamos la tabla "libros":
 
+```
 create table libros(
 codigo int unsigned,
 titulo varchar(40),
@@ -2759,6 +2760,8 @@ editorial varchar (20),
 precio decimal(5,2) unsigned,
 cantidad smallint unsigned
 );
+```
+
 Para agregar un índice común por el campo "editorial" usamos la siguiente sentencia:
 
 alter table libros
