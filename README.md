@@ -1121,25 +1121,25 @@ MySQL tiene algunas funciones para trabajar con cadenas de caracteres. Estas son
 
 -ord(caracter): Retorna el código ASCII para el caracter enviado como argumento. Ejemplo:
 
-select ord('A');
+> select ord('A');
 retorna 65.
 
 -char(x,..): retorna una cadena con los caracteres en código ASCII de los enteros enviados como
 argumentos. Ejemplo:
 
-select char(65,66,67);
+> select char(65,66,67);
 retorna "ABC".
 
 -concat(cadena1,cadena2,...): devuelve la cadena resultado de concatenar los argumentos. Ejemplo:
 
-select concat('Hola,',' ','como esta?');
+> select concat('Hola,',' ','como esta?');
 retorna "Hola, como esta?".
 
 -concat_ws(separador,cadena1,cadena2,...): "ws" son las iniciales de "with separator". El primer
 argumento especifica el separador que utiliza para los demás argumentos; el separador se agrega entre
 las cadenas a concatenar. Ejemplo:
 
-select concat_ws('-','Juan','Pedro','Luis');
+> select concat_ws('-','Juan','Pedro','Luis');
 retorna "Juan-Pedro-Luis".
 
 -find_in_set(cadena,lista de cadenas): devuelve un valor entre de 0 a n (correspondiente a la posición),
@@ -1148,25 +1148,25 @@ segundo argumento. La lista de cadenas enviada como segundo argumento es una cad
 subcadenas separadas por comas. Devuelve 0 si no encuentra "cadena" en la "lista de cadenas".
 Ejemplo:
 
-select find_in_set('hola','como esta,hola,buen dia');
+> select find_in_set('hola','como esta,hola,buen dia');
 retorna 2, porque la cadena "hola" se encuentra en la lista de cadenas, en la posición 2.
 
 -length(cadena): retorna la longitud de la cadena enviada como argumento. Ejemplo:
 
-select length('Hola');
+> select length('Hola');
 devuelve 4.
 
 
 - locate(subcadena,cadena): retorna la posición de la primera ocurrencia de la subcadena en la cadena
 enviadas como argumentos. Devuelve "0" si la subcadena no se encuentra en la cadena. Ejemplo:
 
-select locale('o','como le va');
+> select locale('o','como le va');
 retorna 2.
 
 - position(subcadena in cadena): funciona como "locate()". Devuelve "0" si la subcadena no se
 encuentra en la cadena. Ejemplo:
 
-select position('o' in 'como le va');
+> select position('o' in 'como le va');
 retorna 2.
 
 - locate(subcadena,cadena,posicioninicial): retorna la posición de la primera ocurrencia de la subcadena
@@ -1174,36 +1174,36 @@ enviada como primer argumentos en la cadena enviada como segundo argumento, empe
 posición enviada como tercer argumento. Devuelve "0" si la subcadena no se encuentra en la cadena.
 Ejemplos:
 
-select locate('ar','Margarita',1);
+> select locate('ar','Margarita',1);
 retorna 1.
 
-select locate('ar','Margarita',3);
+> select locate('ar','Margarita',3);
 retorna 5.
 
 - instr(cadena,subcadena): retorna la posición de la primera ocurrencia de la subcadena enviada como
 segundo argumento en la cadena enviada como primer argumento. Ejemplo:
 
-select instr('como le va','om');
+> select instr('como le va','om');
 devuelve 2.
 
 - lpad(cadena,longitud,cadenarelleno): retorna la cadena enviada como primer argumento, rellenada por
 la izquierda con la cadena enviada como tercer argumento hasta que la cadena retornada tenga la
 longitud especificada como segundo argumento. Si la cadena es más larga, la corta. Ejemplo:
 
-select lpad('hola',10,'0');
+> select lpad('hola',10,'0');
 retorna "000000hola".
 
 - rpad(cadena,longitud,cadenarelleno): igual que "lpad" excepto que rellena por la derecha.
 - left(cadena,longitud): retorna la cantidad (longitud) de caracteres de la cadena comenzando desde la
 inquierda, primer caracter. Ejemplo:
 
-select left('buenos dias',8);
+> select left('buenos dias',8);
 retorna "buenos d".
 
 - right(cadena,longitud): retorna la cantidad (longitud) de caracteres de la cadena comenzando desde la
 derecha, último caracter. Ejemplo:
 
-select right('buenos dias',8);
+> select right('buenos dias',8);
 retorna "nos dias".
 
 
@@ -1211,28 +1211,28 @@ retorna "nos dias".
 especifica en tercer argumento, de la cadena enviada como primer argumento, empezando desde la
 posición especificada en el segundo argumento. Ejemplo:
 
-select substring('Buenas tardes',3,5);
+> select substring('Buenas tardes',3,5);
 retorna "enas".
 
 - substring(cadena from posicion for longitud): variante de "substring(cadena,posicion,longitud)".
 Ejemplo:
 
-select substring('Buenas tardes' from 3 for 5);
+> select substring('Buenas tardes' from 3 for 5);
 
 - mid(cadena,posicion,longitud): igual que "substring(cadena,posicion,longitud)". Ejemplo:
 
-select mid('Buenas tardes' from 3 for 5);
+> select mid('Buenas tardes' from 3 for 5);
 retorna "enas".
 
 - substring(cadena,posicion): retorna la subcadena de la cadena enviada como argumento, empezando
 desde la posición indicada por el segundo argumento. Ejemplo:
 
-select substring('Margarita',4);
+> select substring('Margarita',4);
 retorna "garita".
 
 -substring(cadena from posicion): variante de "substring(cadena,posicion)". Ejemplo:
 
-select substring('Margarita' from 4);
+> select substring('Margarita' from 4);
 retorna "garita".
 
 -substring_index(cadena,delimitador,ocurrencia): retorna la subcadena de la cadena enviada como
@@ -1240,15 +1240,15 @@ argumento antes o después de la "ocurrencia" de la cadena enviada como delimita
 es positiva, retorna la subcadena anterior al delimitador (comienza desde la izquierda); si "ocurrencia"
 es negativa, retorna la subcadena posterior al delimitador (comienza desde la derecha). Ejemplo:
 
-select substring_index( 'margarita','ar',2);
+> select substring_index( 'margarita','ar',2);
 retorna "marg", todo lo anterior a la segunda ocurrencia de "ar".
 
-select substring_index( 'margarita','ar',-2);
+> select substring_index( 'margarita','ar',-2);
 retorna "garita", todo lo posterior a la segunda ocurrencia de "ar".
 
 -ltrim(cadena): retorna la cadena con los espacios de la izquierda eliminados. Ejemplo:
 
-select ltrim(' Hola ');
+> select ltrim(' Hola ');
 retorna
 
 "Hola "
@@ -1256,7 +1256,7 @@ retorna
 
 - rtrim(cadena): retorna la cadena con los espacios de la derecha eliminados. Ejemplo:
 
-select rtrim(' Hola ');
+> select rtrim(' Hola ');
 retorna
 
 " Hola"
