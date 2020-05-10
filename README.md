@@ -1,12 +1,12 @@
 # MySql
 
-´´´
+```
 IMAGINAGROUP FORMACIÓN
 --------------------------------------------------
 Profesor: David Pestana
 Duracion: 2 sesiones de 3,5 horas
 Fundamentos: Operaciones y optimización con MYSQL
-´´´
+```
 
 ## Índice
 
