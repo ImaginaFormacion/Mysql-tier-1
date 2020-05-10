@@ -2482,11 +2482,12 @@ reemplazando el registro con el valor de código existente por el nuevo registro
 
 Veamos un ejemplo. Tenemos los siguientes registros almacenados en "libros":
 
-codigo titulo autor editorial precio
-_______________________________________________________________
-10 Alicia en .. Lewis Carroll Emece 15.4
-15 Aprenda PHP Mario Molina Planeta 45.8
-23 El aleph Borges Planeta 23.0
+| codigo | titulo | autor | editorial | precio |
+| ------ | ------ | ----- | --------- | ------ |
+| 10 | Alicia en .. | Lewis Carroll | Emece | 15.4 |
+| 15 | Aprenda PHP | Mario Molina | Planeta | 45.8 |
+| 23 | El aleph | Borges | Planeta | 23.0 |
+
 Intentamos insertar un registro con valor de key repetida (código 23):
 
 > insert into libros values(23,'Java en 10 minutos','Mario Molina','Emece',25.5);
