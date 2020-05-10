@@ -3400,9 +3400,10 @@ primera tabla (de la izquierda) no están en la segunda (de la derecha).
 Para obtener la lista de editoriales y sus libros, incluso de aquellas editoriales de las cuales no tenemos
 libros usamos:
 
-select * from editoriales
+> select * from editoriales
 left join libros
 on editoriales.codigo=libros.codigoeditorial;
+
 Un "left join" se usa para hacer coincidir registros en una tabla (izquierda) con otra tabla (derecha),
 pero, si un valor de la tabla de la izquierda no encuentra coincidencia en la tabla de la derecha, se
 genera una fila extra (una por cada valor no encontrado) con todos los campos seteados a "null".
@@ -3413,13 +3414,14 @@ de "on". Es importante la posición en que se colocan las tablas en un "left joi
 es la que se usa para localizar registros en la tabla de la derecha. Por lo tanto, estos "join" no son
 iguales:
 
-select * from editoriales
+> select * from editoriales
 left join libros
 on editoriales.codigo=libros.codigoeditorial;
 
-select * from libros
+> select * from libros
 left join editoriales
 on editoriales.codigo=libros.codigoeditorial;
+
 La primera sentencia opera así: por cada valor de codigo de "editoriales" busca coincidencia en la tabla
 "libros", si no encuentra coincidencia para algún valor, genera una fila seteada a "null".
 
@@ -3436,20 +3438,22 @@ Luego del "on" se especifican los campos que se asociarán; no se deben colocar 
 Un "left join" puede tener clausula "where" que restringa el resultado de la consulta considerando
 solamente los registros que encuentran coincidencia en la tabla de la derecha:
 
-select e.name,l.titulo
+> select e.name,l.titulo
 from editoriales as e
 left join libros as l
 on e.codigo=l.codigoeditorial
 where l.codigoeditorial is not null;
+
 El anterior "left join" muestra los valores de la tabla "editoriales" que están presentes en la tabla de la
 derecha ("libros").
 
 También podemos mostrar las editoriales que no están presentes en "libros":
 
-select e.name,l.titulo from editoriales as e
+> select e.name,l.titulo from editoriales as e
 left join libros as l
 on e.codigo=l.codigoeditorial
 where l.codigoeditorial is null;
+
 El anterior "left join" muestra los valores de la tabla "editoriales" que no encuentran correspondencia
 en la tabla de la derecha, "libros".
 
