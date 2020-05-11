@@ -4770,6 +4770,33 @@ where name='MariaGarcia';
 # MYSAM VS INNODB
 
 
+Los motores más populares y usados en desarrollo web son MyISAM e InnoDB, su correcta elección definirá como se gestionarán los recursos en cuanto a velocidad, consumo de esos recursos y calidad de servicio.
+
+Cada proyecto tiene su casuística, a la que debemos prestar atención, conociendo el número de usuarios que accederán o pueden acceder simultáneamente a realizar altas, bajas, etc., o bien si tenemos miles de accesos solamente a consulta.
+
+### Características de MyISAM:
+* Se establece por defecto cuando se crea una tabla, salvo que se indique lo contrario.
+* Soporta transacciones.
+* Realizar bloqueo de registros.
+* Soporta un gran número de consultas SQL, lo que se refleja en una velocidad de carga muy rápida para nuestra web.
+* Como desventaja, señalamos que no realiza bloqueo de tablas, esto puede ser un problema si como se ha mencionado anteriormente hay un acceso simultáneo al mantenimiento de registros por parte de varios usuarios.
+
+### Características de InnoDB
+* Bloqueo de registros. Importante para accesos múltiples al mantenimiento de tablas, es decir, ejecuciones de sentencias tipo INSERT o UPTATE, éstas ejecuciones tienen una velocidad optimizada.
+* Capacidad para soportar transacciones e integridad de datos, es decir previene el alta de datos no adecuados.
+* Aplica las características propias de ACID (Atomicity, Consistency, Isolation and Durability), consistentes en garantizar la integridad de las tablas.
+
+Como desventaja, marcamos que al ser un tipo de motor que define un sistema más complejo de diseño de tablas, reduce el rendimiento en velocidad para desarrollo que requieren de un elevado número de consultas.
+
+Independientemente del sistema que se elija, hay que hacer un buen diseño de la estructura y funcionalidad de la base de datos, si bien este tema requiere un capítulo aparte, os damos unas nociones a tener en cuenta.
+
+La información o datos no deben almacenarse de cualquier manera. Hay que buscar el mayor aprovechamiento de los recursos que tenemos a nuestra disposición, tanto a nivel de almacenamiento como de rendimiento.
+
+Hay que mantener la consistencia de la información durante todo el ciclo de vida de la base de datos, más aún si los datos que se manejan son críticos, por ejemplo los salarios de una organización.
+
+Los primeros factores que realizará el analista, serán el análisis del sistema que servirá de modelo, la observación de los elementos que lo componen y la descomposición en partes mucho más pequeñas.
+
+
 Las únicas razones para usar MyISAM en versiones de MySQL previas a la 5.5, era que InnoDB no soportaba particionar tablas ni crear índices FULLTEXT.
 
 Esas restricciones ya no existen.
@@ -4780,10 +4807,11 @@ Si vas a tener múltiples updates, o inserciones concurrentes, por ejemplo, un b
 
 Súmale a todo eso que InnoDB permite el uso de llaves foráneas que son indispensables para mantener la integridad referencial de un modelo de datos, el soporte para transacciones.
 
-En resumen, usa InnoDB porque
 
-En la versión MySQL actual soporta todo lo que soporta MyISAM
-Llaves foráneas / Integridad relacional
-Bloqueo a nivel de fila
-Transacciones
-Todas esas ventajas superan con creces una merma en velocidad de los select.
+#### En resumen, usa InnoDB porque
+
+* En la versión MySQL actual soporta todo lo que soporta MyISAM
+* Llaves foráneas / Integridad relacional
+* Bloqueo a nivel de fila
+* Transacciones
+* Todas esas ventajas superan con creces una merma en velocidad de los select.
