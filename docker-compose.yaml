@@ -1,3 +1,14 @@
+test:
+    build: ./source/scripts
+    container_name: test
+    restart: always
+    links: 
+        - mysql:db
+    ports:
+        - 8080:80
+    volumes:
+        - ./source/scripts:/var/www/html
+
 mysql:
     image: mysql:5.7
     container_name: mysql
