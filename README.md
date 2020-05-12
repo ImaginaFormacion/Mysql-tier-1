@@ -4815,3 +4815,106 @@ Súmale a todo eso que InnoDB permite el uso de llaves foráneas que son indispe
 * Bloqueo a nivel de fila
 * Transacciones
 * Todas esas ventajas superan con creces una merma en velocidad de los select.
+
+
+
+
+
+
+
+## ACTIVAR EL LOG DE CONSULTAS LENTAS
+
+> SET GLOBAL slow_query_log = 'ON';
+
+por defecto esta a off y esto hara que se comiencen a logear las consultas lentas, se consideran consultas lentas las que duran mas de lo que este fijado en otro parametro llamado 'long_query_time' que por defecto esta a 10 segundos
+
+De este modo redefinimos el parametro a un valor menor
+
+> SET GLOBAL long_query_time = X;
+
+
+Existen multiples usos que pueden darse a una base de datos MYSQL y por tanto no esta definido lo que es una consulta lenta o no como norma general, sin embargo en la mayoria de los casos las bases de datos MYSQL dan soporte a servicios web, y en un servicio web cualquier tiempo de respuesta superior a 500 milisegundos se considera Not QoS, o sin calidad de servicio.
+
+El tiempo optimo de un servicio web ronda los 50 ms, y 200ms es el maximo tolerable para considerar calidad de servicio, entre 200 y 500 milisegundos se considera baja calidad de servicio y por encima de 500 milisegundos se considera sin calidad.
+
+Por tanto en un entorno web o de servicios web, teniendo en cuenta el tiempo de preparación de la respuesta y que para esta respuesta puedan darse de 1 a N consultas a la base de datos, deberiamos trabajar con tiempos de consulta muy poco tolerantes a retraso incluso en alta concurrencia.
+
+
+
+
+
+
+
+
+
+## Diferencia entre MySQL y SQL Server
+
+
+Introducción
+MySQL vs SQL Server
+Diferencia entre MySQL y SQL Server
+
+### Introducción
+
+
+Prácticamente todas las aplicaciones web y bases de datos modernas desempeñan un papel crucial. Debido a la naturaleza dinámica del desarrollo web actual, incluso las aplicaciones rudimentarias requieren algún mecanismo de almacenamiento, recuperación y modificación de datos (es por eso que en Hostinger ofrecemos bases de datos MySQL ilimitadas para nuestros clientes premium y empresariales). Naturalmente, a medida que la importancia de las bases de datos ha crecido, también lo ha hecho la popularidad de ciertos sistemas de administración de bases de datos relacionales (RDBMS).
+
+Dos de estos sistemas son MySQL y SQL Server. Ambos realizan la misma función, aunque se utilizan en diferentes escenarios. Se puede decir que tienen un saber diferente, pero se basan en SQL, o en lenguaje de consulta estructurado. Los desarrolladores pueden esperar algunas similitudes entre MySQL y SQL Server, como el uso de tablas para almacenar datos, referencias a claves primarias y externas, así como a múltiples bases de datos en un único entorno o servidor.
+
+No sería inexacto llamar a MySQL y SQL Server las dos soluciones de RDBMS más populares que hay, aunque Oracle y Postgres podrían tener algo que decir al respecto. Aunque gradualmente estamos presenciando un cambio de SQL a NoSQL, el primero sigue siendo la presencia más dominante. Significa que ahora es un buen momento para aprender MySQL o SQL Server.
+
+
+## MySQL vs SQL Server
+
+### ¿Qué es MySQL?
+
+Desarrollado a mediados de los años 90 (más tarde adquirido por Oracle), MySQL fue una de las primeras bases de datos de código abierto y sigue siéndolo hasta el día de hoy. Esto quiere decir que hay varias alternativas a MySQL. Pero las diferencias entre estas variantes no son demasiado pronunciadas; la sintaxis y la funcionalidad básica siguen siendo idénticas.
+
+Algo que se ha convertido en una de las características de MySQL es su popularidad dentro de las startups. Debido a que es de código abierto y gratuito, los desarrolladores pueden comenzar fácilmente con MySQL y modificar su código en la rara instancia que puedan necesitar. MySQL se usa generalmente junto con PHP y Apache Web Server, además de una distribución de Linux, lo que ha llevado al famoso acrónimo LAMP (Linux, Apache, MySQL, PHP).
+
+### ¿Qué es SQL Server?
+El servidor SQL, también conocido como Microsoft SQL Server, ha existido por mucho más tiempo que MySQL. Microsoft desarrolló SQL Server en los años 80, con la promesa de proporcionar un RDBMS confiable y escalable. Estas siguen siendo las cualidades principales de SQL Server después de todos estos años, ya que es la plataforma de acceso para el software empresarial a gran escala.
+
+SQL Server está destinado principalmente para desarrolladores que usan .NET como su lenguaje de desarrollo, en oposición a PHP para MySQL. Esto tiene sentido, ya que ambos caen bajo el paraguas de Microsoft.
+
+## Diferencia entre MySQL y SQL Server
+
+MySQL es muy utilizado para proyectos y aplicaciones PHP. SQL Server se usa principalmente para aplicaciones .NET o proyectos de Windows. En MySQL hay múltiples motores de almacenamiento, lo cual le da mayor flexibilidad a los desarrolladores en cuanto al uso de las tablas.
+
+Hay varias diferencias entre MySQL y SQL, y la más importante para muchos es la sintaxis, aunque también hay diferencias en cuanto al entorno, pues SQL funciona mejor con .NET, el nivel de soporte, la forma de almacenamiento de datos y el costo de la licencia.
+
+Ahora veamos cada una de las diferencias en más detalle:
+
+* Entorno
+    Como se mencionó anteriormente, SQL Server funciona mejor con .NET, mientras que MySQL se puede emparejar con casi cualquier otro idioma, generalmente con PHP. También se debe mencionar que SQL Server solía ejecutarse exclusivamente en Windows, pero esto ha cambiado desde el año pasado cuando Microsoft anunció el soporte de Linux para SQL Server. Aún así, la versión de Linux no es lo suficientemente estable, lo que significa que nuestra recomendación sigue siendo que sigas trabajando en Windows si utilizas SQL Server, y cambia a Linux si vas con MySQL.
+* Sintaxis
+    Para la mayoría de las personas, esta es la diferencia más importante entre los dos sistemas. Estar familiarizado con un conjunto de reglas de sintaxis sobre otro puede influir enormemente en su decisión en cuanto a qué sistema le conviene más. Si bien tanto MySQL como SQL Server se basan en SQL, las diferencias en la sintaxis siguen siendo importantes y vale la pena tenerlas en cuenta. Por ejemplo, mira el siguiente ejemplo:
+    ### MySQL
+    ```
+    SELECT age
+    FROM person
+    ORDER BY age ASC
+    LIMIT 1 OFFSET 2
+    ```
+    ### Microsoft SQL Server
+
+    ```
+    SELECT TOP 3 WITH TIES *
+    FROM person
+    ORDER BY age ASC
+    ```
+
+Ambos fragmentos de código logran el mismo resultado: devuelve 3 entradas con la edad más joven de una persona nombrada en la tabla. Pero hay un cambio drástico en la sintaxis. Por supuesto, la sintaxis es subjetiva, por lo que no podemos dar ninguna recomendación; ve con la que te parezca más intuitiva. La lista completa de cambios de implementación entre MySQL y SQL Server se puede encontrar aquí.
+
+* SQL Server es más que un RDBMS
+    Una gran ventaja del software propietario frente al software de código abierto es el soporte exclusivo que recibe. En este caso particular, la ventaja se vuelve aún más profunda, ya que SQL Server está respaldado por una de las compañías tecnológicas más grandes del mundo. Microsoft ha creado herramientas adicionales para SQL Server, que vienen integradas con el RDBMS, incluidas las herramientas de análisis de datos. También presenta un servidor de informes: SQL Server Reporting Services, así como una herramienta ETL. Esto hace que SQL Server sea la navaja suiza de los RDBMS. También puedes obtener funciones similares en MySQL, pero tienes que azotar la web en busca de soluciones de terceros, lo que no es ideal para la mayoría de las personas.
+* Motores de almacenamiento
+    Otra gran diferencia que a veces se pasa por alto entre MySQL y SQL Server es la forma en que almacenan los datos. SQL Server usa un único motor de almacenamiento desarrollado por Microsoft, en contraste con múltiples motores en oferta para MySQL. Esto le da a los desarrolladores de MySQL mucha más flexibilidad, ya que pueden usar diferentes motores para diferentes tablas, en función de la velocidad, la confiabilidad o alguna otra dimensión. Un popular motor de almacenamiento MySQL es InnoDB, que cae en el extremo más lento del espectro, pero mantiene la confiabilidad. Otro es MyISAM.
+* Cancelación de consultas
+    No mucha gente sabe esto, pero una diferencia potencialmente importante entre MySQL y SQL Server es que MySQL no le permite cancelar una consulta a mitad de la ejecución. Esto significa que una vez que un comando comienza a ejecutarse, es mejor que espere que cualquier daño que pueda causar sea reversible. SQL Server, por otro lado, le permite cancelar la ejecución de consultas a mitad de camino en el proceso. Esta diferencia puede ser particularmente perjudicial para los administradores de bases de datos, a diferencia de los desarrolladores web, que ejecutan comandos con guiones que rara vez requieren la cancelación de consultas durante la ejecución.
+* Costo
+    Aquí es donde SQL Server se vuelve mucho menos atractivo y MySQL gana puntos importantes. Microsoft requiere que compres licencias para ejecutar múltiples bases de datos en SQL Server; hay una versión gratuita, pero solo para familiarizarte con el RDBMS. Por el contrario, MySQL usa la Licencia Pública General de GNU, lo que hace que su uso sea totalmente gratuito. Ten en cuenta, sin embargo, que si necesitas soporte o asistencia para MySQL, deberás pagarlo.
+* Soporte comunitario
+    Lo que nos lleva a nuestro próximo punto. Si bien puedes pagar por el soporte de MySQL, el escenario rara vez surge, debido a la contribución de la comunidad estelar y el apoyo para ello. Una ventaja de tener a la comunidad más amplia de su parte es que la mayoría de las personas no tienen que buscar ayuda oficial, pueden buscar en la web y encontrar un montón de soluciones.
+* IDEs
+    Es importante tener en cuenta que ambas RDMBS admiten diferentes herramientas de entorno de desarrollo integrado (IDE). Estas herramientas ofrecen un entorno coherente para el desarrollo, y debes prestar mucha atención a cuál se adapta mejor a tus necesidades. MySQL cuenta con Enterprise Manager de Oracle, mientras que SQL Server usa Management Studio (SSMS). Ambos tienen sus pros y sus contras y pueden inclinar la balanza si no tiene nada más para basar su decisión.
