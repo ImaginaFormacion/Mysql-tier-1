@@ -34,3 +34,25 @@ phpmyadmin:
         PMA_HOST: 'mysql'
         PMA_USER: 'root'
         PMA_PASSWORD: 'password'
+
+
+
+master:
+    image: 'christianbladescb/locustio'
+    container_name: 'master'
+    restart: always
+    command: " -f locustfile.py --host=test:80 --master
+    "
+    ports:
+    - "8089:8089"
+    - "5557:5557"
+    volumes:
+    - ./source/locust/benchmarks:/locust
+
+slave:
+    image: 'christianbladescb/locustio'
+    container_name: 'slave'
+    restart: 'always'
+    command: " -f locustfile.py --host=test:80 --slave --master-host=master"
+    volumes:
+    - ./source/locust/benchmarks:/locust
